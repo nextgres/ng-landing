@@ -27,14 +27,23 @@ layout: base.njk
     </div>
     <div class="mb-3">
       <label for="analytics" class="form-label">What analytics system are you using?</label>
-      <select class="form-select" id="analytics" name="analytics" required>
-        <option>Looker</option>
-        <option>Metabase</option>
+      <select class="form-select" id="analytics" name="analytics" multiple required aria-multiselectable="true" size="6">
+        <option>Amplitude</option>
+        <option>Mixpanel</option>
+        <option>Google Analytics</option>
+        <option>Heap</option>
+        <option>Segment</option>
+        <option>Pendo</option>
+        <option>Hotjar</option>
+        <option>FullStory</option>
+        <option>Plausible</option>
+        <option>PostHog</option>
         <option>Tableau</option>
         <option>None</option>
       </select>
+      <small class="form-text text-muted">Hold down Command (⌘) on Mac or Ctrl on Windows to select multiple options.</small>
     </div>
-    <button type="submit" class="btn btn-primary w-100" aria-label="Get Started">Get Started</button>
+    <button type="submit" class="btn btn-primary w-100" aria-label="add me to the beta">Add me to the Beta</button>
   </form>
 </section>
 {% endblock %}
