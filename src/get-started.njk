@@ -1,0 +1,40 @@
+---
+title: Get Started
+layout: base.njk
+---
+{% block content %}
+<section class="col-md-6 mx-auto py-5">
+  <h1 class="mb-4 text-center">Get Started with NEXTGRES</h1>
+  <p class="mb-4 text-center">Thank you for your interest in NEXTGRES. We are in closed Beta now. Give us your email address and we'll let you know when it is your turn.</p>
+  <form name="beta" method="POST" netlify netlify-honeypot="bot-field" action="/thanks" class="card p-4 shadow-sm">
+    <input type="hidden" name="form-name" value="beta">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="mb-3">
+      <label for="database" class="form-label">What database are you using?</label>
+      <select class="form-select" id="database" name="database" required>
+        <option>PostgreSQL</option>
+        <option>MySQL</option>
+        <option>MongoDB</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="analytics" class="form-label">What analytics system are you using?</label>
+      <select class="form-select" id="analytics" name="analytics" required>
+        <option>Looker</option>
+        <option>Metabase</option>
+        <option>Tableau</option>
+        <option>None</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary w-100" aria-label="Get Started">Get Started</button>
+  </form>
+</section>
+{% endblock %}
