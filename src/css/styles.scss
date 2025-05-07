@@ -1,0 +1,37 @@
+@use "../../node_modules/bootstrap/scss/bootstrap" with (
+  $body-bg: #10141a,
+  $body-color: #f4f8fb,
+  $primary: #3ea6ff,
+  $secondary: #00e6d2,
+  $success: #2ee59d,
+  $danger: #ff4c60,
+  $card-bg: #181e26,
+  $card-border-color: #232a34,
+  $input-bg: #181e26,
+  $input-color: #f4f8fb,
+  $input-border-color: #232a34,
+  $link-color: #3ea6ff,
+  $link-hover-color: #00e6d2
+);
+
+// Custom styles for a crisp, modern look
+body {
+  background: #10141a;
+  color: #f4f8fb;
+}
+
+.card {
+  background: #181e26;
+  border-color: #232a34;
+}
+
+.navbar {
+  background: #181e26 !important;
+}
+
+a {
+  color: #3ea6ff;
+  &:hover {
+    color: #00e6d2;
+  }
+}
