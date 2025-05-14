@@ -2,14 +2,42 @@
 title: Home
 layout: base.njk
 ---
-{% block content %}
-<section class="text-center py-5">
-  <h1 class="display-4 mb-4">Welcome to NEXTGRES</h1>
-  <p class="lead mb-4">The next generation analytics database platform.</p>
-  <div class="mb-4">
-    <a href="/landing1" class="btn btn-outline-primary mx-2">Industry Landing 1</a>
-    <a href="/landing2" class="btn btn-outline-primary mx-2">Industry Landing 2</a>
+<section class="text-center py-5 bg-dark text-light">
+  <div class="container">
+    <h1 class="display-4 mb-3">Turn Every Click Into Growth</h1>
+    <p class="lead mb-4">Instantly personalize experiences to engage, retain, and convert users in real time.</p>
+
+    <ul class="list-unstyled mb-4">
+      <li>Real-time personalized user experiences</li>
+      <li>Increased customer retention and engagement</li>
+      <li>Simplified architecture, instant implementation</li>
+    </ul>
+
+    <a href="/get-started" class="btn btn-primary btn-lg mb-5" aria-label="Get Started">Request Early Access</a>
+
+    <h2 class="h4 mb-3 text-light">Explore Industry Solutions</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for industry in [
+        {slug:'saas-solutions', label:'SaaS Solutions', icon:'bi-bar-chart-line', teaser:'Personalize your SaaS application instantly based on real-time user behavior.'},
+        {slug:'ecommerce-growth', label:'E-commerce Growth', icon:'bi-bag-check', teaser:'Boost conversions with real-time personalized shopping experiences.'},
+        {slug:'financial-services', label:'Financial Services', icon:'bi-bank', teaser:'Deliver personalized financial products and detect fraud in real time.'},
+        {slug:'health-wellness', label:'Health & Wellness', icon:'bi-heart-pulse', teaser:'Empower healthier decisions with instant, personalized health insights.'},
+        {slug:'media-entertainment', label:'Media & Entertainment', icon:'bi-play-circle', teaser:'Keep audiences engaged with real-time personalized content.'},
+        {slug:'customer-support', label:'Proactive Customer Support', icon:'bi-headset', teaser:'Resolve issues before they escalate with actionable user insights.'}
+      ] %}
+      <div class="col">
+        <div class="card h-100 text-center border-0 shadow-sm bg-dark text-light">
+          <div class="card-body d-flex flex-column">
+            <div class="mb-3">
+              <i class="{{ industry.icon }} fs-1 text-primary"></i>
+            </div>
+            <h5 class="card-title">{{ industry.label }}</h5>
+            <p class="card-text flex-grow-1">{{ industry.teaser }}</p>
+            <a href="/{{ industry.slug }}" class="btn btn-outline-primary mt-auto">Learn More</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
-  <a href="/get-started" class="btn btn-primary btn-lg mt-3" aria-label="Get Started">Get Started!</a>
 </section>
-{% endblock %}
