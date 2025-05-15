@@ -7,7 +7,13 @@ layout: base.njk
     <p class="lead mb-4">{{ body }}</p>
     <ul class="list-unstyled mb-4">
       {% for benefit in benefits %}
-        <li>{{ benefit }}</li>
+        <li><h2>
+          {% if benefit.icon %}
+            <i class="{{ benefit.icon }} me-2"></i>
+          {% endif %}
+          {{ benefit.text }}
+          </h2>
+        </li>
       {% endfor %}
     </ul>
     <a href="{{ ctaUrl }}" class="btn btn-primary btn-lg">{{ ctaText }}</a>
