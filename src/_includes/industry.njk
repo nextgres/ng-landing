@@ -1,0 +1,15 @@
+---
+layout: base.njk
+---
+<section class="py-5">
+  <div class="container">
+    <h1 class="display-4 mb-3">{{ headline }}</h1>
+    <p class="lead mb-4">{{ body }}</p>
+    <ul class="list-unstyled mb-4">
+      {% for benefit in benefits %}
+        <li>{{ benefit }}</li>
+      {% endfor %}
+    </ul>
+    <a href="{{ ctaUrl }}" class="btn btn-primary btn-lg">{{ ctaText }}</a>
+  </div>
+</section>
