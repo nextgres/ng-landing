@@ -11963,43 +11963,38 @@ a:hover {
   color: #00e6d2;
 }
 
-.timeline-zigzag .col-md-2.position-relative {
-  min-height: 120px;
-  display: flex;
-  align-items: stretch;
+.steps-01__list {
   padding: 0;
   margin: 0;
 }
-.timeline-zigzag .icon-box {
+.steps-01__list .steps-01__item {
+  list-style: none;
+}
+.steps-01__list .steps-01__item .steps-01__number {
   width: 3rem;
   height: 3rem;
-  margin: 0 auto;
+  font-size: 1.25rem;
+  background: #181e26;
+  border-color: #3ea6ff;
+  color: #3ea6ff;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+.steps-01__list .steps-01__item .steps-01__heading {
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  background: #3ea6ff;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.35rem;
+  color: #f4f8fb;
 }
-.timeline-zigzag .line-vertical {
-  position: absolute;
-  top: -24px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 6px;
-  height: calc(100% + 48px);
-  background: linear-gradient(180deg, #3ea6ff 0%, #00e6d2 100%);
-  border-radius: 3px;
-  z-index: 1;
+.steps-01__list .steps-01__item .steps-01__subtitle {
+  margin-bottom: 0.75rem;
+  color: #00e6d2;
 }
-.timeline-zigzag .row {
-  margin-bottom: -24px;
+.steps-01__list .steps-01__item .steps-01__text {
+  color: #f4f8fb;
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
-.timeline-zigzag h5 {
-  margin-bottom: 0.25rem;
-}
-.timeline-zigzag p.small {
-  margin-bottom: 0;
+.steps-01__list .steps-01__item .steps-01__img_box img, .steps-01__list .steps-01__item .steps-01__img_box svg {
+  max-width: 100%;
+  height: auto;
 }

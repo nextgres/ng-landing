@@ -47,48 +47,71 @@ layout: base.njk
   </div>
 </div>
 <!-- How It Works -->
-<h2 class="my-5 text-light">How it Works</h2>
-<section class="timeline-zigzag py-5">
-  <!-- Step 1 -->
-  <div class="row align-items-center gy-4 gx-0">
-    <div class="col-md-5 text-md-end">
-      <div class="icon-box mb-2"><i class="bi-plug-fill"></i></div>
-      <h5>Connect Your App</h5>
-      <p class="small">Instant integration with your stack.</p>
-    </div>
-    <div class="col-md-2 position-relative">
-      <div class="line-vertical"></div>
-    </div>
-    <div class="col-md-5"></div>
-  </div>
+<h2 class="my-5 text-light text-center">How it Works</h2>
 
-  <!-- Step 2 (reversed) -->
-  <div class="row align-items-center gy-4 gx-0 flex-md-row-reverse">
-    <div class="col-md-5 text-md-start">
-      <div class="icon-box mb-2"><i class="bi-database-fill"></i></div>
-      <h5>Transform Your Data</h5>
-      <p class="small">Structure it for AI readiness.</p>
-    </div>
-    <div class="col-md-2 position-relative">
-      <div class="line-vertical"></div>
-    </div>
-    <div class="col-md-5"></div>
-  </div>
+<div class="container">
+  <ul class="list-unstyled steps-01__list">
+    <!-- STEP 1 -->
+    <li class="steps-01__item row align-items-center mb-5">
+      <!-- Number -->
+      <div class="col-auto">
+        <div class="steps-01__number text-primary bg-dark border rounded-circle d-flex align-items-center justify-content-center">
+          1
+        </div>
+      </div>
+      <!-- Text -->
+      <div class="col-md-7 steps-01__content ps-md-4">
+        <h2 class="steps-01__heading">Connect Your App</h2>
+        <p class="steps-01__subtitle fw-bold">Instant Integration with Zero Disruption</p>
+        <p class="steps-01__text">
+          Easily plug NEXTGRES into your existing application—whether you’re starting fresh or modernizing a legacy system. Our compatibility engine integrates with your current backend, frameworks, and data sources without forcing a complete rewrite. Simply connect your app, and we’ll automatically sync your diverse data models—SQL, NoSQL, event streams, and more—to lay the groundwork for real-time intelligence.
+        </p>
+      </div>
+      <!-- Image -->
+      <div class="col-md-4 steps-01__img_box text-center">
+        <!-- insert<img> or <i> here -->
+      </div>
+    </li>
 
-  <!-- Step 3 -->
-  <div class="row align-items-center gy-4 gx-0">
-    <div class="col-md-5 text-md-end">
-      <div class="icon-box mb-2"><i class="bi-gear-wide-connected"></i></div>
-      <h5>Deploy Intelligent Features</h5>
-      <p class="small">Power real-time personalized experiences.</p>
-    </div>
-    <div class="col-md-2 position-relative">
-      <div class="line-vertical"></div>
-    </div>
-    <div class="col-md-5"></div>
-  </div>
-</section>
+    <!-- STEP 2 -->
+    <li class="steps-01__item row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-auto">
+        <div class="steps-01__number text-primary bg-dark border rounded-circle d-flex align-items-center justify-content-center">
+          2
+        </div>
+      </div>
+      <div class="col-md-7 steps-01__content pe-md-4">
+        <h2 class="steps-01__heading">Transform Your Data</h2>
+        <p class="steps-01__subtitle fw-bold">AI-Ready Without The Overhead</p>
+        <p class="steps-01__text">
+          Your app generates valuable data, but preparing it for AI usually means complex pipelines and extensive manual tuning. NEXTGRES takes care of that for you. Our automated data agents clean, normalize, and enrich your data in real time, transforming raw inputs into structured, AI-ready assets. This means you get immediate access to insights and capabilities like personalized recommendations and smart search—without any additional data engineering.
+        </p>
+      </div>
+      <div class="col-md-4 steps-01__img_box text-center">
+        <!-- insert<img> or <i> here -->
+      </div>
+    </li>
 
+    <!-- STEP 3 -->
+    <li class="steps-01__item row align-items-center mb-5">
+      <div class="col-auto">
+        <div class="steps-01__number text-primary bg-dark border rounded-circle d-flex align-items-center justify-content-center">
+          3
+        </div>
+      </div>
+      <div class="col-md-7 steps-01__content ps-md-4">
+        <h2 class="steps-01__heading">Deploy Intelligent Features</h2>
+        <p class="steps-01__subtitle fw-bold">AI That Powers Your App in Real Time</p>
+        <p class="steps-01__text">
+          With your data now primed for AI, instantly embed intelligent features into your app. Whether you want to deliver personalized content, automate decision-making, or power dynamic notifications, our built-in models (or your own) let you deploy these features effortlessly. Our platform continuously optimizes performance based on user interactions, ensuring your app stays smart and adaptive—without the overhead of traditional MLOps or constant fine-tuning.
+        </p>
+      </div>
+      <div class="col-md-4 steps-01__img_box text-center">
+        <!-- insert<img> or <i> here -->
+      </div>
+    </li>
+  </ul>
+</div>
 <!-- Explore Solutions -->
 <div class="row row-cols-1 mb-2 mt-2 text-center" id="explore-solutions-section">
   <div class="col">

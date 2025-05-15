@@ -138,50 +138,48 @@ a {
     color: #00e6d2;
   }
 }
-.timeline-zigzag {
-  .col-md-2.position-relative {
-    min-height: 120px;
-    display: flex;
-    align-items: stretch;
-    padding: 0;
-    margin: 0;
-  }
 
-  .icon-box {
-    width: 3rem;
-    height: 3rem;
-    margin: 0 auto;
-    margin-bottom: 0.5rem;       // tighten up from 1rem
-    background: bootstrap.$primary;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.35rem;
-  }
+.steps-01__list {
+  padding: 0;
+  margin: 0;
 
-  .line-vertical {
-    position: absolute;
-    top: -24px; // extend line further above the step
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6px;
-    height: calc(100% + 48px); // extend line further below the step
-    background: linear-gradient(180deg, #3ea6ff 0%, #00e6d2 100%);
-    border-radius: 3px;
-    z-index: 1;
-  }
+  .steps-01__item {
+    list-style: none;
 
-  .row {
-    margin-bottom: -24px; // pull rows even closer together
-  }
+    .steps-01__number {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.25rem;
+      background: bootstrap.$card-bg;        // match your card background
+      border-color: bootstrap.$primary;      // colored border
+      color: bootstrap.$primary;
+      margin-right: 1rem;
+      flex-shrink: 0;              // prevent squishing
+    }
 
-  h5 {
-    margin-bottom: 0.25rem;      // tighten heading/text gap
-  }
+    .steps-01__heading {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: bootstrap.$body-color;
+    }
 
-  p.small {
-    margin-bottom: 0;            // no extra gap after the small text
+    .steps-01__subtitle {
+      margin-bottom: 0.75rem;
+      color: bootstrap.$secondary;
+    }
+
+    .steps-01__text {
+      color: bootstrap.$input-color;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .steps-01__img_box {
+      // if you add images, size/position them here
+      img, svg {
+        max-width: 100%;
+        height: auto;
+      }
+    }
   }
 }
