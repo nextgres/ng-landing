@@ -2,20 +2,54 @@
 title: Home
 layout: base.njk
 ---
-<section class="text-center py-5 bg-dark text-light">
+<div class="jumbotron text-center bg-dark text-light py-8 mb-4" style="background-image: url('/assets/hero-image.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay;">
   <div class="container">
-    <h1 class="display-4 mb-3">Turn Every Click Into Growth</h1>
-    <p class="lead mb-4">Instantly personalize experiences to engage, retain, and convert users in real time.</p>
+    <h1 class="display-4 mb-3" style="text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);">Unlock Hyper-Personalization Without the Headaches</h1>
+    <p class="lead mb-4">NEXTGRES turns your user data into real-time personalized experiences—no complex infrastructure required.</p>
+    <a href="/coming-soon" class="btn btn-primary btn-lg mb-5" style="background-color: #3ea6ff; border-color: #3ea6ff;" aria-label="Join the Waitlist">Join the Waitlist</a>
+  </div>
+</div>
 
-    <ul class="list-unstyled mb-4">
-      <li>Real-time personalized user experiences</li>
-      <li>Increased customer retention and engagement</li>
-      <li>Simplified architecture, instant implementation</li>
-    </ul>
+<h2 class="mb-3 text-light">Why Choose NEXTGRES?</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+  <div class="col">
+    <div class="card h-100 text-center border-0 shadow-sm" style="background: #182a3a; color: #f4f8fb;">
+      <div class="card-body">
+        <div class="mb-3">
+          <i class="bi-lightning-fill fs-1 text-primary"></i>
+        </div>
+        <h5 class="card-title">Instant Personalization</h5>
+        <p class="card-text">Create data-driven, dynamic user experiences in real time.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 text-center border-0 shadow-sm" style="background: #182a3a; color: #f4f8fb;">
+      <div class="card-body">
+        <div class="mb-3">
+          <i class="bi-gear-fill fs-1 text-primary"></i>
+        </div>
+        <h5 class="card-title">Simplified Integration</h5>
+        <p class="card-text">No new infrastructure or ML expertise required—get started with your existing data stack.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 text-center border-0 shadow-sm" style="background: #182a3a; color: #f4f8fb;">
+      <div class="card-body">
+        <div class="mb-3">
+          <i class="bi-diagram-3-fill fs-1 text-primary"></i>
+        </div>
+        <h5 class="card-title">Unified Data Access</h5>
+        <p class="card-text">Combine user profiles and interactions to drive better decisions and personalization.</p>
+      </div>
+    </div>
+  </div>
+</div>
+    <a href="/coming-soon" class="btn btn-primary btn-lg mb-5" aria-label="Join the Waitlist">Join the Waitlist</a>
 
-    <a href="/get-started" class="btn btn-primary btn-lg mb-5" aria-label="Get Started">Get Started</a>
-
-    <h2 class="h4 mb-3 text-light">Explore Industry Solutions</h2>
+    <h2 class="mb-3 text-light">Explore NEXTGRES Solutions</h2>
+    <p class="mb-4">Tailored for Every Industry—Click to Learn More</p>
     <div class="row row-cols-1 row-cols-md-3 g-4">
       {% set card_bg = "" %}
       {% for industry in [
@@ -34,11 +68,31 @@ layout: base.njk
             </div>
             <h5 class="card-title">{{ industry.label }}</h5>
             <p class="card-text flex-grow-1">{{ industry.teaser }}</p>
-            <a href="/{{ industry.slug }}" class="btn btn-outline-primary mt-auto">Learn More</a>
+            <a href="/{{ industry.slug }}" class="btn btn-outline-primary mt-auto">Explore</a>
           </div>
         </div>
       </div>
       {% endfor %}
     </div>
   </div>
-</section>
+
+<div class="sticky-footer w-100 py-2">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+    <div class="mb-3 mb-md-0">
+      <h4 class="fw-bold mb-1">Ready to personalize?</h4>
+      <p class="mb-0">Join the NEXTGRES Waitlist and unlock real-time user experiences.</p>
+    </div>
+    <a href="/coming-soon" class="btn btn-primary btn-lg px-4 shadow-sm">Join the Waitlist</a>
+  </div>
+</div>
+
+<footer class="py-4 bg-dark text-light text-center w-100 position-relative" style="left:0;right:0;margin-left:auto;margin-right:auto;">
+  <div class="container-fluid p-0">
+    <a href="/about" class="text-light">About NEXTGRES</a> |
+    <a href="/privacy" class="text-light">Privacy Policy</a> |
+    <a href="/terms" class="text-light">Terms of Service</a> |
+    <a href="/contact" class="text-light">Contact Us</a> |
+    <a href="https://linkedin.com" class="text-light">LinkedIn</a> |
+    <a href="https://twitter.com" class="text-light">Twitter</a>
+  </div>
+</footer>
