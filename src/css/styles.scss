@@ -15,7 +15,7 @@
 );
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap");
 
 body {
   font-family: 'Inter', sans-serif;
@@ -74,5 +74,51 @@ a {
   color: #3ea6ff;
   &:hover {
     color: #00e6d2;
+  }
+}
+.how-it-works {
+  padding: 3rem 0;
+  background-color: #1a1e27;
+  color: #f4f8fb;
+  text-align: center;
+
+  .step-card {
+    background: #182a3a;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    .icon {
+      font-size: 2.5rem;
+      color: #3ea6ff;
+      margin-bottom: 0.5rem;
+    }
+
+    h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .step-card {
+      display: inline-block;
+      width: 30%;
+      margin: 1rem;
+    }
   }
 }
