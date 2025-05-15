@@ -18,16 +18,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap");
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background: #10141a;
   color: #f4f8fb;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
-  line-height: 1.2; /* Increased for better readability */
-  letter-spacing: 0.5px; /* Added for a more open feel */
+  line-height: 1.2;
+  letter-spacing: 0.5px;
 }
 
 h1 {
@@ -42,10 +48,62 @@ h3 {
   font-size: 1.75rem;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-size: 1.5rem;
 }
 
+.jumbotron h1 {
+  margin-bottom: 1rem;
+}
+
+.jumbotron .btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+// Section Dividers
+.section-divider {
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    rgba(62, 166, 255, 0) 0%,
+    rgba(62, 166, 255, 0.7) 50%,
+    rgba(62, 166, 255, 0) 100%
+  );
+  margin: 2rem 0;
+}
+
+// Section Backgrounds
+.jumbotron {
+  background-color: #10141a;
+}
+// Section Backgrounds with Improved Contrast
+.benefits-section {
+  background-color: #1a1e27;
+  padding: 3rem 0;
+  border-top: 4px solid #3ea6ff;
+}
+
+.how-it-works {
+  background-color: #182a3a;
+  padding: 4rem 0;
+  border-top: 4px solid #00e6d2;
+}
+
+.solutions-section {
+  background-color: #1a1e27;
+  padding: 3rem 0;
+  border-top: 4px solid #ff4c60;
+}
+
+footer {
+  background-color: #10141a;
+  color: #b0b3b8;
+  border-top: 4px solid #3ea6ff;
+}
 
 // Link Card Interaction Styles
 .link-card {
@@ -53,7 +111,9 @@ h4, h5, h6 {
   border-color: #232a34;
   color: #f4f8fb;
 
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     transform: scale(1.02);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background-color: #1f364d;
@@ -66,59 +126,98 @@ h4, h5, h6 {
   }
 }
 
+// Navbar
 .navbar {
   background: #181e26 !important;
 }
 
+// Links
 a {
   color: #3ea6ff;
   &:hover {
     color: #00e6d2;
   }
 }
-.how-it-works {
-  padding: 3rem 0;
-  background-color: #1a1e27;
-  color: #f4f8fb;
-  text-align: center;
 
-  .step-card {
-    background: #182a3a;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
+// How It Works Section
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: #3ea6ff;
+  }
+
+  .timeline-step {
+    position: relative;
+    width: 45%; // ← fixed width
+    margin: 2rem 0;
+    padding: 1rem;
     border-radius: 8px;
-    transition: transform 0.2s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #182a3a;
+    color: #f4f8fb;
+    display: flex;
+    align-items: center;
 
-    &:hover {
-      transform: scale(1.02);
+    > i.bi {
+      margin-right: 1rem;
     }
 
-    .icon {
-      font-size: 2.5rem;
-      color: #3ea6ff;
-      margin-bottom: 0.5rem;
+    .circle {
+      background-color: #3ea6ff;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-right: 1rem;
     }
 
-    h4 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      font-size: 1.25rem;
-    }
-
-    p {
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      margin: 0;
+    // draw the little connector back to the center line
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px; // ← extend line to reach vertical spine
+      height: 2px;
+      background: #3ea6ff;
     }
   }
 
-  @media (min-width: 768px) {
-    .step-card {
-      display: inline-block;
-      width: 30%;
-      margin: 1rem;
+  // odd items go left, even items go right
+  .timeline-step:nth-of-type(odd) {
+    align-self: flex-start;
+  }
+  .timeline-step:nth-of-type(odd)::before {
+    right: -20px; // ← sticks connector out toward center
+  }
+
+  .timeline-step:nth-of-type(even) {
+    align-self: flex-end;
+  }
+  .timeline-step:nth-of-type(even)::before {
+    left: -20px;
+  }
+
+  // collapse to single column on mobile
+  @media (max-width: 768px) {
+    .timeline-step {
+      width: 90%;
+      align-self: center !important;
+      &::before {
+        display: none;
+      }
     }
   }
 }

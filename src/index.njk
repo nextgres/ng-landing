@@ -10,6 +10,7 @@ layout: base.njk
   </div>
 </div>
 
+<!-- Why choose NEXTGRES -->
 <h2 class="my-5 text-light">Why Choose NEXTGRES?</h2>
 <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
   <div class="col">
@@ -47,40 +48,40 @@ layout: base.njk
   </div>
 </div>
 
+<!-- How It Works -->
 <h2 class="my-5 text-light text-center">How It Works</h2>
-<div class="how-it-works text-center">
-  <div class="row justify-content-center">
-    <div class="col-md-3 step-card">
-      <div class="icon mb-2">
-        <i class="bi-plug-fill"></i>
-      </div>
-      <h4>Connect Your App</h4>
-      <p>Instant integration with your existing stack—no disruption to your current workflows.</p>
+<div class="timeline">
+    <div class="timeline-line"></div>
+    <div class="timeline-step left">
+        <i class="bi bi-1-circle-fill fs-3 text-primary"></i>
+        <div class="content">
+            <h4>Connect Your App</h4>
+            <p>Instant integration with your existing stack—no disruption to your current workflows.</p>
+        </div>
     </div>
-    <div class="col-md-3 step-card">
-      <div class="icon mb-2">
-        <i class="bi-database-fill"></i>
-      </div>
-      <h4>Transform Your Data</h4>
-      <p>Automatically structure your data for AI readiness, without manual tuning.</p>
+    <div class="timeline-step right">
+        <i class="bi bi-2-circle-fill fs-3 text-primary"></i>
+        <div class="content">
+            <h4>Transform Your Data</h4>
+            <p>Automatically structure your data for AI readiness, without manual tuning. Gain real-time insights with minimal effort.</p>
+        </div>
     </div>
-    <div class="col-md-3 step-card">
-      <div class="icon mb-2">
-        <i class="bi-gear-wide-connected"></i>
-      </div>
-      <h4>Deploy Intelligent Features</h4>
-      <p>Leverage real-time insights to power adaptive, personalized user experiences.</p>
+    <div class="timeline-step left">
+        <i class="bi bi-3-circle-fill fs-3 text-primary"></i>
+        <div class="content">
+            <h4>Deploy Intelligent Features</h4>
+            <p>Leverage real-time insights to power adaptive, personalized user experiences, tailored to your customers.</p>
+        </div>
     </div>
-  </div>
 </div>
 
+<!-- Explore Solutions -->
 <div class="row row-cols-1 mb-2 mt-2 text-center" id="explore-solutions-section">
   <div class="col">
     <h2 class="section-title">Explore NEXTGRES Solutions</h2>
     <p class="subtitle">Tailored for Every Industry—Click to Learn More</p>
   </div>
 </div>
-
 <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
   {% for industry in [
     {slug:'saas-solutions', label:'SaaS Solutions', icon:'bi-bar-chart-line', teaser:'Personalize your SaaS application instantly based on real-time user behavior.'},
@@ -104,7 +105,9 @@ layout: base.njk
   {% endfor %}
 </div>
 
-<div class="sticky-footer w-100 py-2">
+<div class="section-divider"></div>
+
+<div class="w-100 py-2">
   <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
     <div class="mb-3 mb-md-0">
       <h4 class="fw-bold mb-1">Ready to personalize?</h4>
@@ -114,7 +117,7 @@ layout: base.njk
   </div>
 </div>
 
-<footer class="py-4 bg-dark text-light text-center w-100 position-relative" style="left:0;right:0;margin-left:auto;margin-right:auto;">
+<footer class="footer-section py-4 bg-dark text-light text-center w-100 position-relative" style="left:0;right:0;margin-left:auto;margin-right:auto;">
   <div class="container-fluid p-0">
     <a href="/about" class="text-light">About NEXTGRES</a> |
     <a href="/privacy" class="text-light">Privacy Policy</a> |
