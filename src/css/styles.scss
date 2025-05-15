@@ -139,85 +139,38 @@ a {
   }
 }
 
-// How It Works Section
-.timeline {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.timeline-zigzag {
+  // no more manual mb-5 on rows—gutters handle it
 
-  .timeline-line {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 100%;
-    background: #3ea6ff;
-  }
-
-  .timeline-step {
-    position: relative;
-    width: 45%; // ← fixed width
-    margin: 2rem 0;
-    padding: 1rem;
-    border-radius: 8px;
-    background: #182a3a;
-    color: #f4f8fb;
+  .icon-box {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;       // tighten up from 1rem
+    background: bootstrap.$primary;
+    color: #fff;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-
-    > i.bi {
-      margin-right: 1rem;
-    }
-
-    .circle {
-      background-color: #3ea6ff;
-      color: #fff;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      margin-right: 1rem;
-    }
-
-    // draw the little connector back to the center line
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px; // ← extend line to reach vertical spine
-      height: 2px;
-      background: #3ea6ff;
-    }
+    justify-content: center;
+    font-size: 1.35rem;
   }
 
-  // odd items go left, even items go right
-  .timeline-step:nth-of-type(odd) {
-    align-self: flex-start;
-  }
-  .timeline-step:nth-of-type(odd)::before {
-    right: -20px; // ← sticks connector out toward center
-  }
-
-  .timeline-step:nth-of-type(even) {
-    align-self: flex-end;
-  }
-  .timeline-step:nth-of-type(even)::before {
-    left: -20px;
+  .line-vertical {
+    position: absolute;
+    top: 1.75rem;                // (3rem icon + 0.5rem mb) ÷ 2
+    left: 50%;
+    transform: translateX(-1px); // center the 2px bar
+    width: 5px;
+    height: calc(100% - 1.75rem);
+    background: bootstrap.$danger;
   }
 
-  // collapse to single column on mobile
-  @media (max-width: 768px) {
-    .timeline-step {
-      width: 90%;
-      align-self: center !important;
-      &::before {
-        display: none;
-      }
-    }
+  h5 {
+    margin-bottom: 0.25rem;      // tighten heading/text gap
+  }
+
+  p.small {
+    margin-bottom: 0;            // no extra gap after the small text
   }
 }

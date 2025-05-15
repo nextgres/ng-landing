@@ -10,7 +10,6 @@ layout: base.njk
   </div>
 </div>
 
-<!-- Why choose NEXTGRES -->
 <h2 class="my-5 text-light">Why Choose NEXTGRES?</h2>
 <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
   <div class="col">
@@ -47,33 +46,48 @@ layout: base.njk
     </div>
   </div>
 </div>
-
 <!-- How It Works -->
-<h2 class="my-5 text-light text-center">How It Works</h2>
-<div class="timeline">
-    <div class="timeline-line"></div>
-    <div class="timeline-step left">
-        <i class="bi bi-1-circle-fill fs-3 text-primary"></i>
-        <div class="content">
-            <h4>Connect Your App</h4>
-            <p>Instant integration with your existing stack—no disruption to your current workflows.</p>
-        </div>
+<h2 class="my-5 text-light">How it Works</h2>
+<section class="timeline-zigzag py-5">
+  <!-- Step 1 -->
+  <div class="row align-items-center gy-4 gx-0">
+    <div class="col-md-5 text-md-end">
+      <div class="icon-box mb-2"><i class="bi-plug-fill"></i></div>
+      <h5>Connect Your App</h5>
+      <p class="small">Instant integration with your stack.</p>
     </div>
-    <div class="timeline-step right">
-        <i class="bi bi-2-circle-fill fs-3 text-primary"></i>
-        <div class="content">
-            <h4>Transform Your Data</h4>
-            <p>Automatically structure your data for AI readiness, without manual tuning. Gain real-time insights with minimal effort.</p>
-        </div>
+    <div class="col-md-2 position-relative">
+      <div class="line-vertical"></div>
     </div>
-    <div class="timeline-step left">
-        <i class="bi bi-3-circle-fill fs-3 text-primary"></i>
-        <div class="content">
-            <h4>Deploy Intelligent Features</h4>
-            <p>Leverage real-time insights to power adaptive, personalized user experiences, tailored to your customers.</p>
-        </div>
+    <div class="col-md-5"></div>
+  </div>
+
+  <!-- Step 2 (reversed) -->
+  <div class="row align-items-center gy-4 gx-0 flex-md-row-reverse">
+    <div class="col-md-5 text-md-start">
+      <div class="icon-box mb-2"><i class="bi-database-fill"></i></div>
+      <h5>Transform Your Data</h5>
+      <p class="small">Structure it for AI readiness.</p>
     </div>
-</div>
+    <div class="col-md-2 position-relative">
+      <div class="line-vertical"></div>
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="row align-items-center gy-4 gx-0">
+    <div class="col-md-5 text-md-end">
+      <div class="icon-box mb-2"><i class="bi-gear-wide-connected"></i></div>
+      <h5>Deploy Intelligent Features</h5>
+      <p class="small">Power real-time personalized experiences.</p>
+    </div>
+    <div class="col-md-2 position-relative">
+      <div class="line-vertical"></div>
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+</section>
 
 <!-- Explore Solutions -->
 <div class="row row-cols-1 mb-2 mt-2 text-center" id="explore-solutions-section">
