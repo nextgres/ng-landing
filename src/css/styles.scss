@@ -15,10 +15,35 @@
 );
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap");
 
 body {
+  font-family: 'Inter', sans-serif;
   background: #10141a;
   color: #f4f8fb;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  line-height: 1.2; /* Increased for better readability */
+  letter-spacing: 0.5px; /* Added for a more open feel */
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4, h5, h6 {
+  font-size: 1.5rem;
 }
 
 
