@@ -11963,6 +11963,13 @@ a:hover {
   color: #00e6d2;
 }
 
+.timeline-zigzag .col-md-2.position-relative {
+  min-height: 120px;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+}
 .timeline-zigzag .icon-box {
   width: 3rem;
   height: 3rem;
@@ -11978,12 +11985,17 @@ a:hover {
 }
 .timeline-zigzag .line-vertical {
   position: absolute;
-  top: 1.75rem;
+  top: -24px;
   left: 50%;
-  transform: translateX(-1px);
-  width: 5px;
-  height: calc(100% - 1.75rem);
-  background: #ff4c60;
+  transform: translateX(-50%);
+  width: 6px;
+  height: calc(100% + 48px);
+  background: linear-gradient(180deg, #3ea6ff 0%, #00e6d2 100%);
+  border-radius: 3px;
+  z-index: 1;
+}
+.timeline-zigzag .row {
+  margin-bottom: -24px;
 }
 .timeline-zigzag h5 {
   margin-bottom: 0.25rem;

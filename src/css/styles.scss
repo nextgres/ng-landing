@@ -138,9 +138,14 @@ a {
     color: #00e6d2;
   }
 }
-
 .timeline-zigzag {
-  // no more manual mb-5 on rows—gutters handle it
+  .col-md-2.position-relative {
+    min-height: 120px;
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+  }
 
   .icon-box {
     width: 3rem;
@@ -158,12 +163,18 @@ a {
 
   .line-vertical {
     position: absolute;
-    top: 1.75rem;                // (3rem icon + 0.5rem mb) ÷ 2
+    top: -24px; // extend line further above the step
     left: 50%;
-    transform: translateX(-1px); // center the 2px bar
-    width: 5px;
-    height: calc(100% - 1.75rem);
-    background: bootstrap.$danger;
+    transform: translateX(-50%);
+    width: 6px;
+    height: calc(100% + 48px); // extend line further below the step
+    background: linear-gradient(180deg, #3ea6ff 0%, #00e6d2 100%);
+    border-radius: 3px;
+    z-index: 1;
+  }
+
+  .row {
+    margin-bottom: -24px; // pull rows even closer together
   }
 
   h5 {
