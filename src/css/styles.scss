@@ -21,9 +21,24 @@ body {
   color: #f4f8fb;
 }
 
-.card {
+
+// Link Card Interaction Styles
+.link-card {
   background: #181e26;
   border-color: #232a34;
+  color: #f4f8fb;
+
+  &:hover, &:focus, &:active {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #1f364d;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
 
 .navbar {
