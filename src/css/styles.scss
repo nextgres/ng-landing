@@ -1,37 +1,23 @@
 @use "../../node_modules/bootstrap/scss/bootstrap" with (
-  $body-bg: #10141a,
-  $body-color: #f4f8fb,
-  $primary: #3ea6ff,
-  $secondary: #00e6d2,
-  $success: #2ee59d,
-  $danger: #ff4c60,
-  $card-bg: #181e26,
-  $card-border-color: #232a34,
-  $input-bg: #181e26,
-  $input-color: #f4f8fb,
-  $input-border-color: #232a34,
-  $link-color: #3ea6ff,
-  $link-hover-color: #00e6d2
+  $body-bg: #10141a, // Matches --background-color
+  $body-color: #f4f8fb, // Matches --text-color
+  $primary: #3ea6ff, // Matches --primary-color
+  $secondary: #a020f0, // Matches --secondary-color
+  $success: #00d1b2, // Matches --accent-color
+  $danger: #ff4c60, // Matches --danger-color
+  $card-bg: #181e26, // Matches card background
+  $card-border-color: #232a34, // Matches card border
+  $link-color: #3ea6ff, // Matches --primary-color
+  $link-hover-color: #00e6d2 // Matches hover color
 );
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap");
 
-:root {
-  --primary-color: #3ea6ff; /* Vibrant blue */
-  --secondary-color: #a020f0; /* Purple */
-  --accent-color: #00d1b2; /* Aqua */
-  --background-color: #000000; /* Black */
-  --text-color: #f4f8fb; /* Light text */
-  --muted-color: rgba(255, 255, 255, 0.6); /* Muted white */
-}
-
 body {
   font-family: "Inter", sans-serif;
-  background: #10141a;
-  color: #f4f8fb;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: bootstrap.$body-bg;
+  color: bootstrap.$body-color;
 }
 
 // Headings
@@ -65,6 +51,15 @@ h6 {
   font-size: 1.5rem;
 }
 
+.jumbotron {
+  background-image: url('/assets/hero-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  background-color: bootstrap.$body-bg;
+  color: bootstrap.$body-color;
+}
+
 .jumbotron h1 {
   margin-bottom: 1rem;
 }
@@ -80,59 +75,50 @@ h6 {
   height: 4px;
   background: linear-gradient(
     90deg,
-    rgba(62, 166, 255, 0) 0%,
-    rgba(62, 166, 255, 0.7) 50%,
-    rgba(62, 166, 255, 0) 100%
+    rgba(bootstrap.$primary, 0) 0%,
+    rgba(bootstrap.$primary, 0.7) 50%,
+    rgba(bootstrap.$primary, 0) 100%
   );
   margin: 2rem 0;
 }
 
 // Section Backgrounds
-.jumbotron {
-  background-image: url('/assets/hero-image.jpg');
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: overlay;
-  background-color: #10141a;
-}
-
-// Section Backgrounds with Improved Contrast
 .benefits-section {
-  background-color: #1a1e27;
+  background-color: bootstrap.$card-bg;
   padding: 3rem 0;
-  border-top: 4px solid #3ea6ff;
+  border-top: 4px solid bootstrap.$primary;
 }
 
 .how-it-works {
-  background-color: #182a3a;
+  background-color: bootstrap.$secondary;
   padding: 4rem 0;
-  border-top: 4px solid #00e6d2;
+  border-top: 4px solid bootstrap.$link-hover-color;
 }
 
 .solutions-section {
-  background-color: #1a1e27;
+  background-color: bootstrap.$card-bg;
   padding: 3rem 0;
-  border-top: 4px solid #ff4c60;
+  border-top: 4px solid bootstrap.$danger;
 }
 
 footer {
-  background-color: #10141a;
-  color: #b0b3b8;
-  border-top: 4px solid #3ea6ff;
+  background-color: bootstrap.$body-bg;
+  color: bootstrap.$body-color;
+  border-top: 4px solid bootstrap.$primary;
 }
 
 // Link Card Interaction Styles
 .link-card {
-  background: #181e26;
-  border-color: #232a34;
-  color: #f4f8fb;
+  background: bootstrap.$card-bg;
+  border-color: bootstrap.$card-border-color;
+  color: bootstrap.$body-color;
 
   &:hover,
   &:focus,
   &:active {
     transform: scale(1.02);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #1f364d;
+    background-color: darken(bootstrap.$card-bg, 5%);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
   }
@@ -144,17 +130,18 @@ footer {
 
 // Navbar
 .navbar {
-  background: #181e26 !important;
+  background: bootstrap.$card-bg !important;
 }
 
 // Links
 a {
-  color: #3ea6ff;
+  color: bootstrap.$link-color;
   &:hover {
-    color: #00e6d2;
+    color: bootstrap.$link-hover-color;
   }
 }
 
+// Timeline Section
 .timeline-section {
   .timeline-container {
     position: relative;
@@ -167,7 +154,7 @@ a {
       bottom: 0;
       left: 50%;
       width: 4px;
-      background: rgba(13, 110, 253, 0.3);
+      background: rgba(bootstrap.$primary, 0.3);
       transform: translateX(-50%);
     }
   }
@@ -197,30 +184,32 @@ a {
   }
 
   .circle-wrapper {
-    background: #13222f;
+    background: bootstrap.$card-bg;
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--accent-color);
+    color: bootstrap.$body-color;
   }
 
   .line {
     width: 4px;
-    background-color: #0d6efd;
+    background-color: bootstrap.$primary;
     height: 2rem;
     margin: 0 auto;
   }
 }
 
+// Buttons
 .btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: bootstrap.$primary;
+  border-color: bootstrap.$primary;
 }
 
+// Cards
 .card {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
+  background-color: bootstrap.$secondary;
+  color: bootstrap.$body-color;
 }
