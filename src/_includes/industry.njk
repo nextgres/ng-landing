@@ -1,18 +1,36 @@
 ---
 layout: base.njk
 ---
-<section class="py-5" style="background: #13222f;">
-  <div class="container">
-    <h1 class="display-4 mb-3 text-primary border-bottom border-primary pb-2">{{ headline }}</h1>
+
+<div class="jumbotron jumbotron-fluid text-center bg-dark text-light position-relative">
+  <div id="p5-background" class="jumbotron-overlay"></div>
+  <div class="container-fluid position-relative z-1">
+    <h1 class="display-4">{{ headline }}</h1>
     <p class="lead mb-4">{{ body }}</p>
-    <ul class="list-unstyled mb-4">
-      {% for benefit in benefits %}
-        <li class="mb-2">
-          <i class="bi {{ benefit.icon | default('bi-check-circle-fill') }} text-success me-2"></i>
-          <span class="text-secondary">{{ benefit.text }}</span>
-        </li>
-      {% endfor %}
-    </ul>
-    <a href="{{ ctaUrl }}" class="btn btn-primary btn-lg">{{ ctaText }}</a>
+    <a href="{{ ctaUrl }}" class="btn btn-primary btn-lg" aria-label="{{ ctaText }}">{{ ctaText }}</a>
   </div>
-</section>
+</div>
+
+<h2 class="my-5 text-light text-center">Key Benefits</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+  {% for benefit in benefits %}
+  <div class="col">
+    <div class="card h-100 text-center border-0 shadow-sm" style="background: #182a3a; color: #f4f8fb;">
+      <div class="card-body">
+        <div class="mb-3">
+          <i class="{{ benefit.icon | default('bi-check-circle-fill') }} fs-1 text-primary"></i>
+        </div>
+        <h5 class="card-title">{{ benefit.text }}</h5>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="w-100 py-4 bg-secondary bg-opacity-10 text-light text-center">
+  <div class="container">
+    <h4 class="fw-bold">Ready to get started?</h4>
+    <p>Take your {{ headline | lower }} to the next level with NEXTGRES.</p>
+    <a href="{{ ctaUrl }}" class="btn btn-primary btn-lg px-4 shadow-sm">{{ ctaText }}</a>
+  </div>
+</div>
