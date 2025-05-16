@@ -11893,22 +11893,48 @@ h6 {
 }
 
 .jumbotron {
-  background-image: url("/assets/hero-image.jpg");
+  background-image: url("/assets/hero-image.png");
   background-size: cover;
   background-position: center;
-  background-blend-mode: overlay;
   background-color: #10141a;
   color: #f4f8fb;
+  padding: 6rem 0;
+  position: relative;
 }
-
+.jumbotron.jumbotron-fluid {
+  width: 100%;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
 .jumbotron h1 {
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
-
-.jumbotron .btn {
-  margin-top: 1rem;
+.jumbotron p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+.jumbotron .btn-primary {
+  background-color: #3ea6ff;
+  border-color: #3ea6ff;
   padding: 0.75rem 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+.jumbotron .btn-primary:hover {
+  background-color: rgb(36.5, 154.2409326425, 255);
+  border-color: rgb(36.5, 154.2409326425, 255);
+}
+.jumbotron .jumbotron-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
 }
 
 .section-divider {

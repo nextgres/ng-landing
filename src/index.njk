@@ -2,11 +2,12 @@
 title: Home
 layout: base.njk
 ---
-<div class="jumbotron text-center pt-4 bg-dark text-light" style="background-image: url('/assets/hero-image.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay;">
-  <div class="container">
-    <h1 class="display-4" style="text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);">Unlock Hyper-Personalization Without the Headaches</h1>
+<div class="jumbotron jumbotron-fluid text-center bg-dark text-light position-relative">
+  <div id="p5-background" class="jumbotron-overlay"></div>
+  <div class="container-fluid position-relative z-1">
+    <h1 class="display-4">Unlock Hyper-Personalization Without the Headaches</h1>
     <p class="lead mb-4">NEXTGRES turns your user data into real-time personalized experiences—no complex infrastructure required.</p>
-    <a href="/get-started" class="btn btn-primary btn-lg mb-5" style="background-color: #3ea6ff; border-color: #3ea6ff;" aria-label="Get started">Get Started</a>
+    <a href="/get-started" class="btn btn-primary btn-lg" aria-label="Start Personalizing Now">Start Personalizing Now</a>
   </div>
 </div>
 
@@ -163,3 +164,103 @@ layout: base.njk
     <a href="https://linkedin.com" class="text-light">LinkedIn</a> |
   </div>
 </footer>
+
+{# <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+<script>
+  let freqSlider, ampSlider, transitionSlider;
+
+  function setup() {
+    let canvas = createCanvas(windowWidth, document.querySelector('.jumbotron').offsetHeight);
+    canvas.parent("p5-background");
+    noFill();
+    strokeWeight(2);
+
+    // Select the slider wrapper
+    let sliderContainer = select('#slider-wrapper');
+
+    // Frequency Slider
+    createP('Frequency').parent(sliderContainer).style('margin', '0');
+    freqSlider = createSlider(0.05, 0.5, 0.15, 0.01);
+    freqSlider.style('width', '300px');
+    freqSlider.parent(sliderContainer);
+    freqSlider.input(drawStaticWaves); // Trigger redraw on change
+
+    // Amplitude Slider
+    createP('Amplitude').parent(sliderContainer).style('margin', '0');
+    ampSlider = createSlider(20, 200, 100, 5);
+    ampSlider.style('width', '300px');
+    ampSlider.parent(sliderContainer);
+    ampSlider.input(drawStaticWaves); // Trigger redraw on change
+
+    // Transition Slider
+    createP('Transition Point').parent(sliderContainer).style('margin', '0');
+    transitionSlider = createSlider(0.3, 0.9, 0.66, 0.01);
+    transitionSlider.style('width', '300px');
+    transitionSlider.parent(sliderContainer);
+    transitionSlider.input(drawStaticWaves); // Trigger redraw on change
+
+    drawStaticWaves(); // Initial draw
+  }
+
+  function drawStaticWaves() {
+    clear();
+    background(0, 0, 0, 50);
+
+    let gradientStart = color(128, 0, 128); // Purple
+    let gradientEnd = color(0, 128, 255);   // Blue
+
+    let baseFrequency = freqSlider.value();
+    let baseAmplitude = ampSlider.value();
+    let transitionPoint = width * transitionSlider.value();
+
+    for (let i = 0; i < 5; i++) {
+      let t = map(i, 0, 5, 0, 1);
+      let lineColor = lerpColor(gradientStart, gradientEnd, t);
+      lineColor.setAlpha(150); // Semi-transparent for glow effect
+
+      stroke(lineColor);
+      noFill();
+      beginShape();
+      let phaseOffset = random(-PI, PI); // Each wave starts with a slightly different phase
+
+      for (let x = 0; x < width; x += 5) {
+        // Transition from chaotic to calm at the selected point
+        let progress = constrain(map(x, 0, transitionPoint, 0, 1), 0, 1);
+        
+        // Frequency and amplitude decrease as the wave moves right
+        let frequency = lerp(baseFrequency * 2, 0.02, progress); // High to low frequency
+
+        // Chaotic amplitude on the left, decreasing to 0 towards the transition point
+        let chaoticAmplitude = lerp(255, 0, progress);
+        let amplitude = chaoticAmplitude * sin(x * frequency + phaseOffset); // Apply phase offset
+
+        // Add an organic curve factor with noise and sin variation
+        let curveFactor = sin(x * 0.02 + i) * (1 - progress) * 30;
+        let noiseFactor = noise(x * 0.01, i * 0.1) * (1 - progress) * 50;
+        amplitude += noiseFactor;
+
+        // Map the amplitude to the canvas range: top (-255) to bottom (+255)
+        let y = map(amplitude, -255, 255, height, 0); // Map amplitude to canvas height
+her
+        // Apply curve factor for a more organic feel
+        let curveY = y + curveFactor;
+
+        // As the waves calm down, make them converge closer
+        let spacing = map(progress, 0, 1, 20, 5); // Tighter spacing towards the end
+        
+        // Use Bezier curves for smoother, flowing lines
+        if (x > 0) {
+          bezierVertex(x - 10, curveY + i * spacing, x, curveY + i * spacing, x + 10, curveY + i * spacing);
+        } else {
+          vertex(x, curveY + i * spacing); // Start point
+        }
+      }
+      endShape();
+    }
+  }
+
+  function windowResized() {
+    resizeCanvas(windowWidth, document.querySelector('.jumbotron').offsetHeight);
+    drawStaticWaves(); // Redraw on resize
+  }
+</script> #}
