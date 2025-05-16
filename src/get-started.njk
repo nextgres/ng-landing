@@ -6,7 +6,7 @@ layout: base.njk
 <section class="col-md-6 mx-auto py-5">
   <h1 class="mb-4 text-center">Get Started with NEXTGRES</h1>
   <p class="mb-4 text-center">NEXTGRES is currently in Closed Beta. Spots are limited--join our waitlist today to secure your early access and lock in exclusive launch pricing.</p>
-  <form name="beta" method="POST" netlify netlify-honeypot="bot-field" action="/thanks" class="card p-4 shadow-sm">
+  <form name="beta" method="POST" netlify netlify-honeypot="bot-field" action="/thanks" class="card bg-secondary bg-opacity-10 p-4 shadow-sm">
     <input type="hidden" name="form-name" value="beta">
     <div class="mb-3">
       <label for="name" class="form-label">Name</label>
@@ -46,4 +46,13 @@ layout: base.njk
     <button type="submit" class="btn btn-primary w-100" aria-label="add me to the beta">Add me to the Beta</button>
   </form>
 </section>
+<footer class="footer-section py-4 bg-dark text-light text-center w-100 position-relative" style="left:0;right:0;margin-left:auto;margin-right:auto;">
+  <div class="container-fluid p-0">
+    <a href="/about" class="text-light">About NEXTGRES</a> |
+    <a href="/privacy" class="text-light">Privacy Policy</a> |
+    <a href="/terms" class="text-light">Terms of Service</a> |
+    <a href="/contact" class="text-light">Contact Us</a> |
+    <a href="https://linkedin.com" class="text-light">LinkedIn</a> |
+  </div>
+</footer>
 {% endblock %}
