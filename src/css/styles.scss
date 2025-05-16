@@ -17,10 +17,21 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap");
 
+:root {
+  --primary-color: #3ea6ff; /* Vibrant blue */
+  --secondary-color: #a020f0; /* Purple */
+  --accent-color: #00d1b2; /* Aqua */
+  --background-color: #000000; /* Black */
+  --text-color: #f4f8fb; /* Light text */
+  --muted-color: rgba(255, 255, 255, 0.6); /* Muted white */
+}
+
 body {
   font-family: "Inter", sans-serif;
   background: #10141a;
   color: #f4f8fb;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 // Headings
@@ -78,8 +89,13 @@ h6 {
 
 // Section Backgrounds
 .jumbotron {
+  background-image: url('/assets/hero-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
   background-color: #10141a;
 }
+
 // Section Backgrounds with Improved Contrast
 .benefits-section {
   background-color: #1a1e27;
@@ -188,6 +204,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--accent-color);
   }
 
   .line {
@@ -196,4 +213,14 @@ a {
     height: 2rem;
     margin: 0 auto;
   }
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.card {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }

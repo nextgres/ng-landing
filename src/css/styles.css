@@ -11856,10 +11856,21 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+:root {
+  --primary-color: #3ea6ff; /* Vibrant blue */
+  --secondary-color: #a020f0; /* Purple */
+  --accent-color: #00d1b2; /* Aqua */
+  --background-color: #000000; /* Black */
+  --text-color: #f4f8fb; /* Light text */
+  --muted-color: rgba(255, 255, 255, 0.6); /* Muted white */
+}
+
 body {
   font-family: "Inter", sans-serif;
   background: #10141a;
   color: #f4f8fb;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 h1,
@@ -11909,6 +11920,10 @@ h6 {
 }
 
 .jumbotron {
+  background-image: url("/assets/hero-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
   background-color: #10141a;
 }
 
@@ -12004,10 +12019,21 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--accent-color);
 }
 .timeline-section .line {
   width: 4px;
   background-color: #0d6efd;
   height: 2rem;
   margin: 0 auto;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.card {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
