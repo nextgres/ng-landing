@@ -5,17 +5,26 @@ layout: base.njk
 {% block content %}
 <section class="col-md-6 mx-auto py-5">
   <h1 class="mb-4 text-center">Get Started with NEXTGRES</h1>
-  <p class="mb-4 text-center">NEXTGRES is currently in Closed Beta. Spots are limited--join our waitlist today to secure your early access and lock in exclusive launch pricing.</p>
+  <p class="mb-3 text-center">
+    NEXTGRES is in Closed Beta. We’re inviting a small number of forward-thinking teams to shape the future of real-time personalization.
+    Join now to secure your early access and lock in exclusive launch pricing.
+  </p>
+  <p class="text-center text-muted mb-4">
+    🔓 Unlock real-time personalization without MLOps complexity—ideal for fast-moving dev teams.
+  </p>
   <form name="beta" method="POST" netlify netlify-honeypot="bot-field" action="/thanks" class="card bg-secondary bg-opacity-10 p-4 shadow-sm">
     <input type="hidden" name="form-name" value="beta">
-    <div class="mb-3">
-      <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-    </div>
+    
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
       <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
     </div>
+    
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+    </div>
+    
     <div class="mb-3">
       <label for="database" class="form-label">What database are you using?</label>
       <select class="form-select" id="database" name="database" required>
@@ -25,6 +34,7 @@ layout: base.njk
         <option>Other</option>
       </select>
     </div>
+    
     <div class="mb-3">
       <label for="analytics" class="form-label">What analytics system are you using?</label>
       <select class="form-select" id="analytics" name="analytics" multiple required aria-multiselectable="true" size="6">
@@ -43,7 +53,16 @@ layout: base.njk
       </select>
       <small class="form-text text-muted">Hold down Command (⌘) on Mac or Ctrl on Windows to select multiple options.</small>
     </div>
-    <button type="submit" class="btn btn-primary w-100" aria-label="add me to the beta">Add me to the Beta</button>
+
+    <div class="mb-3">
+      <label for="goals" class="form-label">What are you hoping to solve with NEXTGRES?</label>
+      <textarea class="form-control" id="goals" name="goals" rows="3" placeholder="Optional"></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary w-100" aria-label="Join the beta and reserve my spot">Join the Beta – Reserve My Spot</button>
+    <p class="text-muted mt-3 mb-0 text-center">
+      ✅ We’ll review your submission and send early access details to your inbox.
+    </p>
   </form>
 </section>
 {% endblock %}
