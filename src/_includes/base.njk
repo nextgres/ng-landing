@@ -64,30 +64,29 @@
         });
       }
 
-      // Track navigation to industry pages
-      document.querySelectorAll('a[href*="/ecommerce-growth"], a[href*="/financial-services"], a[href*="/health-wellness"], a[href*="/media-entertainment"], a[href*="/saas-solutions"], a[href*="/customer-support"]').forEach(function(link) {
-        link.addEventListener('click', function() {
-          gtag('event', 'funnel_navigate_to_industry', {
-            'event_category': 'funnel',
-            'event_label': 'Navigate to Industry',
-            'page_path': link.getAttribute('href')
+      // Dynamically track navigation to industry pages using Eleventy collections
+      const industryPages = {{ collections.industries | jsonify }};
+
+      industryPages.forEach(function(page) {
+        document.querySelectorAll(`a[href*="${page.url}"]`).forEach(function(link) {
+          link.addEventListener('click', function() {
+            gtag('event', 'funnel_navigate_to_industry', {
+              'event_category': 'funnel',
+              'event_label': 'Navigate to Industry',
+              'page_path': link.getAttribute('href')
+            });
           });
         });
-      });
 
-      // Track entry from industry landing pages
-      if (window.location.pathname.includes('/ecommerce-growth') || 
-          window.location.pathname.includes('/financial-services') || 
-          window.location.pathname.includes('/health-wellness') || 
-          window.location.pathname.includes('/media-entertainment') || 
-          window.location.pathname.includes('/saas-solutions') || 
-          window.location.pathname.includes('/customer-support')) {
-        gtag('event', 'funnel_entry_from_industry', {
-          'event_category': 'funnel',
-          'event_label': 'Entry from Industry Page',
-          'page_path': window.location.pathname
-        });
-      }
+        // Track entry from industry landing pages
+        if (window.location.pathname.includes(page.url)) {
+          gtag('event', 'funnel_entry_from_industry', {
+            'event_category': 'funnel',
+            'event_label': 'Entry from Industry Page',
+            'page_path': window.location.pathname
+          });
+        }
+      });
 
       // Track form submission on "Get Started" page
       if (window.location.pathname === '/get-started') {

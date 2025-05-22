@@ -3,7 +3,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
   // Add a global data value for GA4 Measurement ID, configurable via environment variable or fallback
-  eleventyConfig.addGlobalData("ga4_id", process.env.GA4_ID || "G-EMPRP3KC10");
+  eleventyConfig.addGlobalData("ga4_id", process.env.GA4_ID || "G-YNLNEHLGQS");
+
+  // Add a custom jsonify filter
+  eleventyConfig.addFilter("jsonify", function(value) {
+    return JSON.stringify(value);
+  });
 
   return {
     dir: {
