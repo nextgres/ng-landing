@@ -55,6 +55,54 @@
 </footer>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Track entry into the root funnel
+      if (window.location.pathname === '/') {
+        gtag('event', 'funnel_entry_root', {
+          'event_category': 'funnel',
+          'event_label': 'Root Funnel Entry',
+          'page_path': window.location.pathname
+        });
+      }
+
+      // Track navigation to industry pages
+      document.querySelectorAll('a[href*="/ecommerce-growth"], a[href*="/financial-services"], a[href*="/health-wellness"], a[href*="/media-entertainment"], a[href*="/saas-solutions"], a[href*="/customer-support"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+          gtag('event', 'funnel_navigate_to_industry', {
+            'event_category': 'funnel',
+            'event_label': 'Navigate to Industry',
+            'page_path': link.getAttribute('href')
+          });
+        });
+      });
+
+      // Track entry from industry landing pages
+      if (window.location.pathname.includes('/ecommerce-growth') || 
+          window.location.pathname.includes('/financial-services') || 
+          window.location.pathname.includes('/health-wellness') || 
+          window.location.pathname.includes('/media-entertainment') || 
+          window.location.pathname.includes('/saas-solutions') || 
+          window.location.pathname.includes('/customer-support')) {
+        gtag('event', 'funnel_entry_from_industry', {
+          'event_category': 'funnel',
+          'event_label': 'Entry from Industry Page',
+          'page_path': window.location.pathname
+        });
+      }
+
+      // Track form submission on "Get Started" page
+      if (window.location.pathname === '/get-started') {
+        var form = document.querySelector('form[name="beta"]');
+        if (form) {
+          form.addEventListener('submit', function() {
+            gtag('event', 'funnel_form_submission', {
+              'event_category': 'funnel',
+              'event_label': 'Beta Form Submission',
+              'page_path': window.location.pathname
+            });
+          });
+        }
+      }
+
       // Track "Get Started" clicks
       document.querySelectorAll('a[aria-label="Get Started"], a.btn-primary[href="/get-started"]')
         .forEach(function(btn) {
