@@ -2,7 +2,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
-  
+
   // Add a global data value for GA4 Measurement ID, configurable via environment variable or fallback
   eleventyConfig.addGlobalData("ga4_id", process.env.GA4_ID || "G-YNLNEHLGQS");
 
@@ -10,7 +10,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("jsonify", function(value) {
     return JSON.stringify(value);
   });
-
+  // Custom filter to exclude pages from sitemap
+  eleventyConfig.addFilter("excludeFromSitemap", function (pages) {
+    return pages.filter((page) => !page.data.excludeFromSitemap);
+  });
+  
   return {
     dir: {
       input: "src",
