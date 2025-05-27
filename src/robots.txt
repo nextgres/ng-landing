@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://nextgres.ai/sitemap.xml
