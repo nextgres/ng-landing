@@ -53,13 +53,18 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link text-light" href="/">Home</a></li>
           <!-- add other global links here -->
+          <li class="nav-item"><a class="nav-link text-light" href="/about">About</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <main class="container d-flex flex-column align-items-center justify-content-center min-vh-75">
-    {{ content | safe }}
+    {% if page.markdown %}
+      {{ content | markdown | safe }}
+    {% else %}
+      {{ content | safe }}
+    {% endif %}
   </main>
   <footer class="footer-section py-4 bg-dark text-light text-center w-100 position-relative" style="left:0;right:0;margin-left:auto;margin-right:auto;">
   <div class="container-fluid p-0">
