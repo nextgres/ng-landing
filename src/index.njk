@@ -19,7 +19,7 @@ layout: base.njk
         <div class="mb-3">
           <i class="bi-lightning-fill fs-1 text-primary"></i>
         </div>
-        <h5 class="card-title">Instant Personalization</h5>
+        <h5 class="card-title">Real-Time Personalization</h5>
         <p class="card-text">Deliver dynamic experiences that adapt instantly to user behavior—without lag or batch processing.</p>
       </div>
     </div>
@@ -114,18 +114,17 @@ layout: base.njk
 <!-- Explore Solutions -->
 <div class="row row-cols-1 mb-2 mt-2 text-center" id="explore-solutions-section">
   <div class="col">
-    <h2 class="section-title">From SaaS to Support—We Power Smarter Experiences</h2>
+    <h2 class="section-title">Smarter Experiences, Tailored by Industry</h2>
     <p class="subtitle">See how NEXTGRES helps apps in your industry personalize in real time.</p>
   </div>
 </div>
-<div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-4 justify-content-center">
   {% for industry in [
     {slug:'saas-solutions', label:'SaaS Solutions', icon:'bi-bar-chart-line', teaser:'Personalize your SaaS application instantly based on real-time user behavior.'},
     {slug:'ecommerce-growth', label:'E-commerce Growth', icon:'bi-bag-check', teaser:'Boost conversions with real-time personalized shopping experiences.'},
     {slug:'financial-services', label:'Financial Services', icon:'bi-bank', teaser:'Deliver personalized financial products and detect fraud in real time.'},
     {slug:'health-wellness', label:'Health & Wellness', icon:'bi-heart-pulse', teaser:'Empower healthier decisions with instant, personalized health insights.'},
-    {slug:'media-entertainment', label:'Media & Entertainment', icon:'bi-play-circle', teaser:'Keep audiences engaged with real-time personalized content.'},
-    {slug:'customer-support', label:'Proactive Customer Support', icon:'bi-headset', teaser:'Resolve issues before they escalate with actionable user insights.'}
+    {slug:'media-entertainment', label:'Media & Entertainment', icon:'bi-play-circle', teaser:'Keep audiences engaged with real-time personalized content.'}
   ] %}
   <div class="col">
     <a href="/{{ industry.slug }}" class="card link-card h-100 text-center border-0 shadow-sm text-decoration-none" style="background: #182a3a; color: #f4f8fb;">
