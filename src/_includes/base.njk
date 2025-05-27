@@ -105,7 +105,7 @@
         }
       });
 
-      // Track form submission on "Get Started" page
+      // Track form submission on "Start Personalizing Now" page
       if (window.location.pathname === '/get-started') {
         var form = document.querySelector('form[name="beta"]');
         if (form) {
@@ -119,8 +119,8 @@
         }
       }
 
-      // Track "Get Started" clicks
-      document.querySelectorAll('a[aria-label="Get Started"], a.btn-primary[href="/get-started"]')
+      // Track "Start Personalizing Now" clicks
+      document.querySelectorAll('a[aria-label="Start Personalizing Now"], a.btn-primary[href="/get-started"]')
         .forEach(function(btn) {
           btn.addEventListener('click', function() {
             if (typeof gtag === 'function') {
