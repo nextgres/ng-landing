@@ -1,6 +1,17 @@
 ---
 title: Home
 layout: base.njk
+howItWorksHeadline: "From Chaos to Context in Three Simple Steps"
+steps:
+  - title: "Connect Your App"
+    subtitle: "Instant Integration. Zero Disruption."
+    text: "Plug into your current stack—no matter the language, framework, or database. NEXTGRES automatically syncs your SQL, NoSQL, and event streams into a clean, unified model."
+  - title: "Transform Your Data"
+    subtitle: "AI-Ready Without The Overhead"
+    text: "Skip the messy pipelines. Our intelligent data agents clean, normalize, and enrich your raw data in real time—so you’re ready to power personalization, recommendations, and search right away."
+  - title: "Deploy Smart Features"
+    subtitle: "Intelligence Without the MLOps"
+    text: "Go live with personalized content, contextual automation, and adaptive UI. Use our built-in models or bring your own—NEXTGRES adapts as your users do, no retraining required."
 ---
 <div class="jumbotron jumbotron-fluid text-center bg-dark text-light position-relative">
   <div id="p5-background" class="jumbotron-overlay"></div>
@@ -47,69 +58,8 @@ layout: base.njk
     </div>
   </div>
 </div>
-<!-- How It Works -->
-<h2 class="my-5 text-light text-center">From Chaos to Context in Three Simple Steps</h2>
-<section id="timeline" class="timeline-section">
-  <div class="container">
-    <div class="row timeline-container">
-      <!-- Step 1 -->
-      <div class="row g-0 align-items-center mb-4 flex-column flex-md-row">
-        <div class="col order-1 order-md-1" style="flex:0 0 100%; max-width:100%; flex:0 0 45%; max-width:45%;">
-          <div class="card step-card text-center border-0 shadow-sm bg-secondary bg-opacity-10 text-light">
-            <div class="card-body">
-              <h5 class="card-title">Connect Your App</h5>
-              <p class="card-text"><strong>Instant Integration. Zero Disruption.</strong></p>
-              <p class="card-text">Plug into your current stack—no matter the language, framework, or database. NEXTGRES automatically syncs your SQL, NoSQL, and event streams into a clean, unified model.</p>
 
-            </div>
-          </div>
-        </div>
-        <div class="col order-2 order-md-2 d-none d-md-flex align-items-center justify-content-center" style="flex:0 0 100%; max-width:100%; flex:0 0 10%; max-width:10%;">
-          <div class="circle-wrapper">
-            <i class="bi bi-1-circle-fill fs-2 text-primary"></i>
-          </div>
-        </div>
-        <div class="col order-3 order-md-3" style="flex:0 0 100%; max-width:100%; flex:0 0 45%; max-width:45%;"></div>
-      </div>
-      <!-- Step 2 -->
-      <div class="row g-0 align-items-center mb-4 flex-column flex-md-row">
-        <div class="col order-1 order-md-1" style="flex:0 0 100%; max-width:100%; flex:0 0 45%; max-width:45%;"></div>
-        <div class="col order-2 order-md-2 d-none d-md-flex align-items-center justify-content-center" style="flex:0 0 100%; max-width:100%; flex:0 0 10%; max-width:10%;">
-          <div class="circle-wrapper">
-            <i class="bi bi-2-circle-fill fs-2 text-primary"></i>
-          </div>
-        </div>
-        <div class="col order-3 order-md-3" style="flex:0 0 100%; max-width:100%; flex:0 0 45%; max-width:45%;">
-          <div class="card step-card text-center border-0 shadow-sm bg-secondary bg-opacity-10 text-light">
-            <div class="card-body">
-              <h5 class="card-title">Transform Your Data</h5>
-              <p class="card-text">AI-Ready Without The Overhead</p>
-              <p>Skip the messy pipelines. Our intelligent data agents clean, normalize, and enrich your raw data in real time—so you’re ready to power personalization, recommendations, and search right away.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Step 3 -->
-      <div class="row g-0 align-items-center flex-column flex-md-row">
-        <div class="col order-1 order-md-1" style="flex:0 0 100%; max-width:100%; flex:0 0 45%; max-width:45%;">
-          <div class="card step-card text-center border-0 shadow-sm bg-secondary bg-opacity-10 text-light">
-            <div class="card-body">
-              <h5 class="card-title">Deploy Smart Features</h5>
-              <p class="card-text">Intelligence Without the MLOps</p>
-              <p class="card-text">Go live with personalized content, contextual automation, and adaptive UI. Use our built-in models or bring your own—NEXTGRES adapts as your users do, no retraining required.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col order-2 order-md-2 d-none d-md-flex align-items-center justify-content-center" style="flex:0 0 100%; max-width:100%; flex:0 0 10%; max-width:10%;">
-          <div class="circle-wrapper">
-            <i class="bi bi-3-circle-fill fs-2 text-primary"></i>
-          </div>
-        </div>
-        <div class="col order-3 order-md-3" style="flex:0 0 100%; max-width:100%; flex:0 0 45%; max-width:45%;"></div>
-      </div>
-    </div>
-  </div>
-</section>
+{% include "howitworks-section.njk" %}
 
 <!-- Explore Solutions -->
 <div class="row row-cols-1 mb-2 mt-2 text-center" id="explore-solutions-section">
