@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if title %}{{ title }} | NEXTGRES{% else %}NEXTGRES{% endif %}</title>
-  <meta name="description" content="NEXTGRES is a plug-and-play personalization API that turns siloed user data into real-time experiences. No ML team or infrastructure required. Start personalizing in hours.">
-  <meta property="og:title" content="{{ ogTitle or 'NEXTGRES' }}">
-  <meta property="og:description" content="NEXTGRES is a plug-and-play personalization API that turns siloed user data into real-time experiences. No ML team or infrastructure required. Start personalizing in hours.">
+  <meta name="description" content="NEXTGRES is the Product Decision Platform that turns behavioral signals into real-time product decisions — recommendations, search ranking, and personalization.">
+  <meta property="og:title" content="{{ ogTitle or 'NEXTGRES — Product Decision Platform' }}">
+  <meta property="og:description" content="NEXTGRES converges behavioral signals from analytics, product, and marketing systems so product and growth teams can deliver recommendations, search ranking, and personalization in real time.">
   <meta property="og:type" content="{{ ogType or 'website' }}">
 
   <link href="/css/styles.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <!-- Font Awesome (optional, remove if not needed) -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.2/feather.min.js" crossorigin="anonymous"></script> -->
+  <!-- AOS Scroll Animations -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   {# Google Analytics 4 (GA4) #}
   {% if ga4_id and ga4_id != 'G-XXXXXXXXXX' %}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga4_id }}"></script>
@@ -30,7 +30,7 @@
       "@type": "Organization",
       "name": "NEXTGRES",
       "url": "https://nextgres.ai",
-      "description": "NEXTGRES brings your user profiles and events together—so you can ship smarter features, faster.",
+      "description": "NEXTGRES is the Product Decision Platform that turns behavioral signals into real-time product decisions.",
       "sameAs": [
         "https://www.linkedin.com/company/nextgres/"
       ],
@@ -75,79 +75,96 @@
     <a href="https://www.linkedin.com/company/nextgres" class="text-light">LinkedIn</a> |
   </div>
 </footer>
+  <!-- AOS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Track entry into the root funnel
-      if (window.location.pathname === '/') {
-        gtag('event', 'funnel_entry_root', {
-          'event_category': 'funnel',
-          'event_label': 'Root Funnel Entry',
-          'page_path': window.location.pathname
+      // Initialize AOS scroll animations
+      AOS.init({
+        duration: 700,
+        once: true,
+        offset: 80,
+        easing: 'ease-out-cubic'
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         });
-      }
+      });
 
-      // Dynamically track navigation to industry pages using Eleventy collections
-      const industryPages = {{ collections.industries | jsonify }};
-
-      industryPages.forEach(function(page) {
-        document.querySelectorAll(`a[href*="${page.url}"]`).forEach(function(link) {
-          link.addEventListener('click', function() {
-            gtag('event', 'funnel_navigate_to_industry', {
-              'event_category': 'funnel',
-              'event_label': 'Navigate to Industry',
-              'page_path': link.getAttribute('href')
-            });
-          });
-        });
-
-        // Track entry from industry landing pages
-        if (window.location.pathname.includes(page.url)) {
-          gtag('event', 'funnel_entry_from_industry', {
+      // GA4 Tracking
+      if (typeof gtag === 'function') {
+        // Track page entry
+        if (window.location.pathname === '/') {
+          gtag('event', 'funnel_entry_root', {
             'event_category': 'funnel',
-            'event_label': 'Entry from Industry Page',
+            'event_label': 'Root Funnel Entry',
             'page_path': window.location.pathname
           });
         }
-      });
 
-      // Track form submission on "Start Personalizing Now" page
-      if (window.location.pathname === '/get-started') {
-        var form = document.querySelector('form[name="beta"]');
-        if (form) {
-          form.addEventListener('submit', function() {
-            gtag('event', 'funnel_form_submission', {
-              'event_category': 'funnel',
-              'event_label': 'Beta Form Submission',
-              'page_path': window.location.pathname
-            });
-          });
-        }
-      }
-
-      // Track "Start Personalizing Now" clicks
-      document.querySelectorAll('a[aria-label="Start Personalizing Now"], a.btn-primary[href="/get-started"]')
-        .forEach(function(btn) {
-          btn.addEventListener('click', function() {
-            if (typeof gtag === 'function') {
-              gtag('event', 'get_started_click', {
+        // Track demo request clicks
+        document.querySelectorAll('a[aria-label="Request Demo"], a.btn-primary[href="/get-started"]')
+          .forEach(function(btn) {
+            btn.addEventListener('click', function() {
+              gtag('event', 'request_demo_click', {
                 'event_category': 'engagement',
                 'event_label': window.location.pathname
               });
-            }
+            });
           });
-        });
 
-      // Track beta form submissions
-      var form = document.querySelector('form[name="beta"]');
-      if (form) {
-        form.addEventListener('submit', function() {
-          if (typeof gtag === 'function') {
-            gtag('event', 'beta_form_submit', {
+        // Track "See Architecture" clicks
+        document.querySelectorAll('a[href="#architecture"]')
+          .forEach(function(btn) {
+            btn.addEventListener('click', function() {
+              gtag('event', 'see_architecture_click', {
+                'event_category': 'engagement',
+                'event_label': window.location.pathname
+              });
+            });
+          });
+
+        // Track form submissions
+        var form = document.querySelector('form[name="beta"]');
+        if (form) {
+          form.addEventListener('submit', function() {
+            gtag('event', 'demo_form_submit', {
               'event_category': 'engagement',
               'event_label': window.location.pathname
             });
+          });
+        }
+
+        // Track industry page navigation (for industry pages)
+        {% if collections.industries %}
+        var industryPages = {{ collections.industries | jsonify }};
+        industryPages.forEach(function(page) {
+          document.querySelectorAll('a[href*="' + page.url + '"]').forEach(function(link) {
+            link.addEventListener('click', function() {
+              gtag('event', 'funnel_navigate_to_industry', {
+                'event_category': 'funnel',
+                'event_label': 'Navigate to Industry',
+                'page_path': link.getAttribute('href')
+              });
+            });
+          });
+
+          if (window.location.pathname.includes(page.url)) {
+            gtag('event', 'funnel_entry_from_industry', {
+              'event_category': 'funnel',
+              'event_label': 'Entry from Industry Page',
+              'page_path': window.location.pathname
+            });
           }
         });
+        {% endif %}
       }
     });
   </script>

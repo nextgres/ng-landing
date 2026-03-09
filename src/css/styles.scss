@@ -1,56 +1,699 @@
 @use "../../node_modules/bootstrap/scss/bootstrap" with (
-  $body-bg: #10141a, // Matches --background-color
-  $body-color: #f4f8fb, // Matches --text-color
-  $primary: #3ea6ff, // Matches --primary-color
-  $secondary: #a020f0, // Matches --secondary-color
-  $success: #00d1b2, // Matches --accent-color
-  $danger: #ff4c60, // Matches --danger-color
-  $card-bg: #181e26, // Matches card background
-  $card-border-color: #232a34, // Matches card border
-  $link-color: #3ea6ff, // Matches --primary-color
-  $link-hover-color: #00e6d2 // Matches hover color
+  $body-bg: #0a0e17,
+  $body-color: #e2e8f0,
+  $primary: #3ea6ff,
+  $secondary: #a855f7,
+  $success: #00d1b2,
+  $danger: #ff4c60,
+  $card-bg: rgba(17, 24, 39, 0.7),
+  $card-border-color: rgba(62, 166, 255, 0.1),
+  $link-color: #3ea6ff,
+  $link-hover-color: #00e6d2
 );
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&family=JetBrains+Mono:wght@400&display=swap");
 
+// ─── Base ────────────────────────────────────────
 body {
   font-family: "Inter", sans-serif;
   background-color: bootstrap.$body-bg;
   color: bootstrap.$body-color;
+  overflow-x: hidden;
 }
 
-// Headings
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   line-height: 1.2;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
+  color: #f1f5f9;
 }
 
-h1 {
-  font-size: 2.5rem;
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+h3 { font-size: 1.5rem; }
+h4, h5, h6 { font-size: 1.25rem; }
+
+p { line-height: 1.7; }
+
+.lead {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: #94a3b8;
+  line-height: 1.8;
 }
 
-h2 {
-  font-size: 2rem;
+.mono {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: bootstrap.$primary;
 }
 
-h3 {
-  font-size: 1.75rem;
+// ─── Gradient Text ───────────────────────────────
+.gradient-text {
+  background: linear-gradient(135deg, #3ea6ff 0%, #a855f7 50%, #00d1b2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-h4,
-h5,
-h6 {
-  font-size: 1.5rem;
+.gradient-text-subtle {
+  background: linear-gradient(135deg, #f1f5f9 0%, #3ea6ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
+// ─── Grid Background ────────────────────────────
+.grid-bg {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(62, 166, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(62, 166, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// ─── Navbar ──────────────────────────────────────
+.navbar {
+  background: rgba(10, 14, 23, 0.8) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(62, 166, 255, 0.08);
+
+  .navbar-brand {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+// ─── Hero Section ────────────────────────────────
+.hero-section {
+  padding: 8rem 0 6rem;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  // Radial glow behind hero
+  &::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(62, 166, 255, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  h1 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-sub {
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+  }
+}
+
+// ─── Convergence Diagram ─────────────────────────
+.convergence-diagram {
+  max-width: 700px;
+  margin: 3rem auto 0;
+  position: relative;
+
+  .diagram-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .signal-group, .output-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .signal-node, .output-node {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    border: 1px solid rgba(62, 166, 255, 0.15);
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(10px);
+    color: #94a3b8;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: rgba(62, 166, 255, 0.4);
+      color: #e2e8f0;
+    }
+  }
+
+  .signal-node {
+    animation: signal-pulse 3s ease-in-out infinite;
+
+    &:nth-child(2) { animation-delay: 0.5s; }
+    &:nth-child(3) { animation-delay: 1s; }
+  }
+
+  .output-node {
+    border-color: rgba(0, 209, 178, 0.15);
+
+    &:hover {
+      border-color: rgba(0, 209, 178, 0.4);
+    }
+  }
+
+  .flow-arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5rem;
+    color: rgba(62, 166, 255, 0.3);
+    font-size: 1.5rem;
+
+    .arrow-line {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(62, 166, 255, 0.1), rgba(62, 166, 255, 0.4));
+      position: relative;
+
+      &::after {
+        content: "›";
+        position: absolute;
+        right: -8px;
+        top: -10px;
+        color: rgba(62, 166, 255, 0.5);
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .flow-arrows-out .arrow-line {
+    background: linear-gradient(90deg, rgba(0, 209, 178, 0.4), rgba(0, 209, 178, 0.1));
+
+    &::after {
+      color: rgba(0, 209, 178, 0.5);
+    }
+  }
+
+  .convergence-core {
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(62, 166, 255, 0.1), rgba(168, 85, 247, 0.1));
+    border: 1px solid rgba(62, 166, 255, 0.25);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    position: relative;
+    min-width: 140px;
+
+    .core-label {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #f1f5f9;
+    }
+
+    .core-sub {
+      font-size: 0.7rem;
+      color: #64748b;
+      margin-top: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    // Glow ring
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(62, 166, 255, 0.3), rgba(168, 85, 247, 0.3), rgba(0, 209, 178, 0.3));
+      z-index: -1;
+      animation: core-glow 4s ease-in-out infinite;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .diagram-row {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .signal-group, .output-group {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .flow-arrows {
+      transform: rotate(90deg);
+      padding: 0.5rem 0;
+    }
+  }
+}
+
+@keyframes signal-pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes core-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+// ─── Section Spacing ─────────────────────────────
+.page-section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.section-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: bootstrap.$primary;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.section-headline {
+  margin-bottom: 1.5rem;
+}
+
+.section-body {
+  max-width: 640px;
+  margin: 0 auto;
+  color: #94a3b8;
+}
+
+// ─── Glass Cards ─────────────────────────────────
+.glass-card {
+  background: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(62, 166, 255, 0.08);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(62, 166, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+  }
+
+  .card-icon-blue {
+    background: rgba(62, 166, 255, 0.1);
+    color: bootstrap.$primary;
+  }
+
+  .card-icon-purple {
+    background: rgba(168, 85, 247, 0.1);
+    color: bootstrap.$secondary;
+  }
+
+  .card-icon-teal {
+    background: rgba(0, 209, 178, 0.1);
+    color: bootstrap.$success;
+  }
+
+  h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #f1f5f9;
+  }
+
+  p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+}
+
+// ─── Problem Section ─────────────────────────────
+.problem-section {
+  background: linear-gradient(180deg, bootstrap.$body-bg 0%, rgba(17, 24, 39, 0.5) 50%, bootstrap.$body-bg 100%);
+
+  .problem-visual {
+    position: relative;
+    padding: 2rem;
+    border-radius: 12px;
+    background: rgba(17, 24, 39, 0.3);
+    border: 1px solid rgba(255, 76, 96, 0.1);
+
+    .pipeline-line {
+      height: 2px;
+      background: linear-gradient(90deg, rgba(255, 76, 96, 0.1), rgba(255, 76, 96, 0.3), rgba(255, 76, 96, 0.1));
+      margin: 0.75rem 0;
+      border-radius: 1px;
+      animation: pipeline-flow 2s ease-in-out infinite;
+
+      &:nth-child(even) { animation-delay: 0.5s; }
+      &:nth-child(3n) { animation-delay: 1s; }
+    }
+
+    .pipeline-node {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      background: rgba(255, 76, 96, 0.08);
+      border: 1px solid rgba(255, 76, 96, 0.15);
+      color: #94a3b8;
+      margin: 0.25rem;
+    }
+  }
+}
+
+@keyframes pipeline-flow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+// ─── Structural Difference ───────────────────────
+.difference-section {
+  border-top: 1px solid rgba(62, 166, 255, 0.06);
+  border-bottom: 1px solid rgba(62, 166, 255, 0.06);
+
+  .truth-card {
+    position: relative;
+    padding-left: 1.5rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      border-radius: 2px;
+    }
+
+    &.truth-blue::before { background: bootstrap.$primary; }
+    &.truth-purple::before { background: bootstrap.$secondary; }
+    &.truth-teal::before { background: bootstrap.$success; }
+
+    h5 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ─── How It Works ────────────────────────────────
+.how-it-works-section {
+  .step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .step-connector {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+      position: absolute;
+      top: 28px;
+      right: -25%;
+      width: 50%;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(62, 166, 255, 0.3), rgba(62, 166, 255, 0.05));
+    }
+  }
+}
+
+// ─── Architecture Section ────────────────────────
+.architecture-section {
+  .arch-badge {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    background: rgba(62, 166, 255, 0.08);
+    border: 1px solid rgba(62, 166, 255, 0.15);
+    color: #94a3b8;
+    margin: 0.25rem;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    .benefit-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: rgba(0, 209, 178, 0.1);
+      color: bootstrap.$success;
+    }
+
+    h6 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      color: #f1f5f9;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ─── Team Section ────────────────────────────────
+.team-section {
+  background: linear-gradient(180deg, bootstrap.$body-bg 0%, rgba(17, 24, 39, 0.3) 100%);
+
+  .team-stat {
+    text-align: center;
+    padding: 1.5rem;
+
+    .stat-number {
+      font-family: "Poppins", sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: bootstrap.$primary;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 0.25rem;
+    }
+  }
+}
+
+// ─── Final CTA ───────────────────────────────────
+.final-cta {
+  padding: 8rem 0;
+  position: relative;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(168, 85, 247, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  h2 {
+    font-weight: 700;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+  }
+}
+
+// ─── Buttons ─────────────────────────────────────
+.btn-primary {
+  background-color: bootstrap.$primary;
+  border-color: bootstrap.$primary;
+  padding: 0.7rem 1.75rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: darken(bootstrap.$primary, 8%);
+    border-color: darken(bootstrap.$primary, 8%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(62, 166, 255, 0.3);
+  }
+}
+
+.btn-outline-light {
+  border-radius: 8px;
+  padding: 0.7rem 1.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+// ─── Section Dividers ────────────────────────────
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(bootstrap.$primary, 0) 0%,
+    rgba(bootstrap.$primary, 0.15) 50%,
+    rgba(bootstrap.$primary, 0) 100%
+  );
+  margin: 0;
+}
+
+// ─── Footer ──────────────────────────────────────
+footer {
+  background-color: bootstrap.$body-bg;
+  color: bootstrap.$body-color;
+  border-top: 1px solid rgba(62, 166, 255, 0.08);
+}
+
+// ─── Link Card ───────────────────────────────────
+.link-card {
+  background: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(62, 166, 255, 0.08);
+  border-radius: 12px;
+  color: bootstrap.$body-color;
+  transition: all 0.3s ease;
+
+  &:hover, &:focus, &:active {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-color: rgba(62, 166, 255, 0.2);
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// ─── Timeline (keep for industry pages) ──────────
+.timeline-section {
+  .timeline-container {
+    position: relative;
+    padding: 2rem 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: rgba(bootstrap.$primary, 0.3);
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .timeline-container::before { display: none; }
+    .timeline-container .row { flex-direction: column; }
+    .timeline-container .col { max-width: 100%; flex: 0 0 100%; }
+    .timeline-container .circle-wrapper { margin-bottom: 1rem; display: none; }
+  }
+
+  .step-card { min-height: 200px; }
+
+  .circle-wrapper {
+    background: rgba(17, 24, 39, 0.7);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: bootstrap.$body-color;
+  }
+
+  .line {
+    width: 4px;
+    background-color: bootstrap.$primary;
+    height: 2rem;
+    margin: 0 auto;
+  }
+}
+
+// ─── Cards (general) ─────────────────────────────
+.card {
+  background-color: rgba(17, 24, 39, 0.5);
+  color: bootstrap.$body-color;
+  border-radius: 12px;
+}
+
+// ─── AOS overrides ───────────────────────────────
+[data-aos] {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+// ─── Jumbotron (keep for industry pages) ─────────
 .jumbotron {
   background-image: url('/assets/hero-image.png');
   background-size: cover;
@@ -101,146 +744,6 @@ h6 {
     z-index: 0;
   }
 }
-// Section Dividers
-.section-divider {
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    rgba(bootstrap.$primary, 0) 0%,
-    rgba(bootstrap.$primary, 0.7) 50%,
-    rgba(bootstrap.$primary, 0) 100%
-  );
-  margin: 2rem 0;
-}
 
-// Section Backgrounds
-.benefits-section {
-  background-color: bootstrap.$card-bg;
-  padding: 3rem 0;
-  border-top: 4px solid bootstrap.$primary;
-}
-
-.how-it-works {
-  background-color: bootstrap.$secondary;
-  padding: 4rem 0;
-  border-top: 4px solid bootstrap.$link-hover-color;
-}
-
-.solutions-section {
-  background-color: bootstrap.$card-bg;
-  padding: 3rem 0;
-  border-top: 4px solid bootstrap.$danger;
-}
-
-footer {
-  background-color: bootstrap.$body-bg;
-  color: bootstrap.$body-color;
-  border-top: 4px solid bootstrap.$primary;
-}
-
-// Link Card Interaction Styles
-.link-card {
-  background: bootstrap.$card-bg;
-  border-color: bootstrap.$card-border-color;
-  color: bootstrap.$body-color;
-
-  &:hover,
-  &:focus,
-  &:active {
-    transform: scale(1.02);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: darken(bootstrap.$card-bg, 5%);
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
-}
-
-// Navbar
-.navbar {
-  background: bootstrap.$card-bg !important;
-}
-
-// Links
-a {
-  color: bootstrap.$link-color;
-  &:hover {
-    color: bootstrap.$link-hover-color;
-  }
-}
-
-// Timeline Section
-.timeline-section {
-  .timeline-container {
-    position: relative;
-    padding: 2rem 0;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 4px;
-      background: rgba(bootstrap.$primary, 0.3);
-      transform: translateX(-50%);
-    }
-  }
-
-  @media (max-width: 767.98px) {
-    .timeline-container::before {
-      display: none;
-    }
-
-    .timeline-container .row {
-      flex-direction: column;
-    }
-
-    .timeline-container .col {
-      max-width: 100%;
-      flex: 0 0 100%;
-    }
-
-    .timeline-container .circle-wrapper {
-      margin-bottom: 1rem;
-      display: none;
-    }
-  }
-
-  .step-card {
-    min-height: 200px;
-  }
-
-  .circle-wrapper {
-    background: bootstrap.$card-bg;
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: bootstrap.$body-color;
-  }
-
-  .line {
-    width: 4px;
-    background-color: bootstrap.$primary;
-    height: 2rem;
-    margin: 0 auto;
-  }
-}
-
-// Buttons
-.btn-primary {
-  background-color: bootstrap.$primary;
-  border-color: bootstrap.$primary;
-}
-
-// Cards
-.card {
-  background-color: bootstrap.$secondary;
-  color: bootstrap.$body-color;
-}
+// Utility
+.z-1 { z-index: 1; }
