@@ -70,31 +70,30 @@ layout: base.njk
 <div class="section-divider"></div>
 
 {# ─── How It Works Section ────────────────────── #}
-<section class="page-section difference-section">
+<section class="page-section how-it-works-flow">
   <div class="container">
     <div class="text-center mb-5">
       <span class="section-label" data-aos="fade-up">How It Works</span>
       <h2 class="section-headline" data-aos="fade-up" data-aos-delay="50">Three steps. Zero pipelines.</h2>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col" data-aos="fade-up" data-aos-delay="100">
-        <div class="truth-card truth-blue">
-          <h5>Converge</h5>
-          <p>Behavioral signals from analytics, product, and marketing merge inside the database. No ETL. No warehouse. No waiting for tonight's sync.</p>
-        </div>
+    <div class="steps-flow" data-aos="fade-up" data-aos-delay="100">
+      <div class="step-item">
+        <div class="step-num step-num-blue">1</div>
+        <h5>Converge</h5>
+        <p>Behavioral signals from analytics, product, and marketing merge inside the database. No ETL. No warehouse. No waiting for tonight's sync.</p>
       </div>
-      <div class="col" data-aos="fade-up" data-aos-delay="150">
-        <div class="truth-card truth-purple">
-          <h5>Understand</h5>
-          <p>Patterns are computed where the data already lives. No separate ML pipeline, no feature store, no model serving infrastructure.</p>
-        </div>
+      <div class="step-connector-line"></div>
+      <div class="step-item">
+        <div class="step-num step-num-purple">2</div>
+        <h5>Understand</h5>
+        <p>Patterns are computed where the data already lives. No separate ML pipeline, no feature store, no model serving infrastructure.</p>
       </div>
-      <div class="col" data-aos="fade-up" data-aos-delay="200">
-        <div class="truth-card truth-teal">
-          <h5>Deliver</h5>
-          <p>Recommendations, ranking, and personalization execute in the same query as your application data. One round trip. One platform.</p>
-        </div>
+      <div class="step-connector-line"></div>
+      <div class="step-item">
+        <div class="step-num step-num-teal">3</div>
+        <h5>Deliver</h5>
+        <p>Recommendations, ranking, and personalization execute in the same query as your application data. One round trip. One platform.</p>
       </div>
     </div>
   </div>
@@ -257,25 +256,12 @@ layout: base.njk
     <p class="section-body mb-5" data-aos="fade-up" data-aos-delay="100">
       Our team built the recommender system at Noom and The Meet Group that outperformed TikTok's algorithm and drove over $200M in ARR. We've built database infrastructure used by millions of applications and led product platforms through successful exits. NEXTGRES is everything we learned about personalization at scale, built on the database trusted by the world's largest enterprises.
     </p>
-    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" data-aos="fade-up" data-aos-delay="150">
-      <div class="col">
-        <div class="team-stat">
-          <div class="stat-number">$200M+</div>
-          <div class="stat-label">ARR driven by our personalization systems</div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="team-stat">
-          <div class="stat-number">Millions</div>
-          <div class="stat-label">of apps powered by our infrastructure</div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="team-stat">
-          <div class="stat-number">3x</div>
-          <div class="stat-label">personalization systems built and shipped</div>
-        </div>
-      </div>
+    <div class="inline-stats" data-aos="fade-up" data-aos-delay="150">
+      <span class="inline-stat"><strong>$200M+</strong> ARR driven</span>
+      <span class="inline-stat-sep"></span>
+      <span class="inline-stat"><strong>Millions</strong> of apps powered</span>
+      <span class="inline-stat-sep"></span>
+      <span class="inline-stat"><strong>3x</strong> personalization systems shipped</span>
     </div>
     <p class="mt-4" style="color: #475569; font-size: 0.85rem;" data-aos="fade-up" data-aos-delay="200">Currently in closed beta with select product teams.</p>
   </div>

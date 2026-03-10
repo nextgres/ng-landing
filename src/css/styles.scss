@@ -104,8 +104,8 @@ p { line-height: 1.7; }
 
 // ─── Hero Section ────────────────────────────────
 .hero-section {
-  padding: 8rem 0 6rem;
-  min-height: 90vh;
+  padding: 6rem 0 4rem;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -290,7 +290,7 @@ p { line-height: 1.7; }
 
 // ─── Section Spacing ─────────────────────────────
 .page-section {
-  padding: 6rem 0;
+  padding: 4rem 0;
   position: relative;
 }
 
@@ -445,31 +445,109 @@ p { line-height: 1.7; }
   }
 }
 
-// ─── How It Works ────────────────────────────────
-.how-it-works-section {
-  .step-number {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+// ─── How It Works Flow ──────────────────────────
+.how-it-works-flow {
+  .steps-flow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .step-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 1.5rem;
+
+    h5 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+  }
+
+  .step-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: "JetBrains Mono", monospace;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
-    margin-bottom: 1.25rem;
+    margin: 0 auto 1rem;
+    border: 2px solid;
+
+    &.step-num-blue {
+      border-color: bootstrap.$primary;
+      color: bootstrap.$primary;
+      background: rgba(62, 166, 255, 0.08);
+    }
+
+    &.step-num-purple {
+      border-color: bootstrap.$secondary;
+      color: bootstrap.$secondary;
+      background: rgba(168, 85, 247, 0.08);
+    }
+
+    &.step-num-teal {
+      border-color: bootstrap.$success;
+      color: bootstrap.$success;
+      background: rgba(0, 209, 178, 0.08);
+    }
   }
 
-  .step-connector {
-    display: none;
-    @media (min-width: 768px) {
-      display: block;
+  .step-connector-line {
+    width: 60px;
+    height: 2px;
+    flex-shrink: 0;
+    margin-top: 22px; // vertically center with step-num
+    background: linear-gradient(90deg, rgba(62, 166, 255, 0.3), rgba(168, 85, 247, 0.3));
+    position: relative;
+
+    &::after {
+      content: "›";
       position: absolute;
-      top: 28px;
-      right: -25%;
-      width: 50%;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(62, 166, 255, 0.3), rgba(62, 166, 255, 0.05));
+      right: -4px;
+      top: -9px;
+      color: rgba(168, 85, 247, 0.5);
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .steps-flow {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .step-connector-line {
+      width: 2px;
+      height: 32px;
+      margin: 0.5rem 0;
+      background: linear-gradient(180deg, rgba(62, 166, 255, 0.3), rgba(168, 85, 247, 0.3));
+
+      &::after {
+        content: "›";
+        transform: rotate(90deg);
+        right: -6px;
+        top: auto;
+        bottom: -6px;
+      }
+    }
+
+    .step-item {
+      padding: 0;
+      max-width: 320px;
     }
   }
 }
@@ -523,28 +601,39 @@ p { line-height: 1.7; }
 .team-section {
   background: linear-gradient(180deg, bootstrap.$body-bg 0%, rgba(17, 24, 39, 0.3) 100%);
 
-  .team-stat {
-    text-align: center;
-    padding: 1.5rem;
+  .inline-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 
-    .stat-number {
+  .inline-stat {
+    font-size: 0.95rem;
+    color: #94a3b8;
+
+    strong {
       font-family: "Poppins", sans-serif;
-      font-size: 2rem;
       font-weight: 700;
       color: bootstrap.$primary;
+      font-size: 1.1rem;
     }
+  }
 
-    .stat-label {
-      font-size: 0.85rem;
-      color: #64748b;
-      margin-top: 0.25rem;
-    }
+  .inline-stat-sep {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #334155;
+    flex-shrink: 0;
   }
 }
 
 // ─── Final CTA ───────────────────────────────────
 .final-cta {
-  padding: 8rem 0;
+  padding: 5rem 0;
   position: relative;
   text-align: center;
 
