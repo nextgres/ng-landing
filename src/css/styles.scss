@@ -141,13 +141,17 @@ h6 {
   }
 }
 
-// Who It's For — manifesto statement with radial blue glow
+// Who It's For — manifesto statement band
 .section-audience {
   background: radial-gradient(
     ellipse at center,
     rgba(bootstrap.$primary, 0.08) 0%,
     transparent 70%
   );
+  border-top: 3px solid rgba(bootstrap.$primary, 0.3);
+  border-bottom: 3px solid rgba(bootstrap.$primary, 0.3);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 
   h2 {
     font-size: 2.25rem;
@@ -157,12 +161,20 @@ h6 {
     font-size: 1.15rem;
     line-height: 1.7;
   }
+
+  .pull-quote {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: bootstrap.$primary;
+    letter-spacing: 0.3px;
+    margin-top: 1.5rem;
+  }
 }
 
-// How It Works — elevated surface with top border
+// How It Works — elevated surface
 .section-technical {
   background-color: #151b24;
-  border-top: 3px solid rgba(bootstrap.$primary, 0.4);
 }
 
 // Demo / Final CTA — prominent closing section
