@@ -1,103 +1,162 @@
 ---
 title: Home
 layout: base.njk
-howItWorksHeadline: "From Chaos to Context in Three Simple Steps"
-steps:
-  - title: "Connect Your App"
-    subtitle: "Instant Integration. Zero Disruption."
-    text: "Plug into your current stack—no matter the language, framework, or database. NEXTGRES automatically syncs your SQL, NoSQL, and event streams into a clean, unified model."
-  - title: "Transform Your Data"
-    subtitle: "AI-Ready Without The Overhead"
-    text: "Skip the messy pipelines. Our intelligent data agents clean, normalize, and enrich your raw data in real time—so you’re ready to power personalization, recommendations, and search right away."
-  - title: "Deploy Smart Features"
-    subtitle: "Intelligence Without the MLOps"
-    text: "Go live with personalized content, contextual automation, and adaptive UI. Use our built-in models or bring your own—NEXTGRES adapts as your users do, no retraining required."
 ---
+
+{# SECTION 1 — HERO #}
 <div class="jumbotron jumbotron-fluid text-center bg-dark text-light position-relative">
   <div id="p5-background" class="jumbotron-overlay"></div>
   <div class="container-fluid position-relative z-1">
-    <h1 class="display-4">Add Real-Time Intelligence to Your App—Fast</h1>
-    <p class="lead mb-4">Stop fighting with fragmented data. NEXTGRES brings your user profiles and events together—so you can ship smarter features, faster.</p>
-    <a href="/get-started" class="btn btn-primary btn-lg" aria-label="Start Personalizing Now">Start Personalizing Now</a>
+    <p class="text-uppercase fw-bold text-primary mb-2" style="letter-spacing:2px; font-size:0.9rem;">Individualization at Scale</p>
+    <h1 class="display-4">Most platforms see segments.<br>NEXTGRES sees individuals.</h1>
+    <p class="lead mb-3">Don't target who they were. Connect with who they are right now.</p>
+    <p class="mb-4" style="max-width:700px; margin:0 auto;">NEXTGRES delivers real-time individualization at scale—connecting to your existing data, inferring what each customer wants right now, and acting on it instantly. No data migration. No ML team. No year-long implementation.</p>
+    <a href="#demo" class="btn btn-primary btn-lg" aria-label="Watch the demo">Watch the demo <i class="bi bi-play-circle ms-1"></i></a>
   </div>
 </div>
 
-<h2 class="my-5 text-light">Built for Builders</h2>
-<div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-  <div class="col">
-    <div class="card h-100 text-center border-0 shadow-sm" style="background: #182a3a; color: #f4f8fb;">
-      <div class="card-body">
-        <div class="mb-3">
-          <i class="bi-lightning-fill fs-1 text-primary"></i>
-        </div>
-        <h5 class="card-title">Real-Time Personalization</h5>
-        <p class="card-text">Deliver dynamic experiences that adapt instantly to user behavior—without lag or batch processing.</p>
-      </div>
-    </div>
+{# SECTION 2 — PROBLEM #}
+<section class="py-5">
+  <div class="container" style="max-width:760px;">
+    <h2 class="text-center mb-4">Personalization shouldn't cost a year and seven figures.</h2>
+    <p>Most teams hit the same wall. You decide personalization is a priority. Then you realize your data is spread across five systems, your engineers have a six-month backlog, and the ML infrastructure you need doesn't exist yet.</p>
+    <p>So you wait. And while you wait, every customer gets the same generic experience—grouped into broad segments based on what they did last quarter, not what they're doing right now.</p>
+    <p>This isn't a people problem. It's a data problem. And it's one NEXTGRES was built to solve.</p>
   </div>
-  <div class="col">
-    <div class="card h-100 text-center border-0 shadow-sm" style="background: #182a3a; color: #f4f8fb;">
-      <div class="card-body">
-        <div class="mb-3">
-          <i class="bi-gear-fill fs-1 text-primary"></i>
-        </div>
-        <h5 class="card-title">Zero Rewrite Integration</h5>
-        <p class="card-text">Connect to your existing backend—SQL, NoSQL, or streams. No new infra. No ML team required.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 text-center border-0 shadow-sm" style="background: #182a3a; color: #f4f8fb;">
-      <div class="card-body">
-        <div class="mb-3">
-          <i class="bi-diagram-3-fill fs-1 text-primary"></i>
-        </div>
-        <h5 class="card-title">Unified Data Layer</h5>
-        <p class="card-text">One source of truth for personalization—combine profile, usage, and event data into a single queryable system.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-{% include "howitworks-section.njk" %}
-
-<!-- Explore Solutions -->
-<div class="row row-cols-1 mb-2 mt-2 text-center" id="explore-solutions-section">
-  <div class="col">
-    <h2 class="section-title">Smarter Experiences, Tailored by Industry</h2>
-    <p class="subtitle">See how NEXTGRES helps apps in your industry personalize in real time.</p>
-  </div>
-</div>
-<div class="row row-cols-1 row-cols-md-3 g-4 mb-4 justify-content-center">
-  {% for industry in [
-    {slug:'saas-solutions', label:'SaaS Solutions', icon:'bi-bar-chart-line', teaser:'Personalize your SaaS application instantly based on real-time user behavior.'},
-    {slug:'ecommerce-growth', label:'E-commerce Growth', icon:'bi-bag-check', teaser:'Boost conversions with real-time personalized shopping experiences.'},
-    {slug:'financial-services', label:'Financial Services', icon:'bi-bank', teaser:'Deliver personalized financial products and detect fraud in real time.'},
-    {slug:'health-wellness', label:'Health & Wellness', icon:'bi-heart-pulse', teaser:'Empower healthier decisions with instant, personalized health insights.'},
-    {slug:'media-entertainment', label:'Media & Entertainment', icon:'bi-play-circle', teaser:'Keep audiences engaged with real-time personalized content.'}
-  ] %}
-  <div class="col">
-    <a href="/{{ industry.slug }}" class="card link-card h-100 text-center border-0 shadow-sm text-decoration-none" style="background: #182a3a; color: #f4f8fb;">
-      <div class="card-body d-flex flex-column">
-        <div class="mb-3">
-          <i class="{{ industry.icon }} fs-1 text-primary"></i>
-        </div>
-        <h5 class="card-title">{{ industry.label }}</h5>
-        <p class="card-text flex-grow-1">{{ industry.teaser }}</p>
-      </div>
-    </a>
-  </div>
-  {% endfor %}
-</div>
+</section>
 
 <div class="section-divider"></div>
 
-<div class="w-100 py-2">
-  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
-    <div class="mb-3 mb-md-0">
-      <h4 class="fw-bold mb-1">Be Among the First to Personalize Smarter</h4>
-      <p class="mb-0">Join early adopters using NEXTGRES to build intelligent features—without the infrastructure burden.</p>
-    </div>
-    <a href="/get-started" class="btn btn-primary btn-lg px-4 shadow-sm" aria-label="Start Personalizing Now">Start Personalizing Now</a>
+{# SECTION 3 — SOLUTION #}
+<section class="py-5">
+  <div class="container" style="max-width:760px;">
+    <h2 class="text-center mb-4">You don't need clean data to get started. You just need NEXTGRES.</h2>
+    <p>NEXTGRES connects to your existing databases—SQL, NoSQL, event streams, all of it—through a unified virtualization layer, so your data works together without ever having to live together.</p>
+    <ul class="list-unstyled my-4">
+      <li class="mb-2"><i class="bi bi-check-lg text-primary me-2" aria-hidden="true"></i>No consolidation required.</li>
+      <li class="mb-2"><i class="bi bi-check-lg text-primary me-2" aria-hidden="true"></i>No brittle ETL pipelines.</li>
+      <li class="mb-2"><i class="bi bi-check-lg text-primary me-2" aria-hidden="true"></i>No waiting on engineering.</li>
+    </ul>
+    <p>From day one, your team gets real-time individualization powered by the data you already have. Every customer becomes a segment of one—served experiences based on what they're doing right now, not what a segment profile says about them.</p>
   </div>
-</div>
+</section>
+
+<div class="section-divider"></div>
+
+{# SECTION 4 — CAPABILITIES (Featured + Grid) #}
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Everything your team needs to individualize at scale.</h2>
+      <p class="lead">Five capabilities. One platform. No data engineering required after setup.</p>
+    </div>
+
+    {# Featured capability — full width #}
+    <div class="card border-0 shadow-sm mb-4" style="background:#182a3a; color:#f4f8fb;">
+      <div class="card-body p-4 p-md-5 d-flex flex-column flex-md-row align-items-center gap-4">
+        <div class="text-center" style="min-width:80px;">
+          <i class="bi bi-people-fill fs-1 text-primary" aria-hidden="true"></i>
+        </div>
+        <div>
+          <h3 class="h4 mb-1">Synthetic Personas</h3>
+          <p class="text-primary fw-bold mb-2" style="font-size:0.95rem;">Warm up cold-start onboarding</p>
+          <p class="mb-0">New users shouldn't get generic experiences just because you don't know them yet. NEXTGRES analyzes behavioral patterns from your existing user base and builds synthetic personas for brand-new users—so their very first experience is relevant, not a coin flip.</p>
+        </div>
+      </div>
+    </div>
+
+    {# Grid — 2×2 #}
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card h-100 border-0 shadow-sm" style="background:#182a3a; color:#f4f8fb;">
+          <div class="card-body p-4">
+            <div class="mb-3">
+              <i class="bi bi-chat-square-text fs-1 text-primary" aria-hidden="true"></i>
+            </div>
+            <h3 class="h5 mb-1">Inferred Segments</h3>
+            <p class="text-primary fw-bold mb-2" style="font-size:0.9rem;">Ask a question, get an audience</p>
+            <p class="mb-0">Stop defining segments. Start asking questions. Type what you want to know—"Who's going to watch this show?" "Who's about to churn?"—and NEXTGRES infers the matching audience directly from your event data. No SQL. No analyst in the loop.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 border-0 shadow-sm" style="background:#182a3a; color:#f4f8fb;">
+          <div class="card-body p-4">
+            <div class="mb-3">
+              <i class="bi bi-activity fs-1 text-primary" aria-hidden="true"></i>
+            </div>
+            <h3 class="h5 mb-1">Monitor</h3>
+            <p class="text-primary fw-bold mb-2" style="font-size:0.9rem;">See every signal driving every decision</p>
+            <p class="mb-0">See exactly what your recommendation engine is doing in real time. Track the signals driving every recommendation, catch underperformance before your users do, and give your team the visibility it's never had.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 border-0 shadow-sm" style="background:#182a3a; color:#f4f8fb;">
+          <div class="card-body p-4">
+            <div class="mb-3">
+              <i class="bi bi-sliders fs-1 text-primary" aria-hidden="true"></i>
+            </div>
+            <h3 class="h5 mb-1">Simulate</h3>
+            <p class="text-primary fw-bold mb-2" style="font-size:0.9rem;">Test without risk, ship with confidence</p>
+            <p class="mb-0">Preview what every audience will see before anything goes live. Test variants, pressure-test segments, and ship with confidence—without running a single live experiment you can't take back.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 border-0 shadow-sm" style="background:#182a3a; color:#f4f8fb;">
+          <div class="card-body p-4">
+            <div class="mb-3">
+              <i class="bi bi-lightbulb fs-1 text-primary" aria-hidden="true"></i>
+            </div>
+            <h3 class="h5 mb-1">Understand</h3>
+            <p class="text-primary fw-bold mb-2" style="font-size:0.9rem;">Defend every recommendation with confidence</p>
+            <p class="mb-0">Ask why any recommendation was made and get a real answer. No black box. No guessing. The explainability your team needs to own every decision—and defend it to anyone who asks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+{# SECTION 5 — WHO IT'S FOR #}
+<section class="py-5">
+  <div class="container text-center" style="max-width:760px;">
+    <h2 class="mb-4">Built for the team that owns personalization—and is accountable for the results.</h2>
+    <p>You're responsible for conversion, retention, and engagement. But you depend on data you don't fully control, built on pipelines you didn't design, producing results you can't always explain.</p>
+    <p>NEXTGRES puts the engine—and the answers—in your hands. No tickets. No waiting. No guesswork.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+{# SECTION 6 — HOW IT WORKS #}
+<section class="py-5">
+  <div class="container" style="max-width:760px;">
+    <h2 class="text-center mb-4">How it works: database virtualization retains your databases while eliminating your data silos</h2>
+    <p>NEXTGRES sits on top of your existing databases as a virtualization layer—creating a single, unified view of your data without moving, consolidating, or replicating a single record. Your Postgres instance, your NoSQL store, your event streams—NEXTGRES queries across all of them as if they were one.</p>
+    <p>If you eventually want to consolidate, you can. But you'll never have to.</p>
+    <p>Onboarding is a guided setup with our team. After that, your martech and analytics teams are fully self-serve. No ongoing data engineering required.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+{# SECTION 7 — DEMO + FINAL CTA #}
+<section class="py-5" id="demo">
+  <div class="container text-center">
+    <h2 class="mb-4">See what real-time individualization looks like on your data.</h2>
+    <p class="mb-4" style="max-width:700px; margin:0 auto;">NEXTGRES works with the data you already have—and makes every customer a segment of one, right now.</p>
+    <div class="ratio ratio-16x9 mx-auto mb-4" style="max-width:800px;">
+      <iframe
+        src="https://www.youtube.com/embed/69fLHvNNCBU"
+        title="NEXTGRES Demo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <a href="/get-started" class="btn btn-primary btn-lg px-4 shadow-sm" aria-label="Contact us now">Contact us now <i class="bi bi-arrow-right ms-1"></i></a>
+  </div>
+</section>
