@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if title %}{{ title }} | NEXTGRES{% else %}NEXTGRES{% endif %}</title>
-  <meta name="description" content="NEXTGRES is a plug-and-play personalization API that turns siloed user data into real-time experiences. No ML team or infrastructure required. Start personalizing in hours.">
-  <meta property="og:title" content="{{ ogTitle or 'NEXTGRES' }}">
-  <meta property="og:description" content="NEXTGRES is a plug-and-play personalization API that turns siloed user data into real-time experiences. No ML team or infrastructure required. Start personalizing in hours.">
+  {% set defaultDescription = "Real-time individualization at scale. NEXTGRES connects to your existing data, infers what each customer wants right now, and acts on it instantly. No data migration. No ML team." %}
+  <title>{% if title == 'Home' %}NEXTGRES — Real-Time Individualization at Scale{% elif title %}{{ title }} | NEXTGRES{% else %}NEXTGRES{% endif %}</title>
+  <meta name="description" content="{{ description or defaultDescription }}">
+  <link rel="canonical" href="https://nextgres.ai{{ page.url }}">
+  <meta property="og:title" content="{{ ogTitle or title or 'NEXTGRES' }}">
+  <meta property="og:description" content="{{ description or defaultDescription }}">
   <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:url" content="https://nextgres.ai{{ page.url }}">
+  <meta property="og:site_name" content="NEXTGRES">
+  <meta property="og:image" content="https://nextgres.ai{{ ogImage or '/assets/og-default.png' }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ ogTitle or title or 'NEXTGRES' }}">
+  <meta name="twitter:description" content="{{ description or defaultDescription }}">
+  <meta name="twitter:image" content="https://nextgres.ai{{ ogImage or '/assets/og-default.png' }}">
 
   <link href="/css/styles.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
