@@ -151,6 +151,84 @@ layout: base.njk
     <p>If you eventually want to consolidate, you can. But you'll never have to.</p>
     <p>Onboarding is a guided setup with our team. After that, your martech and analytics teams are fully self-serve. No ongoing data engineering required.</p>
   </div>
+
+  {# Architecture pipeline diagram #}
+  <div class="container mt-5" style="max-width:900px;">
+    <div class="platform-diagram">
+
+      {# Data sources — pills at the top #}
+      <p class="diagram-label text-center mb-2">data in</p>
+      <div class="diagram-sources d-flex flex-wrap justify-content-center gap-2 mb-3">
+        <span class="diagram-pill"><i class="fa-solid fa-database me-1" aria-hidden="true"></i>SQL Server</span>
+        <span class="diagram-pill"><i class="fa-solid fa-database me-1" aria-hidden="true"></i>MongoDB</span>
+        <span class="diagram-pill"><i class="fa-solid fa-database me-1" aria-hidden="true"></i>MySQL</span>
+        <span class="diagram-pill"><i class="fa-solid fa-bolt me-1" aria-hidden="true"></i>Event Streams</span>
+        <span class="diagram-pill"><i class="fa-solid fa-ellipsis me-1" aria-hidden="true"></i>Others</span>
+      </div>
+
+      <div class="diagram-connector"></div>
+
+      {# Engine cards — equal peers #}
+      <div class="diagram-card">
+        <div class="d-flex align-items-start gap-3">
+          <i class="fa-solid fa-plug fs-4 text-primary mt-1" aria-hidden="true"></i>
+          <div>
+            <h4 class="h6 mb-1">Compatibility Engine</h4>
+            <p class="mb-0 small">Protocol, query, and data type compatibility layers for popular database APIs. Your existing applications connect without changes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagram-connector"></div>
+
+      <div class="diagram-card">
+        <div class="d-flex align-items-start gap-3">
+          <i class="fa-solid fa-code-merge fs-4 text-primary mt-1" aria-hidden="true"></i>
+          <div>
+            <h4 class="h6 mb-1">Convergence Engine</h4>
+            <p class="mb-0 small">Unifies data models by dynamically re-mapping data to optimize its internal representation. Multiple sources, one unified view.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagram-connector"></div>
+
+      <div class="diagram-card diagram-card-core">
+        <div class="d-flex align-items-start gap-3">
+          <i class="fa-solid fa-hard-drive fs-4 text-primary mt-1" aria-hidden="true"></i>
+          <div>
+            <h4 class="h6 mb-1">Data Engine</h4>
+            <p class="mb-0 small">Custom Postgres distribution with curated extensions and optimizations for enterprise-grade performance and scalability.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagram-connector"></div>
+
+      <div class="diagram-card">
+        <div class="d-flex align-items-start gap-3">
+          <i class="fa-solid fa-microchip fs-4 text-primary mt-1" aria-hidden="true"></i>
+          <div>
+            <h4 class="h6 mb-1">Compute Engine</h4>
+            <p class="mb-0 small">Personalization, machine learning, and recommendation logic—executed directly within the database for optimized performance and reduced latency.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagram-connector"></div>
+
+      {# Applications — pills at the bottom #}
+      <div class="diagram-sources d-flex flex-wrap justify-content-center gap-2 mt-3">
+        <span class="diagram-pill"><i class="fa-solid fa-globe me-1" aria-hidden="true"></i>Web Apps</span>
+        <span class="diagram-pill"><i class="fa-solid fa-mobile-screen me-1" aria-hidden="true"></i>Mobile</span>
+        <span class="diagram-pill"><i class="fa-solid fa-envelope me-1" aria-hidden="true"></i>Email</span>
+        <span class="diagram-pill"><i class="fa-solid fa-bullhorn me-1" aria-hidden="true"></i>Campaigns</span>
+        <span class="diagram-pill"><i class="fa-solid fa-chart-line me-1" aria-hidden="true"></i>Analytics</span>
+      </div>
+      <p class="diagram-label text-center mt-2">experiences out</p>
+
+    </div>
+  </div>
 </section>
 
 <div class="section-divider"></div>

@@ -177,6 +177,50 @@ h6 {
   background-color: #151b24;
 }
 
+// Platform architecture diagram
+.platform-diagram {
+  .diagram-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(bootstrap.$primary, 0.6);
+  }
+
+  .diagram-pill {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(bootstrap.$primary, 0.1);
+    border: 1px solid rgba(bootstrap.$primary, 0.2);
+    border-radius: 20px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.8rem;
+    color: bootstrap.$body-color;
+  }
+
+  .diagram-connector {
+    width: 2px;
+    height: 24px;
+    background: rgba(bootstrap.$primary, 0.4);
+    margin: 0 auto;
+  }
+
+  .diagram-card {
+    background: #182a3a;
+    border: 1px solid rgba(bootstrap.$primary, 0.15);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .diagram-card-core {
+    border-color: rgba(bootstrap.$primary, 0.4);
+    box-shadow: 0 0 20px rgba(bootstrap.$primary, 0.08);
+  }
+}
+
 // Final CTA — prominent closing block
 .section-cta {
   background: linear-gradient(
