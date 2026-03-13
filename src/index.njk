@@ -16,27 +16,31 @@ layout: base.njk
 </div>
 
 {# SECTION 2 — PROBLEM #}
-<section class="py-5">
+<section class="section-problem py-5">
   <div class="container" style="max-width:760px;">
-    <h2 class="text-center mb-4">Personalization shouldn't cost a year and seven figures.</h2>
-    <p>Most teams hit the same wall. You decide personalization is a priority. Then you realize your data is spread across five systems, your engineers have a six-month backlog, and the ML infrastructure you need doesn't exist yet.</p>
-    <p>So you wait. And while you wait, every customer gets the same generic experience—grouped into broad segments based on what they did last quarter, not what they're doing right now.</p>
-    <p>This isn't a people problem. It's a data problem. And it's one NEXTGRES was built to solve.</p>
+    <div class="problem-inner">
+      <h2 class="text-center mb-4">Personalization shouldn't cost a year and seven figures.</h2>
+      <p>Most teams hit the same wall. You decide personalization is a priority. Then you realize your data is spread across five systems, your engineers have a six-month backlog, and the ML infrastructure you need doesn't exist yet.</p>
+      <p>So you wait. And while you wait, every customer gets the same generic experience—grouped into broad segments based on what they did last quarter, not what they're doing right now.</p>
+      <p class="mb-0">This isn't a people problem. It's a data problem. And it's one NEXTGRES was built to solve.</p>
+    </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
 {# SECTION 3 — SOLUTION #}
-<section class="py-5">
+<section class="section-solution py-5">
   <div class="container" style="max-width:760px;">
     <h2 class="text-center mb-4">You don't need clean data to get started. You just need NEXTGRES.</h2>
     <p>NEXTGRES connects to your existing databases—SQL, NoSQL, event streams, all of it—through a unified virtualization layer, so your data works together without ever having to live together.</p>
-    <ul class="list-unstyled my-4">
-      <li class="mb-2"><i class="bi bi-check-lg text-primary me-2" aria-hidden="true"></i>No consolidation required.</li>
-      <li class="mb-2"><i class="bi bi-check-lg text-primary me-2" aria-hidden="true"></i>No brittle ETL pipelines.</li>
-      <li class="mb-2"><i class="bi bi-check-lg text-primary me-2" aria-hidden="true"></i>No waiting on engineering.</li>
-    </ul>
+    <div class="solution-checks my-4">
+      <ul class="list-unstyled mb-0">
+        <li class="mb-2"><i class="bi bi-check-lg text-primary me-2" aria-hidden="true"></i>No consolidation required.</li>
+        <li class="mb-2"><i class="bi bi-check-lg text-primary me-2" aria-hidden="true"></i>No brittle ETL pipelines.</li>
+        <li class="mb-2"><i class="bi bi-check-lg text-primary me-2" aria-hidden="true"></i>No waiting on engineering.</li>
+      </ul>
+    </div>
     <p>From day one, your team gets real-time individualization powered by the data you already have. Every customer becomes a segment of one—served experiences based on what they're doing right now, not what a segment profile says about them.</p>
   </div>
 </section>
@@ -122,7 +126,7 @@ layout: base.njk
 <div class="section-divider"></div>
 
 {# SECTION 5 — WHO IT'S FOR #}
-<section class="py-5">
+<section class="section-audience py-5">
   <div class="container text-center" style="max-width:760px;">
     <h2 class="mb-4">Built for the team that owns personalization—and is accountable for the results.</h2>
     <p>You're responsible for conversion, retention, and engagement. But you depend on data you don't fully control, built on pipelines you didn't design, producing results you can't always explain.</p>
@@ -133,7 +137,7 @@ layout: base.njk
 <div class="section-divider"></div>
 
 {# SECTION 6 — HOW IT WORKS #}
-<section class="py-5">
+<section class="section-technical py-5">
   <div class="container" style="max-width:760px;">
     <h2 class="text-center mb-4">How it works: database virtualization retains your databases while eliminating your data silos</h2>
     <p>NEXTGRES sits on top of your existing databases as a virtualization layer—creating a single, unified view of your data without moving, consolidating, or replicating a single record. Your Postgres instance, your NoSQL store, your event streams—NEXTGRES queries across all of them as if they were one.</p>
@@ -145,7 +149,7 @@ layout: base.njk
 <div class="section-divider"></div>
 
 {# SECTION 7 — DEMO + FINAL CTA #}
-<section class="py-5" id="demo">
+<section class="section-cta py-5" id="demo">
   <div class="container text-center">
     <h2 class="mb-4">See what real-time individualization looks like on your data.</h2>
     <p class="mb-4" style="max-width:700px; margin:0 auto;">NEXTGRES works with the data you already have—and makes every customer a segment of one, right now.</p>

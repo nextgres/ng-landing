@@ -113,7 +113,68 @@ h6 {
   margin: 2rem 0;
 }
 
-// Section Backgrounds
+// Homepage Section Personalities
+
+// Problem — contained card-like treatment
+.section-problem {
+  .problem-inner {
+    background: linear-gradient(
+      135deg,
+      rgba(bootstrap.$danger, 0.06) 0%,
+      rgba(bootstrap.$card-bg, 0.8) 100%
+    );
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+  }
+}
+
+// Solution — subtle glow behind the checklist
+.section-solution {
+  .solution-checks {
+    background: linear-gradient(
+      135deg,
+      rgba(bootstrap.$primary, 0.08) 0%,
+      rgba(bootstrap.$success, 0.05) 100%
+    );
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+  }
+}
+
+// Who It's For — manifesto statement with radial blue glow
+.section-audience {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(bootstrap.$primary, 0.08) 0%,
+    transparent 70%
+  );
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+}
+
+// How It Works — elevated surface with top border
+.section-technical {
+  background-color: #151b24;
+  border-top: 3px solid rgba(bootstrap.$primary, 0.4);
+}
+
+// Demo / Final CTA — prominent closing section
+.section-cta {
+  background: linear-gradient(
+    180deg,
+    bootstrap.$body-bg 0%,
+    #151b24 100%
+  );
+}
+
+// Section Backgrounds (used by industry pages)
 .benefits-section {
   background-color: bootstrap.$card-bg;
   padding: 3rem 0;
