@@ -16,7 +16,7 @@ layout: base.njk
 </div>
 
 {# SECTION 2 — PROBLEM #}
-<section class="section-problem py-5">
+<section class="section-problem py-4">
   <div class="container" style="max-width:760px;">
     <div class="problem-inner">
       <h2 class="text-center mb-4">Personalization shouldn't cost a year and seven figures.</h2>
@@ -30,7 +30,7 @@ layout: base.njk
 <div class="section-divider"></div>
 
 {# SECTION 3 — SOLUTION #}
-<section class="section-solution py-5">
+<section class="section-solution py-4">
   <div class="container" style="max-width:760px;">
     <h2 class="text-center mb-4">You don't need clean data to get started. You just need NEXTGRES.</h2>
     <p>NEXTGRES connects to your existing databases—SQL, NoSQL, event streams, all of it—through a unified virtualization layer, so your data works together without ever having to live together.</p>
@@ -59,7 +59,7 @@ layout: base.njk
     <div class="card border-0 shadow-sm mb-4" style="background:#182a3a; color:#f4f8fb;">
       <div class="card-body p-4 p-md-5 d-flex flex-column flex-md-row align-items-center gap-4">
         <div class="text-center" style="min-width:80px;">
-          <i class="bi bi-people-fill fs-1 text-primary" aria-hidden="true"></i>
+          <i class="fa-solid fa-fingerprint fs-1 text-primary" aria-hidden="true"></i>
         </div>
         <div>
           <h3 class="h4 mb-1">Synthetic Personas</h3>
@@ -74,11 +74,13 @@ layout: base.njk
       <div class="col">
         <div class="card h-100 border-0 shadow-sm" style="background:#182a3a; color:#f4f8fb;">
           <div class="card-body p-4">
-            <div class="mb-3">
-              <i class="bi bi-chat-square-text fs-1 text-primary" aria-hidden="true"></i>
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <i class="fa-solid fa-wand-magic-sparkles fs-3 text-primary mt-1" aria-hidden="true"></i>
+              <div>
+                <h3 class="h5 mb-1">Inferred Segments</h3>
+                <p class="text-primary fw-bold mb-0" style="font-size:0.9rem;">Ask a question, get an audience</p>
+              </div>
             </div>
-            <h3 class="h5 mb-1">Inferred Segments</h3>
-            <p class="text-primary fw-bold mb-2" style="font-size:0.9rem;">Ask a question, get an audience</p>
             <p class="mb-0">Stop defining segments. Start asking questions. Type what you want to know—"Who's going to watch this show?" "Who's about to churn?"—and NEXTGRES infers the matching audience directly from your event data. No SQL. No analyst in the loop.</p>
           </div>
         </div>
@@ -86,11 +88,13 @@ layout: base.njk
       <div class="col">
         <div class="card h-100 border-0 shadow-sm" style="background:#182a3a; color:#f4f8fb;">
           <div class="card-body p-4">
-            <div class="mb-3">
-              <i class="bi bi-activity fs-1 text-primary" aria-hidden="true"></i>
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <i class="fa-solid fa-satellite-dish fs-3 text-primary mt-1" aria-hidden="true"></i>
+              <div>
+                <h3 class="h5 mb-1">Monitor</h3>
+                <p class="text-primary fw-bold mb-0" style="font-size:0.9rem;">See every signal driving every decision</p>
+              </div>
             </div>
-            <h3 class="h5 mb-1">Monitor</h3>
-            <p class="text-primary fw-bold mb-2" style="font-size:0.9rem;">See every signal driving every decision</p>
             <p class="mb-0">See exactly what your recommendation engine is doing in real time. Track the signals driving every recommendation, catch underperformance before your users do, and give your team the visibility it's never had.</p>
           </div>
         </div>
@@ -98,11 +102,13 @@ layout: base.njk
       <div class="col">
         <div class="card h-100 border-0 shadow-sm" style="background:#182a3a; color:#f4f8fb;">
           <div class="card-body p-4">
-            <div class="mb-3">
-              <i class="bi bi-sliders fs-1 text-primary" aria-hidden="true"></i>
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <i class="fa-solid fa-flask-vial fs-3 text-primary mt-1" aria-hidden="true"></i>
+              <div>
+                <h3 class="h5 mb-1">Simulate</h3>
+                <p class="text-primary fw-bold mb-0" style="font-size:0.9rem;">Test without risk, ship with confidence</p>
+              </div>
             </div>
-            <h3 class="h5 mb-1">Simulate</h3>
-            <p class="text-primary fw-bold mb-2" style="font-size:0.9rem;">Test without risk, ship with confidence</p>
             <p class="mb-0">Preview what every audience will see before anything goes live. Test variants, pressure-test segments, and ship with confidence—without running a single live experiment you can't take back.</p>
           </div>
         </div>
@@ -110,11 +116,13 @@ layout: base.njk
       <div class="col">
         <div class="card h-100 border-0 shadow-sm" style="background:#182a3a; color:#f4f8fb;">
           <div class="card-body p-4">
-            <div class="mb-3">
-              <i class="bi bi-lightbulb fs-1 text-primary" aria-hidden="true"></i>
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <i class="fa-solid fa-microscope fs-3 text-primary mt-1" aria-hidden="true"></i>
+              <div>
+                <h3 class="h5 mb-1">Understand</h3>
+                <p class="text-primary fw-bold mb-0" style="font-size:0.9rem;">Defend every recommendation with confidence</p>
+              </div>
             </div>
-            <h3 class="h5 mb-1">Understand</h3>
-            <p class="text-primary fw-bold mb-2" style="font-size:0.9rem;">Defend every recommendation with confidence</p>
             <p class="mb-0">Ask why any recommendation was made and get a real answer. No black box. No guessing. The explainability your team needs to own every decision—and defend it to anyone who asks.</p>
           </div>
         </div>
@@ -136,7 +144,7 @@ layout: base.njk
 </section>
 
 {# SECTION 6 — HOW IT WORKS #}
-<section class="section-technical py-5">
+<section class="section-technical py-4">
   <div class="container" style="max-width:760px;">
     <h2 class="text-center mb-4">How it works: database virtualization retains your databases while eliminating your data silos</h2>
     <p>NEXTGRES sits on top of your existing databases as a virtualization layer—creating a single, unified view of your data without moving, consolidating, or replicating a single record. Your Postgres instance, your NoSQL store, your event streams—NEXTGRES queries across all of them as if they were one.</p>
