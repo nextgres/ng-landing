@@ -52,13 +52,11 @@ h6 {
 }
 
 .jumbotron {
-  background-image: url('/assets/hero-image.png');
-  background-size: cover;
-  background-position: center;
   background-color: bootstrap.$body-bg;
   color: bootstrap.$body-color;
-  padding: 6rem 0;
+  padding: 5rem 0;
   position: relative;
+  overflow: hidden;
 
   &.jumbotron-fluid {
     width: 100%;
@@ -67,10 +65,13 @@ h6 {
     padding-right: 0;
   }
 
+  .hero-text {
+    text-align: left;
+  }
+
   h1 {
     font-size: 3rem;
     font-weight: 600;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
   }
 
   p {
@@ -91,6 +92,26 @@ h6 {
     }
   }
 
+  .hero-image-col {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-image-inline {
+    width: 130%;
+    max-width: none;
+    height: auto;
+    margin-left: -15%;
+    mask-image:
+      linear-gradient(to right, transparent 0%, black 25%, black 100%),
+      linear-gradient(to bottom, transparent 0%, black 8%, black 65%, transparent 100%);
+    mask-composite: intersect;
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, black 25%, black 100%),
+      linear-gradient(to bottom, transparent 0%, black 8%, black 65%, transparent 100%);
+    -webkit-mask-composite: source-in;
+  }
+
   .jumbotron-overlay {
     position: absolute;
     top: 0;
@@ -99,6 +120,16 @@ h6 {
     bottom: 0;
     background: rgba(0, 0, 0, 0.4);
     z-index: 0;
+  }
+
+  // Mobile: stack text centered above image
+  @media (max-width: 991.98px) {
+    text-align: center;
+    padding: 3rem 0;
+
+    .hero-text {
+      text-align: center;
+    }
   }
 }
 // Section Dividers
@@ -110,10 +141,145 @@ h6 {
     rgba(bootstrap.$primary, 0.7) 50%,
     rgba(bootstrap.$primary, 0) 100%
   );
-  margin: 2rem 0;
+  margin: 0.5rem 0;
 }
 
-// Section Backgrounds
+// Homepage Section Personalities
+
+// Problem — contained card-like treatment
+.section-problem {
+  .problem-inner {
+    background: linear-gradient(
+      135deg,
+      rgba(bootstrap.$danger, 0.06) 0%,
+      rgba(bootstrap.$card-bg, 0.8) 100%
+    );
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+  }
+}
+
+// Solution — subtle glow behind the checklist
+.section-solution {
+  .solution-checks {
+    background: linear-gradient(
+      135deg,
+      rgba(bootstrap.$primary, 0.08) 0%,
+      rgba(bootstrap.$success, 0.05) 100%
+    );
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+  }
+}
+
+// Who It's For — manifesto statement band
+.section-audience {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(bootstrap.$primary, 0.08) 0%,
+    transparent 70%
+  );
+  border-top: 3px solid rgba(bootstrap.$primary, 0.3);
+  border-bottom: 3px solid rgba(bootstrap.$primary, 0.3);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+
+  .pull-quote {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: bootstrap.$primary;
+    letter-spacing: 0.3px;
+    margin-top: 1.5rem;
+  }
+}
+
+// How It Works — elevated surface
+.section-technical {
+  background-color: #151b24;
+}
+
+// Platform architecture diagram
+.platform-diagram {
+  .diagram-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(bootstrap.$primary, 0.6);
+  }
+
+  .diagram-pill {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(bootstrap.$primary, 0.1);
+    border: 1px solid rgba(bootstrap.$primary, 0.2);
+    border-radius: 20px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.8rem;
+    color: bootstrap.$body-color;
+  }
+
+  .diagram-connector {
+    width: 2px;
+    height: 24px;
+    background: rgba(bootstrap.$primary, 0.4);
+    margin: 0 auto;
+  }
+
+  .diagram-card {
+    background: #182a3a;
+    border: 1px solid rgba(bootstrap.$primary, 0.15);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .diagram-card-core {
+    border-color: rgba(bootstrap.$primary, 0.4);
+    box-shadow: 0 0 20px rgba(bootstrap.$primary, 0.08);
+  }
+}
+
+// Final CTA — prominent closing block
+.section-cta {
+  background: linear-gradient(
+    180deg,
+    #151b24 0%,
+    #1a2636 50%,
+    #151b24 100%
+  );
+  border-top: 3px solid rgba(bootstrap.$primary, 0.3);
+  border-bottom: 3px solid rgba(bootstrap.$primary, 0.3);
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+
+  .btn-primary {
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+}
+
+// Section Backgrounds (used by industry pages)
 .benefits-section {
   background-color: bootstrap.$card-bg;
   padding: 3rem 0;
