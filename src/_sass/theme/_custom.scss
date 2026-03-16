@@ -55,6 +55,11 @@
 .section-projects .row > [class*="col-"]:nth-last-child(-n+2) {
   margin-bottom: 0 !important;
 }
+.section-projects .grid-header h2 {
+  text-transform: none;
+  font-size: 28px;
+  font-weight: 500;
+}
 
 .page.page-home {
   .card-services {

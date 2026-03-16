@@ -101,11 +101,9 @@ solution:
 
 projects:
   enabled: true
-  heading: "Everything your team needs to individualize at scale"
+  heading: "Segmentation optimizes for the average. NEXTGRES optimizes for the individual."
   sub_heading: |
-    Segmentation optimizes for the average. NEXTGRES optimizes for the individual — responding to what each person is doing in the moment, across recommendations, content, and search.
-
-    Five capabilities. One platform. No data engineering required.
+    Personalization used to mean back-and-forth with analytics, data science, and engineering. NEXTGRES eliminates that — putting personalization directly in your hands using conversational AI. Define audiences, preview experiences, and understand every decision in plain language. No tickets. No waiting. No guesswork.
   limit: 5
   columns: 3
   sort: "weight"
