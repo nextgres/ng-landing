@@ -128,7 +128,7 @@ services:
 video:
   enabled: true
   heading: "See what owning personalization actually looks like."
-  sub_heading: "Watch how growth and product teams use NEXTGRES to define audiences in natural language, simulate experiences before they go live, and understand every recommendation — without a single data engineering ticket."
+  sub_heading: "Watch how growth and product teams use NEXTGRES to define audiences in natural language, simulate experiences before they go live, and understand every recommendation — without a single engineering ticket."
   youtube_id: "69fLHvNNCBU"
 
 outro:
