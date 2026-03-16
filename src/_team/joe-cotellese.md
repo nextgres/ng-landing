@@ -6,6 +6,7 @@ description: "Co-founder & COO. Led engineering and product at multiple SaaS com
 thumbnail: ""
 image: ""
 jobtitle: "Co-founder & COO"
+permalink: false
 links:
   - url: "https://www.linkedin.com/in/joecotellese"
     label: LinkedIn

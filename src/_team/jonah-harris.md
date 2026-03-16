@@ -6,6 +6,7 @@ description: "Co-founder & CEO. Led AI at Noom and The Meet Group."
 thumbnail: ""
 image: ""
 jobtitle: "Co-founder & CEO"
+permalink: false
 links:
   - url: "https://www.linkedin.com/in/jonahharris"
     label: LinkedIn

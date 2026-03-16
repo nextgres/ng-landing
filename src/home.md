@@ -45,7 +45,7 @@ problem:
   enabled: true
   align: center
   image: false
-  heading: "Personalization shouldn't take a year and cost seven figures"
+  heading: "Personalization delayed is customers lost."
   sub_heading: |
     You've been here before. You decide to make personalization a priority, then you're right back to the same problems: data spread across five systems, a six-month engineering backlog, and ML infrastructure that doesn't exist yet.
 
@@ -65,7 +65,7 @@ solution:
   sub_heading: |
     NEXTGRES requires no data engineers, no complex pipelines, and no changes to your existing infrastructure. It connects to your existing databases — SQL, NoSQL, event streams, all of it — through a unified virtualization layer, so your data works together without ever having to live together.
 
-    The result: every customer gets experiences shaped by what they're doing right now. Not a segment profile built on last quarter's behavior. If someone just upgraded their plan, abandoned a cart, or changed a preference, NEXTGRES sees it and acts on it — instantly, across every touchpoint.
+    The result: every customer gets experiences shaped by what they're doing in real time. Not a segment profile built on last quarter's behavior. If someone just upgraded their plan, abandoned a cart, or changed a preference, NEXTGRES sees it and acts on it — instantly, across every touchpoint.
   bullets:
     enabled: true
     list:
@@ -82,7 +82,7 @@ projects:
   enabled: true
   heading: "Everything your team needs to individualize at scale"
   sub_heading: |
-    Segmentation optimizes for the average. NEXTGRES optimizes for the individual — responding to what each person is doing right now, across recommendations, content, and search.
+    Segmentation optimizes for the average. NEXTGRES optimizes for the individual — responding to what each person is doing in the moment, across recommendations, content, and search.
 
     Five capabilities. One platform. No data engineering required.
   limit: 5
@@ -91,6 +91,12 @@ projects:
   view_more_button_text: ""
   view_more_button_link: ""
   prevent_click: false
+
+credibility:
+  enabled: true
+  heading: "Built by practitioners, not theorists."
+  sub_heading: "We've built and scaled personalization systems serving hundreds of millions of users — behind the scenes at some of the world's most recognized brands."
+  logos_image: "/assets/images/icons/allicons.png"
 
 audience:
   enabled: true
@@ -101,10 +107,12 @@ audience:
     You're responsible for conversion, retention, and engagement. But you depend on data you don't fully control, built on pipelines you didn't design, producing results you can't always explain.
 
     NEXTGRES puts the engine and the answers in your hands. No tickets. No waiting. No guesswork.
+
+    *We're currently onboarding a select group of teams for hands-on pilots. No lengthy sales process. No commitment required.*
   buttons:
     enabled: true
     list:
-      - text: "Book a 15-Minute Demo"
+      - text: "See It on Your Data — Apply for Early Access"
         url: "/contact/"
         external: false
         fa_icon: ""
@@ -119,7 +127,7 @@ services:
 
 video:
   enabled: true
-  heading: "See exactly what it looks like to own personalization end to end."
+  heading: "See what owning personalization actually looks like."
   sub_heading: "Watch how growth and product teams use NEXTGRES to define audiences in natural language, simulate experiences before they go live, and understand every recommendation — without a single data engineering ticket."
   youtube_id: "69fLHvNNCBU"
 

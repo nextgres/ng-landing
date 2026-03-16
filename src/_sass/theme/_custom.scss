@@ -44,6 +44,14 @@
   color: var(--color-primary-text);
 }
 
+.credibility-logos {
+  .credibility-logos-image {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.7;
+  }
+}
+
 .page.page-home {
   .card-services {
     padding: 25px;
