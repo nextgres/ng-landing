@@ -48,6 +48,7 @@ body_classes: page-contact
   <div class="container">
     <div class="row justify-content-start">
       <div class="col-12 col-lg-8">
+        <h2 class="mb-4">Contact Us</h2>
         {% if site.contact_form.use_netlify_form %}
           {% include "framework/form-contact-netlify" %}
         {% elsif site.contact_form.use_formspree_form and site.contact_form.formspree_endpoint %}
