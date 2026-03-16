@@ -24,7 +24,7 @@ hero:
   background_gradient: true
   background_image: false
   background_image_blend_mode: false
-  fullscreen_mobile: true
+  fullscreen_mobile: false
   fullscreen_desktop: false
   height: "660px"
   buttons:
