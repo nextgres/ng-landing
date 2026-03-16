@@ -1,0 +1,5 @@
+{% if categories %}
+  {% for category in categories %}
+    {% include 'framework/category-link', category_name:category show_count:false %}
+  {% endfor %}
+{% endif %}

@@ -1,0 +1,135 @@
+---
+layout: default
+body_classes: page-list
+---
+
+{% if hero.enabled %}
+  {% include "framework/hero", 
+    heading:hero.heading 
+    sub_heading:hero.sub_heading 
+    background_image:hero.background_image 
+    background_image_blend_mode:hero.background_image_blend_mode 
+    background_color:hero.background_color 
+    background_gradient:hero.background_gradient 
+    text_color:hero.text_color 
+    fullscreen_mobile:hero.fullscreen_mobile 
+    fullscreen_desktop:hero.fullscreen_desktop 
+    height:hero.height 
+    buttons:hero.buttons 
+  %}
+{% else %}
+  {% include "framework/title", 
+    fa_icon:fa_icon 
+    icon:icon 
+    title:title 
+    description:description 
+    image:image 
+  %}
+{% endif %}
+
+{% if intro.enabled %}
+  <div class="section section-base-bg-2 strip-border-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          {% include "framework/info", 
+            heading:intro.heading 
+            sub_heading:intro.sub_heading 
+            align:intro.align 
+            buttons:intro.buttons 
+            bullets:intro.bullets 
+            image:intro.image 
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% assign card_type = grid.collection %}
+{% assign cards = collections[card_type] | sort: 'date' | reverse %}
+{% assign limit = grid.limit | default: nil %}
+{% assign sort_by = grid.sort_by | default: 'date' %}
+{% assign columns =  grid.columns | default: 3 %}
+{% capture columns %}col-lg-{{ 12 | divided_by:columns }}{% endcapture %}
+{% if sort_by == "weight" %}
+  {% assign cards = cards | sortByWeight %}
+{% endif %}
+{% if grid.size > 0 %}
+<div class="section">
+  <div class="container">
+    <div class="row">
+
+      {% include "framework/grid-header",
+        heading:grid.heading 
+        sub_heading:grid.sub_heading 
+        align:"center"
+      %}
+
+      {% for card in cards %}
+        {% assign url = card.url %}
+        {% if grid.prevent_click %}
+          {% assign url = nil %}
+        {% endif %}
+
+        <div class="col-12 col-md-4 {{ columns }} {% if forloop.first %}mt-0{% endif %} {% if forloop.last %}mb-0{% endif %} mb-3 mb-md-6">
+          {% include "theme/cards/card-{{ card_type }}",
+            title:card.data.title 
+            description:card.data.description 
+            fa_icon:card.data.fa_icon 
+            icon:card.data.icon 
+            thumbnail:card.data.thumbnail 
+            image:card.data.image 
+            url:url 
+            weight:card.data.weight 
+            jobtitle:card.data.jobtitle 
+            links:card.data.links 
+          %}
+        </div>
+      {% endfor %}
+
+      {% include "framework/grid-footer", 
+        view_more_button_text:grid.view_more_button_text 
+        view_more_button_link:grid.view_more_button_link 
+        align:"right" 
+      %}
+
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if outro.enabled %}
+  <div class="section section-base-bg-2 strip-border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          {% include "framework/info", 
+            heading:outro.heading 
+            sub_heading:outro.sub_heading 
+            description:outro.description 
+            align:outro.align 
+            buttons:outro.buttons 
+            bullets:outro.bullets 
+            image:outro.image 
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% assign content = content | strip_newlines %}
+{% if content != ""  %}
+  <div class="section strip-border-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <div class="content">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %} 

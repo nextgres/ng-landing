@@ -1,0 +1,55 @@
+<div class="contact">
+  <form action="/contact/success" data-netlify="true" netlify-honeypot="bot-field" method="POST" name="{{ site.contact_form.netlify_form_name }}">
+  <input type="hidden" name="form-name" value="{{ site.contact_form.netlify_form_name }}">
+  <p class="d-none"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Work Email</label>
+    <input type="email" id="email" name="email" placeholder="you@company.com" required>
+  </div>
+
+  <div class="form-group">
+    <label for="database">What databases does your team use?</label>
+    <select id="database" name="database" required>
+      <option value="" disabled selected>Select your primary database</option>
+      <option>PostgreSQL</option>
+      <option>MySQL</option>
+      <option>SQL Server</option>
+      <option>MongoDB</option>
+      <option>Multiple / mixed</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="analytics">What analytics tools are in the mix?</label>
+    <select id="analytics" name="analytics" multiple size="5">
+      <option>Amplitude</option>
+      <option>Mixpanel</option>
+      <option>Google Analytics</option>
+      <option>Segment</option>
+      <option>PostHog</option>
+      <option>Heap</option>
+      <option>Pendo</option>
+      <option>FullStory</option>
+      <option>Tableau</option>
+      <option>Other / None</option>
+    </select>
+    <small>Select all that apply (Cmd+click on Mac, Ctrl+click on Windows).</small>
+  </div>
+
+  <div class="form-group">
+    <label for="goals">What's the personalization challenge you're trying to solve?</label>
+    <textarea id="goals" name="goals" placeholder="Optional — but it helps us tailor the conversation" style="height:120px"></textarea>
+  </div>
+
+  <input class="button" type="submit" value="Get in touch">
+  <p class="mt-2"><small>We'll reach out within one business day to schedule a conversation.</small></p>
+
+  </form>
+</div>

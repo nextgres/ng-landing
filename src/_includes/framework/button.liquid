@@ -1,0 +1,16 @@
+{% assign style=style | default: "primary" %}
+
+{% capture button_style %}
+  mr-1 button
+  {% if style == "primary" %}button-primary{% endif %}
+  {% if style == "light" %}button-light{% endif %}
+  {% if style == "dark" %}button-dark{% endif %}
+  {% if size == 'small' %}button-sm{% endif %}
+  {% if size == 'large' %}button-lg{% endif %}
+  {% if rounded %}button-rounded{% endif %}
+  {% if outline %}button-outline{% endif %}
+{% endcapture %}
+
+<a href="{% if external %}{{url}}{% else %}{{url }}{% endif %}" {% if external %}target:"_blank" rel="noopener"{% endif %} class="{{ button_style}}">
+  {{ text }}{% if fa_icon %}<i class="{{ fa_icon}} ml-1"></i>{% endif %}
+</a>

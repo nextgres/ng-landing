@@ -1,0 +1,130 @@
+# -------------------
+# Theme Config
+# --------------------
+title: "NEXTGRES"
+category_dir: category
+
+colors:
+  #light-mode colors
+  primary_bg: "#2b3af7"
+  primary_bg_2: "#424ff8"
+  primary_bg_3: "#702bf7"
+  primary_text: "#fdfcf9"
+  base_bg: "#ffffff"
+  base_bg_2: "#f8f9ff"
+  base_bg_3: "#eef2f9"
+  text: "#0d042b"
+  text_2: "#3b364c"
+  logo_text: "#2b3af7"
+  header_text: "#0d042b"
+
+  # dark-mode colors
+  primary_bg_dark: "#2b3af7"
+  primary_bg_2_dark: "#424ff8"
+  primary_bg_3_dark: "#702bf7"
+  primary_text_dark: "#fdfcf9"
+  base_bg_dark: "#0f0f10"
+  base_bg_2_dark: "#1a191c"
+  base_bg_3_dark: "#222124"
+  text_dark: "#f5f5ec"
+  text_2_dark: "#b6c3d6"
+  logo_text_dark: "#ffffff"
+  header_text_dark: "#f5f5ec"
+
+fonts:
+  use_google_fonts: false
+  google_fonts_url: "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Source+Code+Pro&family=Source+Sans+3:wght@300;400;700&display=swap"
+  use_self_hosted_fonts: true
+  heading: "Lato"
+  base: "'Source Sans 3'"
+  monospace: "'Source Code Pro'"
+  logo: "Lato"
+
+logo:
+  logo_text: "NEXTGRES"
+  logo_image: false
+  logo_image_mobile: false
+  logo_image_invert: false
+  logo_image_invert_mobile: false
+  logo_image_desktop_height: "30px"
+  logo_image_desktop_width: "132px"
+  logo_image_mobile_height: "30px"
+  logo_image_mobile_width: "34px"
+  show_logo_image_on_mobile: false
+  show_logo_image_on_desktop: false
+  show_logo_text_on_mobile: true
+  show_logo_text_on_desktop: true
+
+header:
+  fixed: true
+
+open_graph:
+  meta_opengraph_type: "website"
+  meta_twitter_card: "summary"
+  meta_twitter_site: ""
+  meta_twitter_creator: ""
+
+darkmode:
+  enable_dark_mode: true
+  show_dark_mode_toggle_in_header: false
+  show_dark_mode_toggle_in_footer: false
+  show_dark_mode_toggle_in_bottom: true
+  show_dark_mode_toggle_in_mobile_menu: true
+
+cookie_banner:
+  enabled: false
+  show_manage_cookies_at_bottom: false
+
+analytics:
+  disable_analytics_on_localhost: false
+  google_analytics_id: ""
+  gtm_id: ""
+  plausible_data_domain: ""
+  umami_data_website_id: ""
+  umami_src: ""
+
+comments:
+  commento:
+    enabled: false
+  disqus:
+    shortname: ""
+
+newsletter:
+  mailchimp:
+    form_action_url: ""
+    form_title: ""
+
+contact_form:
+  use_netlify_form: true
+  use_formspree_form: false
+  formspree_endpoint: ""
+  netlify_form_name: "beta"
+
+menu:
+  show_dropdown_items_in_mobile_menu: false
+  show_social_media_in_mobile_menu: true
+
+footer:
+  enable_footer: true
+  footer_title: "NEXTGRES"
+  footer_description: "Real-time individualization at scale. Connect to your existing data, infer what each customer wants right now, and act on it instantly."
+  enable_social_media_icons: true
+  enable_contact_details: true
+  enable_menu_footer_primary: true
+  enable_menu_footer_secondary: true
+  enable_menu_footer_tertiary: true
+  footer_primary_menu_title: "Solutions"
+  footer_secondary_menu_title: "Company"
+  footer_tertiary_menu_title: "Support"
+
+bottom:
+  enable_bottom: true
+  enable_bottom_menu: false
+  copyright_text: "© 2026 NEXTGRES, INC."
+  show_rss_icon: false
+
+sidebar:
+  enable_sidebar_services: true
+  enable_breadcrumbs_services: true
+  enable_sidebar_projects: false
+  enable_breadcrumbs_projects: true

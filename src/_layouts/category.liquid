@@ -1,0 +1,41 @@
+---
+layout: default
+body_classes: page-category
+permalink: category/{{title}}/
+---
+
+<div class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        {% include "framework/title",
+          title:title 
+          description:description 
+          image:image 
+          badge:"category" 
+        %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="section strip-base">
+  <div class="container">
+    {% assign category = title %}
+    {% for post in collections.categoryList[category] reversed %}
+      <div class="row">
+        <div class="col-12 col-md-8 mb-3 mb-lg-6">
+          {% include "theme/cards/card-posts", 
+            title:post.data.title 
+            date:post.data.date 
+            description:post.data.description  
+            thumbnail:post.data.thumbnail  
+            url:post.url  
+            style:"row" 
+          %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

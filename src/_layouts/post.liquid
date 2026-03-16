@@ -1,0 +1,78 @@
+---
+layout: default
+body_classes: page-post page-post-1
+permalink: "/blog/{{ title | slug }}/index.html"
+---
+
+<div class="section">
+  <div class="container post-header">
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+          {% if date %}
+            <div class="post-date">{{ date | date_to_long_string }}</div>
+          {% endif %}
+          {% if categories %}
+          <div class="post-categories">
+          {% include "framework/categories-badges", 
+              categories:categories 
+          %}
+          {% endif %}
+          </div>
+          <div class="post-title">
+            <h1>{{ title }}</h1>
+          </div>
+          {% if description %}
+            <div class="post-description">
+              <p>{{ description }}</p>
+            </div>
+          {% endif %}
+
+          {% if authors %}
+            <div class="post-authors">
+              {% for author in authors %}
+              {% assign author_id = author | replace: " ", "_" | downcase %}
+              {% assign author_object = authorlist[author_id] %}
+              {% include 'framework/author',
+                  name:author_object.name
+                  job:author_object.job
+                  image:author_object.image
+              %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+      </div>
+    </div>
+          
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10">
+        {% if image %}
+          <div class="post-image">
+            <img src="{{ image }}" alt="{{ title }}" />
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section pt-0">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="col-12 col-lg-8">
+        <div class="content">{{ content }}</div>
+        {% if site.disqus.shortname %}
+        {% if comments != false %}
+          <div class="comments mt-3">
+            {% include "framework/global/integrations/disqus" %}
+          </div>
+        {% endif %}
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>

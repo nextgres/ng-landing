@@ -1,0 +1,54 @@
+main:
+  - name: Home
+    url: /
+    weight: 1
+  - name: Solutions
+    url: "#"
+    weight: 2
+    child:
+      - name: "SaaS Solutions"
+        url: /services/saas-solutions/
+      - name: "E-commerce Growth"
+        url: /services/ecommerce-growth/
+      - name: "Financial Services"
+        url: /services/financial-services/
+      - name: "Health & Wellness"
+        url: /services/health-wellness/
+      - name: "Media & Entertainment"
+        url: /services/media-entertainment/
+  - name: About
+    url: /about/
+    weight: 3
+  - name: Get Started
+    url: /contact/
+    weight: 4
+footer_primary:
+  - name: "SaaS Solutions"
+    url: /services/saas-solutions/
+    weight: 1
+  - name: "E-commerce Growth"
+    url: /services/ecommerce-growth/
+    weight: 2
+  - name: "Financial Services"
+    url: /services/financial-services/
+    weight: 3
+  - name: "Health & Wellness"
+    url: /services/health-wellness/
+    weight: 4
+  - name: "Media & Entertainment"
+    url: /services/media-entertainment/
+    weight: 5
+footer_secondary:
+  - name: About
+    url: /about/
+    weight: 1
+  - name: Team
+    url: /team/
+    weight: 2
+  - name: Get Started
+    url: /contact/
+    weight: 3
+footer_tertiary:
+  - name: Support
+    url: /support/
+    weight: 1

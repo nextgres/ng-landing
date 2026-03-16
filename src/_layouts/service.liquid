@@ -1,0 +1,54 @@
+---
+layout: default
+body_classes: page-service
+---
+
+{% if hero.enabled %}
+  {% include "framework/hero", 
+    heading:hero.heading 
+    sub_heading:hero.sub_heading 
+    background_image:hero.background_image 
+    background_image_blend_mode:hero.background_image_blend_mode 
+    background_color:hero.background_color 
+    background_gradient:hero.background_gradient 
+    text_color:hero.text_color 
+    fullscreen_mobile:hero.fullscreen_mobile 
+    fullscreen_desktop:hero.fullscreen_desktop 
+    height:hero.height 
+    buttons:hero.buttons 
+    image:hero.image 
+  %}
+{% else %}
+  <div class="section">
+    <div class="container">
+    {% include "framework/title", 
+      fa_icon:fa_icon 
+      icon:icon 
+      title:title 
+      description:description 
+      image:image 
+    %}
+    </div>
+  </div>
+{% endif %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 col-lg-8">
+        {% if site.enable_breadcrumbs_services %}
+          {% include "framework/breadcrumbs" %}
+        {% endif %}
+        <div class="content">{{ content }}</div>
+      </div>
+
+      {% if site.enable_sidebar_services %}
+        <div class="col-12 col-lg-3 offset-lg-1">
+          {% include "framework/sidebar", collection:"services" %}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
