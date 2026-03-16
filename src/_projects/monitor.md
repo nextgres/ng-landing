@@ -1,5 +1,5 @@
 ---
-title: "Monitor"
+title: "Monitoring"
 description: "See exactly what your recommendation engine is doing in real time. Track the signals behind every recommendation and catch underperformance before your users do."
 date: 2025-01-03
 weight: 3

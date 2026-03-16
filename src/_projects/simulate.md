@@ -1,5 +1,5 @@
 ---
-title: "Simulate"
+title: "Simulation"
 description: "Preview what every audience will see before anything goes live. Test variants, pressure-test segments, and ship with confidence — without running a single live experiment you can't take back."
 date: 2025-01-02
 weight: 4

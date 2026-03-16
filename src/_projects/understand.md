@@ -1,5 +1,5 @@
 ---
-title: "Understand"
+title: "Understanding"
 description: "Ask why any recommendation was made and get a real answer. No black box. No guessing. The explainability your team needs to own every decision — and defend it to anyone who asks."
 date: 2025-01-01
 weight: 5
