@@ -1,5 +1,5 @@
 ---
-title: "Synthetic Personas"
+title: "Cold-Start Personalization"
 description: "New users shouldn't get generic experiences just because you don't know them yet. NEXTGRES analyzes behavioral patterns from your existing user base and builds synthetic personas for brand-new users — so their very first experience is relevant, not a coin flip.\n\n*Teams receive meaningful lift in Day 1 activation without touching onboarding flows.*"
 date: 2025-01-05
 weight: 1
