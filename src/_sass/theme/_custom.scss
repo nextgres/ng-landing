@@ -63,7 +63,13 @@
   }
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 .cost-boxes {
+  margin-left: 0;
+  margin-right: 0;
   .cost-box {
     background-color: var(--color-base-bg-3);
     border-radius: var(--card-border-radius);

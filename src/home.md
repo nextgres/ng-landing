@@ -133,7 +133,7 @@ audience:
   buttons:
     enabled: true
     list:
-      - text: "See It on Your Data — Apply for Early Access"
+      - text: "Apply for Early Access"
         url: "/contact/"
         external: false
         fa_icon: ""
