@@ -1,6 +1,6 @@
 ---
 title: "Inferred Personas"
-description: "Stop defining segments. Start asking questions. Type what you want to know — \"Who's going to watch this show?\" \"Who's about to churn?\" — and NEXTGRES infers the matching persona directly from your event data. No SQL. No analyst in the loop."
+description: "Stop defining segments. Start asking questions. Type what you want to know — \"Who's going to watch this show?\" \"Who's about to churn?\" — and NEXTGRES infers the matching persona directly from your event data. No SQL. No analyst in the loop.\n\n*Audience definition that used to take a week of analyst time, done in under a minute.*"
 date: 2025-01-04
 weight: 2
 header_transparent: false
@@ -26,6 +26,8 @@ hero:
 ---
 
 Stop defining segments. Start asking questions. Type what you want to know — "Who's going to watch this show?" "Who's about to churn?" — and NEXTGRES infers the matching persona directly from your event data. No SQL. No analyst in the loop.
+
+Audience definition that used to take a week of analyst time, done in under a minute.
 
 ## How It Works
 

@@ -1,6 +1,6 @@
 ---
 title: "Simulation"
-description: "Preview what every audience will see before anything goes live. Test variants, pressure-test segments, and ship with confidence — without running a single live experiment you can't take back."
+description: "Preview what every audience will see before anything goes live. Test variants, pressure-test segments, and ship with confidence — without running a single live experiment you can't take back.\n\n*Preview audience experiences before launch — no live experiment required.*"
 date: 2025-01-02
 weight: 4
 header_transparent: false
@@ -11,7 +11,7 @@ client: "Core Capability"
 
 hero:
   enabled: true
-  heading: "Simulate"
+  heading: "Simulation"
   sub_heading: "Test before you ship, not after"
   text_color: "#FFFFFF"
   background_color: "#1d2830"
@@ -26,6 +26,8 @@ hero:
 ---
 
 Preview what every audience will see before anything goes live. Test variants, pressure-test segments, and ship with confidence — without running a single live experiment you can't take back.
+
+Preview audience experiences before launch — no live experiment required.
 
 ## How It Works
 

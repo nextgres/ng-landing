@@ -15,7 +15,7 @@
     {% endif %}
     {% if description %}
       <div class="card-description">
-        <p>{{ description }}</p>
+        {{ description | markdownify }}
       </div>
     {% endif %}
     {% if url %}

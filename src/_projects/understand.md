@@ -1,6 +1,6 @@
 ---
 title: "Understanding"
-description: "Ask why any recommendation was made and get a real answer. No black box. No guessing. The explainability your team needs to own every decision — and defend it to anyone who asks."
+description: "Ask why any recommendation was made and get a real answer. No black box. No guessing. The explainability your team needs to own every decision — and defend it to anyone who asks.\n\n*Give your team a defensible answer for every recommendation, in plain language.*"
 date: 2025-01-01
 weight: 5
 header_transparent: false
@@ -11,7 +11,7 @@ client: "Core Capability"
 
 hero:
   enabled: true
-  heading: "Understand"
+  heading: "Understanding"
   sub_heading: "Defend every recommendation with confidence"
   text_color: "#FFFFFF"
   background_color: "#1d2830"
@@ -25,7 +25,9 @@ hero:
     enabled: false
 ---
 
-Ask why any recommendation was made and get a real answer. No black box. No guessing. The explainability your team needs to own every decision and defend it to anyone who asks.
+Ask why any recommendation was made and get a real answer. No black box. No guessing. The explainability your team needs to own every decision — and defend it to anyone who asks.
+
+Give your team a defensible answer for every recommendation, in plain language.
 
 ## How It Works
 

@@ -44,7 +44,7 @@ export default function(eleventyConfig) {
   });
 
   // Markdownify filter (render markdown strings in templates)
-  const md = markdownIt();
+  const md = markdownIt({ html: true });
   eleventyConfig.addLiquidFilter("markdownify", function(value) {
     if (!value) return "";
     return md.render(value);

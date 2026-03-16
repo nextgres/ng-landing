@@ -1,6 +1,6 @@
 ---
 title: "Monitoring"
-description: "See exactly what your recommendation engine is doing in real time. Track the signals behind every recommendation and catch underperformance before your users do."
+description: "See exactly what your recommendation engine is doing in real time. Track the signals behind every recommendation and catch underperformance before your users do.\n\n*Catch recommendation drift before it shows up in your retention numbers.*"
 date: 2025-01-03
 weight: 3
 header_transparent: false
@@ -11,7 +11,7 @@ client: "Core Capability"
 
 hero:
   enabled: true
-  heading: "Monitor"
+  heading: "Monitoring"
   sub_heading: "See what's driving every decision"
   text_color: "#FFFFFF"
   background_color: "#1d2830"
@@ -26,6 +26,8 @@ hero:
 ---
 
 See exactly what your recommendation engine is doing in real time. Track the signals behind every recommendation and catch underperformance before your users do.
+
+Catch recommendation drift before it shows up in your retention numbers.
 
 ## How It Works
 

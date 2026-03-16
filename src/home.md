@@ -8,13 +8,17 @@ meta_title: "NEXTGRES | Real-Time Individualization at Scale"
 
 hero:
   enabled: true
-  heading: "Most platforms know who your customers were.<br>NEXTGRES knows who they are right now."
+  heading: "You're not missing customers.<br>You're missing moments."
   sub_heading: |
-    Reach them in the moment that matters — not based on who they were yesterday, last week, or last month.
+    The reason is simple: your data is fragmented.
 
-    NEXTGRES delivers real-time personalization at scale, connecting to your existing data and acting on what each customer does the moment they do it.
+    By the time the right signal reaches the right system, the moment is gone — and so is your customer.
 
-    No data pipelines. No AI/ML team. No year-long implementation.
+    Right now, your best users are getting the same generic experience as everyone else. But they're not waiting for you to fix it — they're churning.
+
+    NEXTGRES eliminates fragmentation — unifying your existing data sources through a single virtualization layer that acts on individual behavior in the moment.
+
+    No new pipelines. No big AI/ML team. No multi-month implementation.
   text_color: "#FFFFFF"
   background_color: "#1d2830"
   background_gradient: true
@@ -26,19 +30,12 @@ hero:
   buttons:
     enabled: true
     list:
-      - text: "Watch Demo"
-        url: "#demo"
-        external: false
-        fa_icon: false
-        size: large
-        outline: false
-        style: "light"
-      - text: "Get Started"
+      - text: "Apply for Early Access"
         url: "/contact/"
         external: false
         fa_icon: false
         size: large
-        outline: true
+        outline: false
         style: "light"
 
 problem:
@@ -49,9 +46,33 @@ problem:
   sub_heading: |
     You've been here before. You decide to make personalization a priority, then you're right back to the same problems: data spread across five systems, a six-month engineering backlog, and ML infrastructure that doesn't exist yet.
 
-    So you wait. And while you wait, every customer gets the same generic experience. That's not just a personalization problem — it's churn, lost revenue, and the cost of replacing customers you should have kept.
+    So you wait. And the cost of waiting is specific:
 
-    This isn't a people problem. It's a data problem. And it's exactly what NEXTGRES was built to solve.
+    <div class="row mt-4 mb-4 cost-boxes">
+      <div class="col-12 col-md-4 mb-3 mb-md-0">
+        <div class="cost-box">
+          <h4>Activation</h4>
+          <p>New users sign up from a high-intent campaign — and land on a generic onboarding flow.</p>
+          <p><em>Day 1 activation stays flat.</em></p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-3 mb-md-0">
+        <div class="cost-box">
+          <h4>Engagement</h4>
+          <p>Loyal users change their preferences mid-session — and keep seeing recommendations based on last quarter's behavior.</p>
+          <p><em>Engagement erodes.</em></p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-3 mb-md-0">
+        <div class="cost-box">
+          <h4>Retention</h4>
+          <p>A dropped session, a changed preference, an abandoned cart — the signals that predict churn never reach the right system in time to act on.</p>
+          <p><em>Churn accelerates.</em></p>
+        </div>
+      </div>
+    </div>
+
+    You're not losing customers to better products. You're losing them to better timing.
   bullets:
     enabled: false
   buttons:
@@ -90,7 +111,7 @@ projects:
   sort: "weight"
   view_more_button_text: ""
   view_more_button_link: ""
-  prevent_click: false
+  prevent_click: true
 
 credibility:
   enabled: true

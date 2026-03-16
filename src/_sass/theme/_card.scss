@@ -168,6 +168,9 @@
         line-height: 1.5;
         color: var(--color-base-text-2);
       }
+      p + p {
+        margin-top: 12px;
+      }
     }
     .card-link {
       margin-top: auto;
