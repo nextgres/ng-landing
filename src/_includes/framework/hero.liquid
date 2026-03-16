@@ -30,7 +30,7 @@
 {% endcapture %}
 
 {% capture bg_height %}
-  {% if height %}height: {{ height }};{% endif %}
+  {% if height %}min-height: {{ height }};{% endif %}
 {% endcapture %}
 
 <div class="hero {{ fullscreen }} {{ gradient }}" style="{{ bg_color }} {{ bg_height }}">
