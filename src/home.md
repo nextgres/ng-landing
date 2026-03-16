@@ -10,15 +10,15 @@ hero:
   enabled: true
   heading: "You're not missing customers.<br>You're missing moments."
   sub_heading: |
-    The reason is simple: your data is fragmented.
-
-    By the time the right signal reaches the right system, the moment is gone — and so is your customer.
+    Your data is fragmented — and by the time the right signal reaches the right system, the moment is gone. And so is your customer.
 
     Right now, your best users are getting the same generic experience as everyone else. But they're not waiting for you to fix it — they're churning.
 
     NEXTGRES eliminates fragmentation — unifying your existing data sources through a single virtualization layer that acts on individual behavior in the moment.
 
     No new pipelines. No AI/ML team. No multi-month implementation.
+
+    Every user gets an experience tailored to them. Right now.
   text_color: "#FFFFFF"
   background_color: "#1d2830"
   background_gradient: true
