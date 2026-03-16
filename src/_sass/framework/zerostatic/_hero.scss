@@ -5,10 +5,13 @@
   align-items: flex-start;
   flex-direction: row;
   background-color: var(--color-base-2);
-  min-height: 300px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
+  @include media-breakpoint-down(md) {
+    min-height: auto !important;
+  }
   @include media-breakpoint-up(md) {
     align-items: center;
+    min-height: 300px;
   }
   &.hero-gradient {
     background-image: linear-gradient(to right, var(--color-primary-bg), var(--color-primary-bg-3));
