@@ -2,11 +2,14 @@
   position: relative;
   display: flex;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   background-color: var(--color-base-2);
   min-height: 300px;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
+  @include media-breakpoint-up(md) {
+    align-items: center;
+  }
   &.hero-gradient {
     background-image: linear-gradient(to right, var(--color-primary-bg), var(--color-primary-bg-3));
   }
