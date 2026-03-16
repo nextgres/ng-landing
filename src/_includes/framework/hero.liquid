@@ -45,7 +45,7 @@
           {% if buttons.enabled and buttons.list.size > 0 %}
             <div class="hero-buttons">
               {% for button in buttons.list %}
-                {% include "framework/button", 
+                {% include "framework/button",
                   text:button.text
                   url:button.url
                   external:button.external
@@ -60,12 +60,17 @@
         </div>
       </div>
       {% if image %}
-        <div class="col-12 col-lg-6">
+        <div class="col-lg-6 d-none d-lg-block">
           <div class="hero-image">
-            <img src="{{ image | url }}"/>
+            <img src="{{ image | url }}" style="cursor: zoom-in;" onclick="document.getElementById('heroLightbox').style.display='flex'"/>
           </div>
         </div>
       {% endif %}
     </div>
   </div>
 </div>
+{% if image %}
+<div id="heroLightbox" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center; cursor:zoom-out;">
+  <img src="{{ image | url }}" style="max-width:90%; max-height:90%; object-fit:contain;"/>
+</div>
+{% endif %}

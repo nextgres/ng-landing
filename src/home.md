@@ -27,6 +27,7 @@ hero:
   fullscreen_mobile: false
   fullscreen_desktop: false
   height: "660px"
+  image: "/assets/images/screenshots/item-analytics.png"
   buttons:
     enabled: true
     list:
