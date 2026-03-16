@@ -18,7 +18,7 @@ hero:
 
     NEXTGRES eliminates fragmentation — unifying your existing data sources through a single virtualization layer that acts on individual behavior in the moment.
 
-    No new pipelines. No big AI/ML team. No multi-month implementation.
+    No new pipelines. No AI/ML team. No multi-month implementation.
   text_color: "#FFFFFF"
   background_color: "#1d2830"
   background_gradient: true
