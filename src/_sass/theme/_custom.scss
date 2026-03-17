@@ -61,6 +61,18 @@
   font-weight: 500;
 }
 
+.section-audience .info-content > div > p:first-child {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.section-solution .info-content ul {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
 .page.page-home {
   .card-services {
     padding: 25px;

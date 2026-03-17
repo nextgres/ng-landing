@@ -129,7 +129,7 @@ body_classes: page-home
 
 {% comment %} SOLUTION SECTION {% endcomment %}
 {% if solution.enabled %}
-  <div class="section d-none d-md-block">
+  <div class="section section-solution">
     <div class="container">
       {% include "framework/info",
         heading:solution.heading
@@ -172,7 +172,7 @@ body_classes: page-home
 
 {% comment %} AUDIENCE SECTION {% endcomment %}
 {% if audience.enabled %}
-  <div class="section d-none d-md-block">
+  <div class="section section-audience">
     <div class="container">
       {% include "framework/info",
         heading:audience.heading
