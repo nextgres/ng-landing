@@ -129,7 +129,7 @@ body_classes: page-home
 
 {% comment %} SOLUTION SECTION {% endcomment %}
 {% if solution.enabled %}
-  <div class="section">
+  <div class="section d-none d-md-block">
     <div class="container">
       {% include "framework/info",
         heading:solution.heading
@@ -153,7 +153,7 @@ body_classes: page-home
             <div class="info-content">
               <h2>{{ credibility.heading }}</h2>
               {% if credibility.sub_heading %}
-                <div class="mt-1 mx-auto">{{ credibility.sub_heading | markdownify }}</div>
+                <div class="mt-1 mx-auto d-none d-md-block">{{ credibility.sub_heading | markdownify }}</div>
               {% endif %}
             </div>
           </div>
@@ -172,7 +172,7 @@ body_classes: page-home
 
 {% comment %} AUDIENCE SECTION {% endcomment %}
 {% if audience.enabled %}
-  <div class="section">
+  <div class="section d-none d-md-block">
     <div class="container">
       {% include "framework/info",
         heading:audience.heading

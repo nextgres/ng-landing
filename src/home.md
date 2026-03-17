@@ -12,7 +12,7 @@ hero:
   sub_heading: |
     Your data is fragmented — and by the time the right signal reaches the right system, the moment is gone. And so is your customer.
 
-    Right now, your best users are getting the same generic experience as everyone else. But they're not waiting for you to fix it — they're churning.
+    <span class="d-none d-md-block">Right now, your best users are getting the same generic experience as everyone else. But they're not waiting for you to fix it — they're churning.</span>
 
     NEXTGRES eliminates fragmentation — unifying your existing data sources through a single virtualization layer that acts on individual behavior in the moment.
 

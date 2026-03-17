@@ -171,6 +171,14 @@
       p + p {
         margin-top: 12px;
       }
+      @include media-breakpoint-down(md) {
+        p:first-child {
+          display: none;
+        }
+        p + p {
+          margin-top: 0;
+        }
+      }
     }
     .card-link {
       margin-top: auto;
