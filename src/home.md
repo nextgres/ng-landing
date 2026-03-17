@@ -117,7 +117,7 @@ projects:
 credibility:
   enabled: true
   heading: "Built by practitioners, not theorists."
-  sub_heading: "We've built and scaled personalization systems serving hundreds of millions of users — behind the scenes at some of the world's most recognized brands."
+  sub_heading: "We've built and scaled personalization systems serving hundreds of millions of users\n\nbehind the scenes at some of the world's most recognized brands."
   logos_image: "/assets/images/icons/allicons.png"
 
 audience:
