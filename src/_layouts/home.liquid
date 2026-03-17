@@ -4,32 +4,7 @@ body_classes: page-home
 ---
 
 {% if hero.enabled %}
-  {% include "framework/hero",
-    heading:hero.heading
-    sub_heading:hero.sub_heading
-    background_image:hero.background_image
-    background_image_blend_mode:hero.background_image_blend_mode
-    background_color:hero.background_color
-    background_gradient:hero.background_gradient
-    text_color:hero.text_color
-    fullscreen_mobile:hero.fullscreen_mobile
-    fullscreen_desktop:hero.fullscreen_desktop
-    height:hero.height
-    buttons:hero.buttons
-    image:hero.image
-  %}
-{% else %}
-  <div class="section">
-    <div class="container">
-    {% include "framework/title",
-      fa_icon:fa_icon
-      icon:icon
-      title:title
-      description:description
-      image:image
-    %}
-    </div>
-  </div>
+  {% include "theme/hero-home" %}
 {% endif %}
 
 {% comment %} PROBLEM SECTION {% endcomment %}
