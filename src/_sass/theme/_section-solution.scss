@@ -1,0 +1,96 @@
+.section-solution {
+  background: #0a0e2a;
+  padding: 80px 0;
+}
+
+.section-solution-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: 2fr 3fr;
+    gap: 64px;
+  }
+}
+
+// Left column — copy
+.section-solution-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.section-solution-headline {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  @include media-breakpoint-up(md) {
+    font-size: 36px;
+  }
+}
+
+.section-solution-subhead {
+  color: #b0b8d4;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  strong {
+    color: #c4c8e8;
+    font-weight: 600;
+  }
+  @include media-breakpoint-down(md) {
+    white-space: normal;
+  }
+}
+
+.section-solution-body {
+  color: #b0b8d4;
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 12px;
+  &--tight {
+    margin-bottom: 0;
+  }
+}
+
+.section-solution-proofs {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 24px 0 0 0;
+  li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #b0b8d4;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &::marker {
+      color: #5a6180;
+    }
+  }
+}
+
+// Right column — diagram
+.section-solution-diagram {
+  position: relative;
+  z-index: 1;
+}
+
+.section-solution-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Pulse animation for green dot
+.section-solution-pulse {
+  animation: solution-pulse 2s ease-in-out infinite;
+}
+
+@keyframes solution-pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+}

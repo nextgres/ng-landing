@@ -85,17 +85,19 @@ solution:
   image: "/assets/images/hero-image.png"
   heading: "Your data is already enough."
   sub_heading: |
-    NEXTGRES requires no data engineers, no complex pipelines, and no changes to your existing infrastructure. It connects to your existing databases — SQL, NoSQL, event streams, all of it — through a unified virtualization layer, so your data works together without ever having to live together.
+    **NEXTGRES doesn't replace your infrastructure. It sits on top of it.**
 
-    The result: every customer gets experiences shaped by what they're doing in real time. Not a segment profile built on last quarter's behavior. If someone just upgraded their plan, abandoned a cart, or changed a preference, NEXTGRES sees it and acts on it — instantly, across every touchpoint.
+    One virtualization layer connects read-only to your SQL databases, NoSQL stores, and event streams. It determines which behavioral signals matter and ingests only what's needed — no pipelines to build, no data warehouse required.
+
+    When a user's behavior changes mid-session — a plan upgrade, a skipped episode, an abandoned cart — NEXTGRES sees the signal and acts on it instantly, across every touchpoint.
   bullets:
     enabled: true
     list:
-      - text: "No migration risk."
+      - text: "Read-only connections — your source systems are never modified"
         fa_icon: "fas fa-check"
-      - text: "No downtime during setup."
+      - text: "Schema-agnostic — works regardless of how your data is structured"
         fa_icon: "fas fa-check"
-      - text: "No ongoing maintenance on your end."
+      - text: "Sub-second inference — acts on behavioral signals as they happen"
         fa_icon: "fas fa-check"
   buttons:
     enabled: false
