@@ -1,3 +1,47 @@
 [build]
   publish = "_site"
-  command = "npx eleventy"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Redirects from old URL structure
+[[redirects]]
+  from = "/saas-solutions"
+  to = "/services/saas-solutions/"
+  status = 301
+
+[[redirects]]
+  from = "/ecommerce-growth"
+  to = "/services/ecommerce-growth/"
+  status = 301
+
+[[redirects]]
+  from = "/financial-services"
+  to = "/services/financial-services/"
+  status = 301
+
+[[redirects]]
+  from = "/health-wellness"
+  to = "/services/health-wellness/"
+  status = 301
+
+[[redirects]]
+  from = "/media-entertainment"
+  to = "/services/media-entertainment/"
+  status = 301
+
+[[redirects]]
+  from = "/get-started"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/thanks"
+  to = "/contact/success/"
+  status = 301
+
+[[redirects]]
+  from = "/customer-support"
+  to = "/support/"
+  status = 301

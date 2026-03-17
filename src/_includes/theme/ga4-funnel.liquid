@@ -1,0 +1,53 @@
+{% if ga4_id and ga4_id != "" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ ga4_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ ga4_id }}');
+
+  // Funnel tracking
+  document.addEventListener('DOMContentLoaded', function() {
+    var path = window.location.pathname;
+
+    // Root entry
+    if (path === '/') {
+      gtag('event', 'funnel_entry_root');
+    }
+
+    // Industry page entry
+    if (path.startsWith('/services/') && path !== '/services/') {
+      gtag('event', 'funnel_entry_from_industry', {
+        industry: path.replace('/services/', '').replace('/', '')
+      });
+    }
+
+    // Track clicks to industry pages from homepage
+    document.querySelectorAll('a[href^="/services/"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        gtag('event', 'funnel_navigate_to_industry', {
+          industry: this.getAttribute('href')
+        });
+      });
+    });
+
+    // Track Get Started / CTA clicks
+    document.querySelectorAll('a[href="/contact/"], a[href="/contact"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        gtag('event', 'get_started_click', {
+          source: path
+        });
+      });
+    });
+
+    // Track form submissions
+    var form = document.querySelector('form[name="beta"]');
+    if (form) {
+      form.addEventListener('submit', function() {
+        gtag('event', 'beta_form_submit');
+        gtag('event', 'funnel_form_submission');
+      });
+    }
+  });
+</script>
+{% endif %}

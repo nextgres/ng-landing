@@ -1,0 +1,265 @@
+---
+layout: default
+body_classes: page-home
+---
+
+{% if hero.enabled %}
+  {% include "theme/hero-home" %}
+{% endif %}
+
+{% comment %} PROBLEM SECTION {% endcomment %}
+{% if problem.enabled %}
+  <div class="section">
+    <div class="container">
+      {% include "framework/info",
+        heading:problem.heading
+        sub_heading:problem.sub_heading
+        align:problem.align
+        bullets:problem.bullets
+        buttons:problem.buttons
+        image:problem.image
+      %}
+    </div>
+  </div>
+{% endif %}
+
+{% comment %} CAPABILITIES / PROJECTS GRID {% endcomment %}
+{% assign cards = collections.projects | sort: 'date' | reverse %}
+{% assign limit = projects.limit | default: 2 %}
+{% assign sort_by = projects.sort | default: 'date' %}
+{% assign columns = projects.columns | default: 2 %}
+{% capture columns %}col-lg-{{ 12 | divided_by:columns }}{% endcapture %}
+{% if sort_by == 'weight' %}
+  {% assign cards = cards | sortByWeight %}
+{% endif %}
+
+{% if projects.enabled %}
+  <div class="section section-base-bg-2 section-projects">
+    <div class="container">
+      <div class="row">
+
+        {% include "framework/grid-header",
+          heading:projects.heading
+          sub_heading:projects.sub_heading
+          align:"left"
+        %}
+
+        {% for card in cards limit: limit %}
+
+          {% assign url = card.url %}
+          {% if projects.prevent_click %}
+            {% assign url = null %}
+          {% endif %}
+
+          <div class="col-12 col-md-4 {{ columns }} mb-3 {% if forloop.first %}mt-0 {% endif %} {% if forloop.last %}mb-0 {% endif %}">
+            {% include "theme/cards/card-projects",
+              title:card.data.title
+              description:card.data.description
+              fa_icon:card.data.fa_icon
+              sub_heading:card.data.hero.sub_heading
+              url:url
+              weight:card.data.weight
+            %}
+          </div>
+        {% endfor %}
+
+        {% include "framework/grid-footer",
+          view_more_button_text:projects.view_more_button_text
+          view_more_button_link:projects.view_more_button_link
+          align:"center"
+        %}
+
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% comment %} VIDEO + CTA SECTION {% endcomment %}
+{% if video.enabled %}
+  <div class="section" id="demo">
+    <div class="container">
+      <div class="info">
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-md-10">
+            <div class="info-content">
+              <h2>{{ video.heading }}</h2>
+              {% if video.sub_heading %}<p>{{ video.sub_heading }}</p>{% endif %}
+            </div>
+          </div>
+          <div class="col-12 col-md-10 mt-3">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/{{ video.youtube_id }}"
+                title="{{ video.heading }}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% comment %} SOLUTION SECTION {% endcomment %}
+{% if solution.enabled %}
+  {% include "theme/section-solution" %}
+{% endif %}
+
+{% comment %} CREDIBILITY SECTION {% endcomment %}
+{% if credibility.enabled %}
+  <div class="section section-base-bg-2">
+    <div class="container">
+      <div class="info">
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-md-10">
+            <div class="info-content">
+              <h2>{{ credibility.heading }}</h2>
+              {% if credibility.sub_heading %}
+                <div class="mt-1 mx-auto d-none d-md-block">{{ credibility.sub_heading | markdownify }}</div>
+              {% endif %}
+            </div>
+          </div>
+          {% if credibility.logos_image %}
+            <div class="col-12 col-md-10 mt-4">
+              <div class="credibility-logos text-center">
+                <img src="{{ credibility.logos_image | url }}" alt="Brand logos" class="credibility-logos-image img-fluid" />
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% comment %} AUDIENCE SECTION {% endcomment %}
+{% if audience.enabled %}
+  <div class="section section-audience">
+    <div class="container">
+      {% include "framework/info",
+        heading:audience.heading
+        sub_heading:audience.sub_heading
+        align:audience.align
+        bullets:audience.bullets
+        buttons:audience.buttons
+        image:audience.image
+      %}
+    </div>
+  </div>
+{% endif %}
+
+{% comment %} INDUSTRY SOLUTIONS / SERVICES GRID {% endcomment %}
+{% assign cards = collections.services | sort: 'date' | reverse %}
+{% assign limit = services.limit | default: 3 %}
+{% assign sort_by = services.sort | default: 'date' %}
+{% assign columns = services.columns | default: 3 %}
+{% capture columns %}col-lg-{{ 12 | divided_by:columns }}{% endcapture %}
+{% if sort_by == 'weight' %}
+  {% assign cards = cards | sortByWeight %}
+{% endif %}
+
+{% if services.enabled %}
+  <div class="section">
+    <div class="container">
+      <div class="row">
+
+        {% include "framework/grid-header",
+          heading:services.heading
+          sub_heading:services.sub_heading
+          align:"center"
+        %}
+
+        {% for card in cards limit: limit %}
+
+          {% assign url = card.url %}
+          {% if services.prevent_click %}
+            {% assign url = null %}
+          {% endif %}
+
+          <div class="col-12 col-md-4 {{ columns }} mb-3 {% if forloop.first %}mt-0 {% endif %} {% if forloop.last %}mb-0 {% endif %}">
+            {% include "theme/cards/card-services",
+              title:card.data.title
+              description:card.data.description
+              fa_icon:card.data.fa_icon
+              icon:card.data.icon
+              url:url
+              weight:card.data.weight
+            %}
+          </div>
+        {% endfor %}
+
+        {% include "framework/grid-footer",
+          view_more_button_text:services.view_more_button_text
+          view_more_button_link:services.view_more_button_link
+          align:"center"
+        %}
+
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% comment %} OUTRO / FINAL CTA {% endcomment %}
+{% if outro.enabled %}
+<div class="section">
+  <div class="container">
+    {% include "framework/info",
+    heading:outro.heading
+    sub_heading:outro.sub_heading
+    align:outro.align
+    bullets:outro.bullets
+    buttons:outro.buttons
+    image:outro.image
+    %}
+  </div>
+</div>
+{% endif %}
+
+{% if posts.enabled %}
+{% assign cards = collections.posts | sortByTitle %}
+{% assign limit = posts.limit | default: 2 %}
+{% assign sort_by = posts.sort | default: 'date' %}
+{% assign columns = posts.columns | default: 2 %}
+{% capture columns %}col-lg-{{ 12 | divided_by:columns }}{% endcapture %}
+{% if sort_by == "weight" %}
+  {% assign cards = cards | sortByWeight %}
+{% endif %}
+  <div class="section section-base-bg-2">
+    <div class="container">
+      <div class="row">
+
+        {% include "framework/grid-header",
+          heading:posts.heading
+          sub_heading:posts.sub_heading
+          align:"center"
+        %}
+
+        {% for card in cards limit:limit %}
+
+          {% assign url = card.url %}
+          {% if posts.prevent_click %}
+            {% assign url = null %}
+          {% endif %}
+
+          <div class="col-12 col-md-4 {{ columns }} mb-3 {% if forloop.first %}mt-0 {% endif %} {% if forloop.last %}mb-0 {% endif %}">
+            {% include "theme/cards/card-posts",
+              title:card.data.title
+              description:card.data.description
+              thumbnail:card.data.thumbnail
+              url:url
+            %}
+          </div>
+        {% endfor %}
+
+        {% include "framework/grid-footer",
+          view_more_button_text:posts.view_more_button_text
+          view_more_button_link:posts.view_more_button_link
+          align:"center"
+        %}
+
+      </div>
+    </div>
+  </div>
+{% endif %}

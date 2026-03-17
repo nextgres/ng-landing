@@ -1,0 +1,68 @@
+---
+layout: default
+body_classes: page-team
+permalink: "/team/{{ title | slug }}/index.html"
+---
+
+{% if hero.enabled %}
+  {% include "framework/hero", 
+    heading:hero.heading 
+    sub_heading:hero.sub_heading 
+    background_image:hero.background_image 
+    background_image_blend_mode:hero.background_image_blend_mode 
+    background_color:hero.background_color 
+    background_gradient:hero.background_gradient 
+    text_color:hero.text_color 
+    fullscreen_mobile:hero.fullscreen_mobile 
+    fullscreen_desktop:hero.fullscreen_desktop 
+    height:hero.height 
+    buttons:hero.buttons 
+  %}
+{% else %}
+  <div class="section">
+    <div class="container">
+        {% assign social = show_social %}
+        
+          <div class="row">
+            {% if image and image != "" %}
+              <div class="col-12 col-md-6">
+                <div class="team-image">
+                  <img class="img-fluid" {% if title %} alt="{{ title }}" {% endif %} src="{{ image | url }}"/>
+                </div>
+              </div>
+            {% endif %}
+            <div class="col-12 {% if image and image != "" %}col-md-6{% else %}col-md-10{% endif %}">
+                <div class="team-header">
+                    {% if title %}
+                        <h1>{{ title }}</h1>
+                    {% endif %}
+                    
+                    {% if description %}
+                        <p>{{ description }}</p>
+                    {% endif %}
+
+                    <div class="team-meta">
+                        {% if description %}
+                            <div class="team-jobtitle">{{ jobtitle }}</div>
+                        {% endif %}
+    
+                        {% if links %}
+                        <div class="team-links">
+                            {% for link in links %}
+                                {% if link.icon %}
+                                    <a href="{{ link.url }}">
+                                        <i class="{{ link.icon }}"></i>
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="content">{{ content }}</div>
+              </div>
+        </div>
+    </div>
+  </div>
+{% endif %}

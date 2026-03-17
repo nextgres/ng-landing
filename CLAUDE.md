@@ -4,44 +4,61 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-NEXTGRES landing site — a static marketing site for a real-time personalization API product. Deployed automatically to Netlify from the `main` branch.
+NEXTGRES landing site — a static marketing site for a real-time personalization API product. Built on the 11ty Advance theme (Zerostatic). Deployed automatically to Netlify from the `main` branch.
 
 ## Commands
 
-- **Dev server:** `npm run dev` (runs Eleventy serve + Sass watch in parallel)
-- **Build:** `npm run build` (runs `npx eleventy`)
-- **Sass compile:** `npm run css:build`
-- **Sass watch:** `npm run css:watch`
+- **Dev server:** `npm run dev` or `npm run start` (builds Sass, then watches Sass + Eleventy in parallel)
+- **Build:** `npm run build` (cleans `_site/`, builds Sass + Eleventy)
+- **Sass compile:** `npm run build:sass`
+- **Sass watch:** `npm run watch:sass`
 
 No test suite exists (`npm test` is a no-op stub).
 
 ## Architecture
 
-**Static site generator:** Eleventy 3.x with Nunjucks templates.
+**Static site generator:** Eleventy 3.x with Liquid templates (ESM config).
 
 **Directory layout:**
 - `src/` — Eleventy input directory
-- `src/_includes/` — Nunjucks layouts and partials
-- `src/_data/` — Global data files (currently empty; `ga4_id` is set in `.eleventy.js` via env var `GA4_ID`)
-- `src/css/styles.scss` — SCSS source compiled to `src/css/styles.css` (Bootstrap 5 + custom styles)
-- `src/assets/` — Static images
+- `src/_layouts/` — Liquid layout files (default, home, basic, service, project, team, contact, list)
+- `src/_includes/` — Reusable Liquid partials (framework/ for core UI, theme/ for custom)
+- `src/_data/` — Global data files (site.yml, menu.yml, contact.yml, social.json, env.js, partners.json, authorlist.yml)
+- `src/_services/` — Industry vertical pages (markdown with service layout)
+- `src/_projects/` — Platform capability pages (markdown with project layout)
+- `src/_team/` — Team member pages (markdown with team layout)
+- `src/_sass/` — SCSS source compiled to `_site/assets/css/style.css` (Bootstrap 5 + theme styles)
+- `assets/` — Static assets (CSS, JS, fonts, images) — passthrough copied to `_site/`
 - `_site/` — Build output (gitignored)
 
-**Template hierarchy:**
-- `base.njk` — Root HTML layout. Contains navbar, footer, GA4 tracking, JSON-LD structured data, and client-side analytics event listeners.
-- `industry.njk` — Extends `base.njk`. Data-driven layout for industry vertical landing pages. Renders hero, benefits cards, "How It Works" timeline, and CTA from frontmatter data (`headline`, `subheadline`, `body`, `benefits`, `steps`, `ctaText`, `ctaUrl`).
-- `howitworks-section.njk` — Shared partial for the alternating-sides timeline. Driven by `steps` array in frontmatter.
-- `index.njk` — Homepage. Uses `base.njk` directly (not `industry.njk`) with inline markup.
+**Layout hierarchy:**
+- `default.liquid` — Root HTML layout. Contains head, nav, footer, dark mode, analytics.
+- `home.liquid` — Extends default. Data-driven homepage with hero, services grid, intro, projects grid, outro sections.
+- `service.liquid` — Extends default. Service detail page with hero + sidebar.
+- `project.liquid` — Extends default. Project detail page with hero + sidebar.
+- `basic.liquid` — Extends default. Simple content page with optional hero.
+- `contact.liquid` — Extends default. Contact form page with Netlify form + contact sidebar.
+- `team.liquid` — Extends default. Team member detail page.
+- `list.liquid` — Extends default. Reusable grid list page (used for services index, team index).
 
-**Adding a page:** Create a `.njk` file in `src/`. For industry verticals, set `layout: industry.njk` and populate the frontmatter fields — no HTML needed.
+**Content structure:**
+- Industry verticals: `src/_services/*.md` with `service` layout. Directory data in `_services.json` sets layout and permalink pattern.
+- Capabilities: `src/_projects/*.md` with `project` layout. Shown on homepage via projects grid.
+- Team: `src/_team/*.md` with `team` layout.
+- Pages: `src/home.md`, `src/about.md`, `src/contact.md`, `src/support.md`, `src/success.md`, `src/services.md`, `src/team.md`
+
+**Adding an industry vertical:** Create a `.md` file in `src/_services/` with frontmatter (title, description, weight, hero config). The `_services.json` handles layout and permalink automatically.
 
 **Key patterns:**
-- Industry pages are purely data-driven via frontmatter; the `industry.njk` layout handles all markup.
-- GA4 analytics are embedded in `base.njk` with funnel tracking for root entry, industry navigation, and beta form submission.
-- The `excludeFromSitemap` frontmatter flag removes pages from the generated sitemap.
-- Custom Eleventy filters: `jsonify` (JSON.stringify), `excludeFromSitemap` (filters sitemap collection).
-- Passthrough copies: `src/css` → `css`, `src/assets` → `assets`, `src/robots.txt` → `/robots.txt`.
+- All configuration is data-driven via `src/_data/site.yml` (branding, colors, features, footer, analytics).
+- Navigation is configured in `src/_data/menu.yml` (main menu, footer menus).
+- Homepage sections are controlled via frontmatter in `src/home.md` (hero, services, intro, projects, outro).
+- GA4 funnel tracking is in `src/_includes/theme/ga4-funnel.liquid`, included in default layout. Uses `ga4_id` global data from env var `GA4_ID`.
+- Dark mode toggle is built into the theme (localStorage persistence).
+- Contact form uses Netlify Forms with honeypot, form name "beta".
+- The `excludeFromSitemap` frontmatter flag removes pages from `sitemap.liquid`.
+- Custom Eleventy filters: `jsonify`, `excludeFromSitemap`, `sortByWeight`, `sortByTitle`.
 
 ## Deployment
 
-Push to `main` → Netlify auto-builds with `npx eleventy` and publishes `_site/`.
+Push to `main` → Netlify runs `npm run build` and publishes `_site/`. URL redirects from old paths (e.g., `/saas-solutions` → `/services/saas-solutions/`) are configured in `netlify.toml`.

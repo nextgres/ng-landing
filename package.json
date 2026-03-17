@@ -1,26 +1,32 @@
 {
   "name": "ng-landing",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "npm-run-all --parallel css:watch eleventy:serve",
-    "eleventy:serve": "npx eleventy --serve",
-    "build": "npx eleventy",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "css:build": "sass src/css/styles.scss:src/css/styles.css --no-source-map --style=compressed",
-    "css:watch": "sass --watch src/css/styles.scss:src/css/styles.css --no-source-map"
+    "watch:sass": "sass --watch src/_sass/style.scss:_site/assets/css/style.css",
+    "build:sass": "sass src/_sass/style.scss:_site/assets/css/style.css",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy",
+    "clean": "rm -rf _site",
+    "dev": "npm run start",
+    "start": "npm-run-all clean build:sass --parallel watch:*",
+    "build": "npm-run-all clean build:*",
+    "test": "echo \"No test specified\" && exit 0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "bootstrap": "^5.3.6",
-    "npm-run-all": "^4.1.5",
-    "sass": "^1.87.0"
-  },
+  "description": "NEXTGRES landing site",
   "dependencies": {
-    "p5": "^2.0.2"
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "markdown-it-attrs": "^4.1.6",
+    "npm-run-all": "^4.1.5",
+    "sass": "1.77.6"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "eleventy-xml-plugin": "^0.1.0"
   }
 }

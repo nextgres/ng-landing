@@ -1,0 +1,42 @@
+{% assign cards = testimonials %}
+{% assign limit = limit | default: nil %}
+{% assign sort_by = sort | default: 'date' %}
+{% assign columns = columns | default: 3 %}
+
+{% capture columns %}col-lg-{{ 12 | divided_by:columns }}{% endcapture %}
+{% assign cards = cards | sort: 'date' | 'reverse' %}
+{% if sort_by == 'weight' %}
+  {% assign cards = cards | sort: 'weight' %}
+{% endif %}
+
+<div class="testimonials">
+{% for card in cards limit: limit %}
+    {% include 'framework/testimonial',
+        headline:card.data.headline
+        quote:card.data.quote
+        avatar:card.data.avatar
+        name:card.data.name
+        twitter:card.data.twitter
+        date:card.data.date
+        weight:card.data.weight
+    %}
+{% endfor %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var macyInstance = Macy({
+            container: ".testimonials",
+            trueOrder: false,
+            waitForImages: false,
+            margin: 30,
+            columns: 3,
+            breakAt: {
+                992: 3,
+                768: 2,
+                576: 1,
+            },
+        })
+    })
+</script>

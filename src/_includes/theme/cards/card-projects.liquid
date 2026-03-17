@@ -1,0 +1,27 @@
+<div class="card card-project card-text-block">
+  <div class="card-body">
+    {% if fa_icon %}
+      <div class="card-icon">
+        <i class="{{ fa_icon }}" aria-hidden="true"></i>
+      </div>
+    {% endif %}
+    <div class="card-title">
+      <h3>{{ title }}</h3>
+    </div>
+    {% if sub_heading %}
+      <div class="card-subtitle">
+        <p>{{ sub_heading }}</p>
+      </div>
+    {% endif %}
+    {% if description %}
+      <div class="card-description">
+        {{ description | markdownify }}
+      </div>
+    {% endif %}
+    {% if url %}
+      <div class="card-link">
+        <a href="{{ url | url }}">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    {% endif %}
+  </div>
+</div>
