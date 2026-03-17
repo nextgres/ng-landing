@@ -48,7 +48,10 @@
 
 // Pill badge
 .hero-home-pill {
-  display: inline-block;
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+  }
   background: rgba(56, 170, 120, 0.15);
   border: 1px solid rgba(56, 170, 120, 0.3);
   color: #5dcaa5;
