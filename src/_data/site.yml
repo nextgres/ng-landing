@@ -6,39 +6,39 @@ category_dir: category
 
 colors:
   #light-mode colors
-  primary_bg: "#2b3af7"
-  primary_bg_2: "#424ff8"
-  primary_bg_3: "#702bf7"
-  primary_text: "#fdfcf9"
+  primary_bg: "#2260D9"
+  primary_bg_2: "#1A4DB5"
+  primary_bg_3: "#4D9FFF"
+  primary_text: "#ffffff"
   base_bg: "#ffffff"
   base_bg_2: "#f8f9ff"
   base_bg_3: "#eef2f9"
   text: "#0d042b"
   text_2: "#3b364c"
-  logo_text: "#2b3af7"
+  logo_text: "#2260D9"
   header_text: "#0d042b"
 
   # dark-mode colors
-  primary_bg_dark: "#0f1f9e"
-  primary_bg_2_dark: "#1a2fdb"
-  primary_bg_3_dark: "#2d45f0"
-  primary_text_dark: "#fdfcf9"
-  base_bg_dark: "#0f0f10"
-  base_bg_2_dark: "#1a191c"
-  base_bg_3_dark: "#222124"
-  text_dark: "#f5f5ec"
-  text_2_dark: "#b6c3d6"
+  primary_bg_dark: "#2260D9"
+  primary_bg_2_dark: "#1A4DB5"
+  primary_bg_3_dark: "#4D9FFF"
+  primary_text_dark: "#ffffff"
+  base_bg_dark: "#0D2147"
+  base_bg_2_dark: "#132B5E"
+  base_bg_3_dark: "#1E3A72"
+  text_dark: "#ffffff"
+  text_2_dark: "#A8BCD8"
   logo_text_dark: "#ffffff"
-  header_text_dark: "#f5f5ec"
+  header_text_dark: "#ffffff"
 
 fonts:
-  use_google_fonts: false
-  google_fonts_url: "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Source+Code+Pro&family=Source+Sans+3:wght@300;400;700&display=swap"
-  use_self_hosted_fonts: true
-  heading: "Lato"
-  base: "'Source Sans 3'"
+  use_google_fonts: true
+  google_fonts_url: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500;600;700&display=swap"
+  use_self_hosted_fonts: false
+  heading: "'Cormorant Garamond'"
+  base: "'Inter'"
   monospace: "'Source Code Pro'"
-  logo: "Lato"
+  logo: "'Inter'"
 
 logo:
   logo_text: "NEXTGRES"

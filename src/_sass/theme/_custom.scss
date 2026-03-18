@@ -1,3 +1,67 @@
+// =============================================
+// NEXTGRES Style Guide Overrides
+// Deep navy design system with Cormorant Garamond + Inter
+// =============================================
+
+// --- Global ---
+html, body {
+  overflow-x: hidden;
+}
+
+// --- Typography: Cormorant Garamond for H1/H2 ---
+h1, h2,
+.info-content h1,
+.info-content h2,
+.content h1,
+.content h2,
+.heading .heading-heading h1 {
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+}
+
+h1, .heading .heading-heading h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.05;
+}
+
+h2, .info-content h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+// --- Logo wordmark ---
+.logos .logo .logo-text {
+  font-size: var(--logo-text-font-size);
+  font-weight: var(--logo-text-font-weight);
+  letter-spacing: var(--logo-letter-spacing);
+  text-transform: var(--logo-text-transform);
+}
+
+// --- Buttons: pill shape, new blue ---
+.button {
+  border-radius: 50px;
+  padding: 14px 32px;
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  &.button-light {
+    background: #ffffff;
+    color: #0D2147;
+    &:hover {
+      background: #f0f0f0;
+      color: #0D2147;
+    }
+  }
+  &.button-outline.button-light {
+    background: none;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+// --- Sections ---
 .section {
   background-repeat: no-repeat;
   padding-top: var(--section-padding);
@@ -8,25 +72,44 @@
   }
 }
 
+.section-base-bg-2 {
+  background-color: var(--color-base-bg-2);
+}
+
+// --- Footer ---
 .footer {
-  background-color: var(--color-primary-bg);
+  background-color: #091A3A;
   color: var(--color-primary-text);
-  
+
   .menu-footer {
     font-size: 16px;
     a {
-      color: var(--color-primary-text);
+      color: #A8BCD8;
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+  .footer-info {
+    h2, h3 {
+      font-family: var(--font-family-base);
     }
   }
 }
 
+.bottom {
+  background-color: #091A3A;
+  color: #A8BCD8;
+}
+
+// --- Grid headers ---
 .grid-footer {
   .grid-view-more-button {
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 500;
     color: var(--color-primary-bg);
-    font-family: $font-family-base;
+    font-family: var(--font-family-base);
   }
 }
 .grid-header {
@@ -39,11 +122,7 @@
   }
 }
 
-.bottom {
-  background-color: var(--color-primary-bg-2);
-  color: var(--color-primary-text);
-}
-
+// --- Credibility logos ---
 .credibility-logos {
   .credibility-logos-image {
     max-width: 100%;
@@ -52,47 +131,52 @@
   }
 }
 
+// --- Projects / Capabilities ---
 .section-projects .row > [class*="col-"]:nth-last-child(-n+2) {
   margin-bottom: 0 !important;
 }
 .section-projects .grid-header h2 {
   text-transform: none;
-  font-size: 28px;
-  font-weight: 500;
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-family: var(--font-family-heading);
 }
 
+// --- Audience section: hide first paragraph on mobile ---
 .section-audience .info-content > div > p:first-child {
   @include media-breakpoint-down(md) {
     display: none;
   }
 }
 
+// --- Solution section: hide bullets on mobile ---
 .section-solution .info-content ul {
   @include media-breakpoint-down(md) {
     display: none;
   }
 }
 
+// --- Home page cards ---
 .page.page-home {
   .card-services {
     padding: 25px;
     background-color: var(--color-base-bg-3);
+    border: 1px solid #1E3A72;
   }
 }
 
-html, body {
-  overflow-x: hidden;
-}
-
+// --- Mobile nav: hide Solutions ---
 .menu-main-mobile .menu-item-solutions {
   display: none;
 }
 
+// --- Cost boxes ---
 .cost-boxes {
   margin-left: 0;
   margin-right: 0;
   .cost-box {
     background-color: var(--color-base-bg-3);
+    border: 1px solid #1E3A72;
     border-radius: var(--card-border-radius);
     padding: 24px;
     height: 100%;
@@ -109,6 +193,7 @@ html, body {
       letter-spacing: 0.04em;
       color: var(--color-base-text);
       margin-bottom: 10px;
+      font-family: var(--font-family-base);
     }
     p {
       font-size: 15px;
@@ -120,4 +205,9 @@ html, body {
       margin-top: 10px;
     }
   }
+}
+
+// --- Cards: border treatment ---
+.card {
+  border: 1px solid #1E3A72;
 }

@@ -19,8 +19,10 @@ permalink: "/assets/css/main.css"
   --color-base-text-2: {{ site.colors.base_text_2 | default: "#4b5563" }};
   --color-header-text:  {{ site.colors.header_text | default: "#111827" }};
   
-  --logo-text-font-size: {{ site.logo.logo_text_font_size | default: "28px" }};
-  --logo-text-font-weight: {{ site.logo.logo_text_font_weight | default: "500" }};
+  --logo-text-font-size: {{ site.logo.logo_text_font_size | default: "22px" }};
+  --logo-text-font-weight: {{ site.logo.logo_text_font_weight | default: "700" }};
+  --logo-letter-spacing: 0.12em;
+  --logo-text-transform: uppercase;
 
   --menu-font-family: {{ site.fonts.base }}, sans-serif;
   --menu-font-size: {{ site.header.header_menu_font_size }};
@@ -30,7 +32,7 @@ permalink: "/assets/css/main.css"
   --header-height: {{ site.header.header_height | default: "60px" }};
   --section-padding: 80px;
   --card-border-radius: 5px;
-  --button-border-radius: 5px;
+  --button-border-radius: 50px;
 }
 
 html[data-bs-theme='dark'] {
