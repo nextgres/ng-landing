@@ -66,12 +66,13 @@
 .hero-home-headline {
   font-family: var(--font-family-heading);
   font-size: 28px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin-bottom: 24px;
   @include media-breakpoint-up(md) {
     font-size: 48px;
+    font-weight: 400;
   }
   &--white {
     display: block;
