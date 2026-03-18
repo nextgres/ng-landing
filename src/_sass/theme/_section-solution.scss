@@ -1,6 +1,6 @@
 .section-solution {
   background: #132B5E;
-  padding: 80px 0;
+  padding: var(--section-padding) 0;
 }
 
 .section-solution-grid {
@@ -23,15 +23,16 @@
 .section-solution-headline {
   color: #fff;
   font-family: var(--font-family-heading);
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 400;
   line-height: 1.1;
+  letter-spacing: -0.01em;
   margin-bottom: 16px;
 }
 
 .section-solution-subhead {
   color: #A8BCD8;
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 20px;
   white-space: nowrap;
@@ -46,7 +47,7 @@
 
 .section-solution-body {
   color: #A8BCD8;
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 1.65;
   margin-bottom: 12px;
   &--tight {
