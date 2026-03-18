@@ -9,8 +9,8 @@
   gap: 48px;
   align-items: center;
   @include media-breakpoint-up(lg) {
-    grid-template-columns: 2fr 3fr;
-    gap: 64px;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
   }
 }
 
@@ -76,6 +76,9 @@
 .section-solution-diagram {
   position: relative;
   z-index: 1;
+  @include media-breakpoint-up(lg) {
+    margin-right: -2rem;
+  }
 }
 
 .section-solution-svg {

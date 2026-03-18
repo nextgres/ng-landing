@@ -21,85 +21,83 @@
 
       <!-- RIGHT COLUMN — Architecture Diagram -->
       <div class="section-solution-diagram">
-        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" class="section-solution-svg">
+        <svg viewBox="0 0 620 310" xmlns="http://www.w3.org/2000/svg" class="section-solution-svg">
 
           <!-- Column labels -->
-          <text x="80" y="24" text-anchor="middle" fill="#A8BCD8" font-size="12" letter-spacing="0.5" font-weight="500">YOUR EXISTING DATA</text>
-          <text x="410" y="24" text-anchor="middle" fill="#A8BCD8" font-size="12" letter-spacing="0.5" font-weight="500">NEXTGRES</text>
-          <text x="725" y="24" text-anchor="middle" fill="#A8BCD8" font-size="12" letter-spacing="0.5" font-weight="500">WHAT YOUR USERS SEE</text>
+          <text x="65" y="20" text-anchor="middle" fill="#ffffff" font-size="11" letter-spacing="0.5" font-weight="600">YOUR DATA</text>
+          <text x="310" y="20" text-anchor="middle" fill="#ffffff" font-size="11" letter-spacing="0.5" font-weight="600">NEXTGRES</text>
+          <text x="545" y="20" text-anchor="middle" fill="#ffffff" font-size="11" letter-spacing="0.5" font-weight="600">WHAT USERS SEE</text>
 
           <!-- ====== LEFT COLUMN: Data source cards ====== -->
 
           <!-- SQL databases -->
-          <rect x="5" y="50" width="150" height="64" rx="8" fill="#132B5E" stroke="#1E3A72" stroke-width="1"/>
-          <text x="20" y="76" fill="#fff" font-size="14" font-weight="500">SQL databases</text>
-          <text x="20" y="94" fill="#A8BCD8" font-size="12">Postgres, MySQL, etc.</text>
+          <rect x="0" y="40" width="130" height="60" rx="8" fill="#0D2147" stroke="#2A4A80" stroke-width="1"/>
+          <text x="14" y="64" fill="#fff" font-size="14" font-weight="500">SQL databases</text>
+          <text x="14" y="82" fill="#C0D0E8" font-size="12">Postgres, MySQL</text>
 
           <!-- NoSQL stores -->
-          <rect x="5" y="134" width="150" height="64" rx="8" fill="#132B5E" stroke="#1E3A72" stroke-width="1"/>
-          <text x="20" y="160" fill="#fff" font-size="14" font-weight="500">NoSQL stores</text>
-          <text x="20" y="178" fill="#A8BCD8" font-size="12">Mongo, DynamoDB, etc.</text>
+          <rect x="0" y="118" width="130" height="60" rx="8" fill="#0D2147" stroke="#2A4A80" stroke-width="1"/>
+          <text x="14" y="142" fill="#fff" font-size="14" font-weight="500">NoSQL stores</text>
+          <text x="14" y="160" fill="#C0D0E8" font-size="12">Mongo, Dynamo</text>
 
           <!-- Event streams -->
-          <rect x="5" y="218" width="150" height="64" rx="8" fill="#132B5E" stroke="#1E3A72" stroke-width="1"/>
-          <text x="20" y="244" fill="#fff" font-size="14" font-weight="500">Event streams</text>
-          <text x="20" y="262" fill="#A8BCD8" font-size="12">Kafka, Kinesis, etc.</text>
+          <rect x="0" y="196" width="130" height="60" rx="8" fill="#0D2147" stroke="#2A4A80" stroke-width="1"/>
+          <text x="14" y="220" fill="#fff" font-size="14" font-weight="500">Event streams</text>
+          <text x="14" y="238" fill="#C0D0E8" font-size="12">Kafka, Kinesis</text>
 
           <!-- ====== Arrows: Left → Center ====== -->
           <defs>
-            <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-              <path d="M0,0 L8,4 L0,8 Z" fill="rgba(77,159,255,0.5)"/>
+            <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L8,4 L0,8 Z" fill="#4D9FFF"/>
             </marker>
           </defs>
 
           <!-- Top source → center -->
-          <line x1="155" y1="82" x2="300" y2="136" stroke="rgba(77,159,255,0.3)" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <line x1="130" y1="70" x2="218" y2="118" stroke="rgba(77,159,255,0.5)" stroke-width="1.5" marker-end="url(#arrow)"/>
           <!-- Middle source → center -->
-          <line x1="155" y1="166" x2="300" y2="166" stroke="rgba(77,159,255,0.3)" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <line x1="130" y1="148" x2="218" y2="148" stroke="rgba(77,159,255,0.5)" stroke-width="1.5" marker-end="url(#arrow)"/>
           <!-- Bottom source → center -->
-          <line x1="155" y1="250" x2="300" y2="196" stroke="rgba(77,159,255,0.3)" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <line x1="130" y1="226" x2="218" y2="178" stroke="rgba(77,159,255,0.5)" stroke-width="1.5" marker-end="url(#arrow)"/>
 
           <!-- ====== CENTER: NEXTGRES layer ====== -->
-          <rect x="305" y="96" width="210" height="140" rx="10" fill="#132B5E" stroke="rgba(34,96,217,0.5)" stroke-width="1.5"/>
+          <rect x="224" y="78" width="172" height="140" rx="10" fill="#0D2147" stroke="#2260D9" stroke-width="1.5"/>
 
-          <text x="410" y="135" text-anchor="middle" fill="#fff" font-size="16" font-weight="600">Virtualization layer</text>
+          <text x="310" y="138" text-anchor="middle" fill="#fff" font-size="18" font-weight="600">Virtualization</text>
+          <line x1="252" y1="148" x2="368" y2="148" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <text x="310" y="165" text-anchor="middle" fill="#C0D0E8" font-size="13">Unified Data Engine</text>
+          <text x="310" y="183" text-anchor="middle" fill="#C0D0E8" font-size="13">Personalization Platform</text>
 
-          <line x1="325" y1="150" x2="495" y2="150" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-
-          <text x="410" y="175" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="12">Read-only · Schema-agnostic</text>
-          <text x="410" y="195" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="12">Sub-second inference</text>
-
-          <!-- Pulsing green dot -->
-          <circle cx="322" cy="220" r="3" fill="#5DCAA5" class="section-solution-pulse"/>
+          <!-- Pulsing dot -->
+          <circle cx="242" cy="200" r="3.5" fill="#5DCAA5" class="section-solution-pulse"/>
 
           <!-- ====== Arrows: Center → Right ====== -->
 
           <!-- Center → top output -->
-          <line x1="515" y1="136" x2="640" y2="82" stroke="rgba(77,159,255,0.3)" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <line x1="396" y1="118" x2="462" y2="70" stroke="rgba(77,159,255,0.5)" stroke-width="1.5" marker-end="url(#arrow)"/>
           <!-- Center → middle output -->
-          <line x1="515" y1="166" x2="640" y2="166" stroke="rgba(77,159,255,0.3)" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <line x1="396" y1="148" x2="462" y2="148" stroke="rgba(77,159,255,0.5)" stroke-width="1.5" marker-end="url(#arrow)"/>
           <!-- Center → bottom output -->
-          <line x1="515" y1="196" x2="640" y2="250" stroke="rgba(77,159,255,0.3)" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <line x1="396" y1="178" x2="462" y2="226" stroke="rgba(77,159,255,0.5)" stroke-width="1.5" marker-end="url(#arrow)"/>
 
           <!-- ====== RIGHT COLUMN: Output cards ====== -->
 
           <!-- Recommendations -->
-          <rect x="645" y="50" width="165" height="64" rx="8" fill="#E6F1FB" stroke="#85B7EB" stroke-width="1"/>
-          <text x="727" y="76" text-anchor="middle" fill="#0C447C" font-size="14" font-weight="500">Recommendations</text>
-          <text x="727" y="94" text-anchor="middle" fill="#0C447C" font-size="12" opacity="0.7">Personalized per user</text>
+          <rect x="468" y="40" width="150" height="60" rx="8" fill="#E6F1FB" stroke="#85B7EB" stroke-width="1"/>
+          <text x="543" y="64" text-anchor="middle" fill="#0C447C" font-size="14" font-weight="500">Recommendations</text>
+          <text x="543" y="82" text-anchor="middle" fill="#0C447C" font-size="12" opacity="0.8">Personalized per user</text>
 
           <!-- Content -->
-          <rect x="645" y="134" width="165" height="64" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="1"/>
-          <text x="727" y="160" text-anchor="middle" fill="#085041" font-size="14" font-weight="500">Content</text>
-          <text x="727" y="178" text-anchor="middle" fill="#085041" font-size="12" opacity="0.7">Tailored in real time</text>
+          <rect x="468" y="118" width="150" height="60" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="1"/>
+          <text x="543" y="142" text-anchor="middle" fill="#085041" font-size="14" font-weight="500">Content</text>
+          <text x="543" y="160" text-anchor="middle" fill="#085041" font-size="12" opacity="0.8">Tailored in real time</text>
 
           <!-- Search -->
-          <rect x="645" y="218" width="165" height="64" rx="8" fill="#FEF3E2" stroke="#F0B95A" stroke-width="1"/>
-          <text x="727" y="244" text-anchor="middle" fill="#7A5A1E" font-size="14" font-weight="500">Search</text>
-          <text x="727" y="262" text-anchor="middle" fill="#7A5A1E" font-size="12" opacity="0.7">Ranked individually</text>
+          <rect x="468" y="196" width="150" height="60" rx="8" fill="#FEF3E2" stroke="#F0B95A" stroke-width="1"/>
+          <text x="543" y="220" text-anchor="middle" fill="#7A5A1E" font-size="14" font-weight="500">Search</text>
+          <text x="543" y="238" text-anchor="middle" fill="#7A5A1E" font-size="12" opacity="0.8">Ranked individually</text>
 
           <!-- Bottom annotation -->
-          <text x="410" y="340" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="12">No pipelines. No warehouse. Just the signals that matter.</text>
+          <text x="310" y="295" text-anchor="middle" fill="#A8BCD8" font-size="13">No pipelines. No warehouse. Just the signals that matter.</text>
 
         </svg>
       </div>
