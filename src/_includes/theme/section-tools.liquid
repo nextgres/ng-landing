@@ -1,0 +1,138 @@
+<section class="section-tools">
+  <div class="container">
+
+    <div class="section-tools-header">
+      <span class="section-tools-eyebrow">Your personalization cockpit</span>
+      <h2 class="section-tools-heading">See everything. Control everything. Explain everything.</h2>
+    </div>
+
+    <!-- Mobile pills -->
+    <div class="section-tools-pills">
+      <button class="section-tools-pill active" onclick="switchToolTab(0)">Preview Experiences</button>
+      <button class="section-tools-pill" onclick="switchToolTab(1)">Observe Outcomes</button>
+      <button class="section-tools-pill" onclick="switchToolTab(2)">Build Audiences</button>
+      <button class="section-tools-pill" onclick="switchToolTab(3)">Transport Preferences</button>
+      <button class="section-tools-pill" onclick="switchToolTab(4)">Explain Decisions</button>
+      <button class="section-tools-pill" onclick="switchToolTab(5)">Cold Starts</button>
+    </div>
+
+    <!-- Tabbed component -->
+    <div class="section-tools-tabbed">
+
+      <!-- Tab list (desktop) -->
+      <div class="section-tools-tabs">
+
+        <span class="section-tools-group section-tools-group--first">See</span>
+
+        <button class="section-tools-tab active" onclick="switchToolTab(0)">
+          <span class="section-tools-tab-name">Preview Experiences</span>
+          <span class="section-tools-tab-hint">Ship with confidence</span>
+        </button>
+        <button class="section-tools-tab" onclick="switchToolTab(1)">
+          <span class="section-tools-tab-name">Observe Outcomes</span>
+          <span class="section-tools-tab-hint">Catch drift early</span>
+        </button>
+
+        <span class="section-tools-group">Control</span>
+
+        <button class="section-tools-tab" onclick="switchToolTab(2)">
+          <span class="section-tools-tab-name">Build Audiences</span>
+          <span class="section-tools-tab-hint">Ask a question, get an audience</span>
+        </button>
+        <button class="section-tools-tab" onclick="switchToolTab(3)">
+          <span class="section-tools-tab-name">Transport Preferences</span>
+          <span class="section-tools-tab-hint">One user, every touchpoint</span>
+        </button>
+
+        <span class="section-tools-group">Explain</span>
+
+        <button class="section-tools-tab" onclick="switchToolTab(4)">
+          <span class="section-tools-tab-name">Explain Decisions</span>
+          <span class="section-tools-tab-hint">Defend every decision</span>
+        </button>
+        <button class="section-tools-tab" onclick="switchToolTab(5)">
+          <span class="section-tools-tab-name">Optimize Cold Starts</span>
+          <span class="section-tools-tab-hint">Personalize from click one</span>
+        </button>
+
+      </div>
+
+      <!-- Content panels -->
+      <div class="section-tools-panels">
+        <div class="section-tools-panel active">
+          <div class="section-tools-screenshot">
+            <span class="section-tools-placeholder">Screenshot</span>
+          </div>
+          <div class="section-tools-panel-text">
+            See what every audience will experience before anything goes live. Pressure-test variants on current data, then ship with confidence.
+          </div>
+        </div>
+
+        <div class="section-tools-panel">
+          <div class="section-tools-screenshot">
+            <span class="section-tools-placeholder">Screenshot</span>
+          </div>
+          <div class="section-tools-panel-text">
+            Track signal drift, model underperformance, and stale recommendations as they happen. Catch problems before your users feel them.
+          </div>
+        </div>
+
+        <div class="section-tools-panel">
+          <div class="section-tools-screenshot">
+            <span class="section-tools-placeholder">Screenshot</span>
+          </div>
+          <div class="section-tools-panel-text">
+            Type "who's about to churn?" and get a live audience inferred from real-time behavioral signals. Update it in seconds as your strategy shifts.
+          </div>
+        </div>
+
+        <div class="section-tools-panel">
+          <div class="section-tools-screenshot">
+            <span class="section-tools-placeholder">Screenshot</span>
+          </div>
+          <div class="section-tools-panel-text">
+            Preferences learned in one context carry across your entire product. A user who browses on mobile, converts on desktop, and re-engages via email is one continuous profile — not three strangers.
+          </div>
+        </div>
+
+        <div class="section-tools-panel">
+          <div class="section-tools-screenshot">
+            <span class="section-tools-placeholder">Screenshot</span>
+          </div>
+          <div class="section-tools-panel-text">
+            Trace every recommendation back to the specific signals that drove it. Give your team a defensible answer for any decision, in plain language.
+          </div>
+        </div>
+
+        <div class="section-tools-panel">
+          <div class="section-tools-screenshot">
+            <span class="section-tools-placeholder">Screenshot</span>
+          </div>
+          <div class="section-tools-panel-text">
+            New users get personalized experiences from their very first click. NEXTGRES builds synthetic personas from your existing user base — no behavioral history required.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-tools-cta">
+      <a href="#demo" class="section-tools-link">See the product in action &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function switchToolTab(idx) {
+  document.querySelectorAll('.section-tools-tab').forEach(function(t, i) {
+    t.classList.toggle('active', i === idx);
+  });
+  document.querySelectorAll('.section-tools-pill').forEach(function(p, i) {
+    p.classList.toggle('active', i === idx);
+  });
+  document.querySelectorAll('.section-tools-panel').forEach(function(p, i) {
+    p.classList.toggle('active', i === idx);
+  });
+}
+</script>

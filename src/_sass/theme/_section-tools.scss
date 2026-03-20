@@ -1,0 +1,213 @@
+.section-tools {
+  padding: var(--section-padding) 0;
+}
+
+// Header
+.section-tools-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-tools-eyebrow {
+  display: block;
+  font-family: var(--font-family-base);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #A8BCD8;
+  margin-bottom: 16px;
+}
+
+.section-tools-heading {
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.25;
+  color: #fff;
+  margin: 0;
+}
+
+// =============================================
+// Mobile pills (visible < md)
+// =============================================
+.section-tools-pills {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar { display: none; }
+  margin-bottom: 16px;
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.section-tools-pill {
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: #A8BCD8;
+  flex-shrink: 0;
+  transition: background 150ms ease, color 150ms ease;
+  &.active {
+    background: rgba(93, 202, 165, 0.12);
+    color: #5DCAA5;
+  }
+}
+
+// =============================================
+// Tabbed component
+// =============================================
+.section-tools-tabbed {
+  background: #0D2147;
+  border: 1px solid #1E3A72;
+  border-radius: var(--card-border-radius, 12px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
+}
+
+// =============================================
+// Tab list (desktop, hidden on mobile)
+// =============================================
+.section-tools-tabs {
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    flex-shrink: 0;
+    border-right: 1px solid #1E3A72;
+  }
+}
+
+// Group labels
+.section-tools-group {
+  display: block;
+  font-family: var(--font-family-base);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(168, 188, 216, 0.7);
+  padding: 16px 18px 6px;
+  &--first {
+    padding-top: 10px;
+  }
+}
+
+// Tab items
+.section-tools-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 18px;
+  border: none;
+  border-left: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background 150ms ease, border-color 150ms ease;
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+  &.active {
+    border-left-color: #5DCAA5;
+    background: rgba(255, 255, 255, 0.04);
+    .section-tools-tab-name {
+      color: #5DCAA5;
+    }
+  }
+}
+
+.section-tools-tab-name {
+  font-family: var(--font-family-base);
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 2px;
+  transition: color 150ms ease;
+}
+
+.section-tools-tab-hint {
+  font-family: var(--font-family-base);
+  font-size: 12px;
+  font-weight: 400;
+  color: #A8BCD8;
+}
+
+// =============================================
+// Content panels
+// =============================================
+.section-tools-panels {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-tools-panel {
+  display: none;
+  &.active {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+// Screenshot zone
+.section-tools-screenshot {
+  flex: 1;
+  min-height: 260px;
+  background: #132B5E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-tools-placeholder {
+  font-size: 13px;
+  color: #A8BCD8;
+  opacity: 0.5;
+}
+
+// Panel text
+.section-tools-panel-text {
+  padding: 14px 20px 20px;
+  font-family: var(--font-family-base);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #fff;
+}
+
+// =============================================
+// CTA link
+// =============================================
+.section-tools-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.section-tools-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4D9FFF;
+  text-decoration: none;
+  &:hover {
+    color: #7AB8FF;
+    text-decoration: none;
+  }
+}

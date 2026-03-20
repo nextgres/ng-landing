@@ -17,6 +17,38 @@ body_classes: page-home
   {% include "theme/section-metrics" %}
 {% endif %}
 
+{% comment %} TOOLS SECTION {% endcomment %}
+{% if tools.enabled %}
+  {% include "theme/section-tools" %}
+{% endif %}
+
+{% comment %} CREDIBILITY SECTION {% endcomment %}
+{% if credibility.enabled %}
+  <div class="section section-base-bg-2">
+    <div class="container">
+      <div class="info">
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-md-10">
+            <div class="info-content">
+              <h2>{{ credibility.heading }}</h2>
+              {% if credibility.sub_heading %}
+                <div class="mt-1 mx-auto d-none d-md-block">{{ credibility.sub_heading | markdownify }}</div>
+              {% endif %}
+            </div>
+          </div>
+          {% if credibility.logos_image %}
+            <div class="col-12 col-md-10 mt-4">
+              <div class="credibility-logos text-center">
+                <img src="{{ credibility.logos_image | url }}" alt="Brand logos" class="credibility-logos-image img-fluid" />
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
 {% comment %} PROBLEM SECTION {% endcomment %}
 {% if problem.enabled %}
   <div class="section">
@@ -86,7 +118,7 @@ body_classes: page-home
 
 {% comment %} VIDEO + CTA SECTION {% endcomment %}
 {% if video.enabled %}
-  <div class="section section-base-bg-2" id="demo">
+  <div class="section" id="demo">
     <div class="container">
       <div class="info">
         <div class="row justify-content-center text-center">
@@ -117,36 +149,9 @@ body_classes: page-home
   {% include "theme/section-solution" %}
 {% endif %}
 
-{% comment %} CREDIBILITY SECTION {% endcomment %}
-{% if credibility.enabled %}
-  <div class="section section-base-bg-2">
-    <div class="container">
-      <div class="info">
-        <div class="row justify-content-center text-center">
-          <div class="col-12 col-md-10">
-            <div class="info-content">
-              <h2>{{ credibility.heading }}</h2>
-              {% if credibility.sub_heading %}
-                <div class="mt-1 mx-auto d-none d-md-block">{{ credibility.sub_heading | markdownify }}</div>
-              {% endif %}
-            </div>
-          </div>
-          {% if credibility.logos_image %}
-            <div class="col-12 col-md-10 mt-4">
-              <div class="credibility-logos text-center">
-                <img src="{{ credibility.logos_image | url }}" alt="Brand logos" class="credibility-logos-image img-fluid" />
-              </div>
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </div>
-{% endif %}
-
 {% comment %} AUDIENCE SECTION {% endcomment %}
 {% if audience.enabled %}
-  <div class="section section-audience">
+  <div class="section section-base-bg-2 section-audience">
     <div class="container">
       {% include "framework/info",
         heading:audience.heading

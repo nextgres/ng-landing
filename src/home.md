@@ -45,6 +45,9 @@ timeline:
 metrics:
   enabled: true
 
+tools:
+  enabled: true
+
 problem:
   enabled: false
   align: center
@@ -86,7 +89,7 @@ problem:
     enabled: false
 
 solution:
-  enabled: true
+  enabled: false
   align: left
   image: "/assets/images/hero-image.png"
   heading: "Your data is already enough."
@@ -109,7 +112,7 @@ solution:
     enabled: false
 
 projects:
-  enabled: true
+  enabled: false
   heading: "Segmentation optimizes for the average. NEXTGRES optimizes for the individual."
   sub_heading: |
     Personalization used to mean back-and-forth with analytics, data science, and engineering. NEXTGRES eliminates that — putting personalization directly in your hands using conversational AI. Define audiences, preview experiences, and understand every decision in plain language. No tickets. No waiting. No guesswork.
@@ -130,13 +133,9 @@ audience:
   enabled: true
   align: center
   image: false
-  heading: "You own personalization. We give you the tools to prove it."
+  heading: "Your first pilot takes hours, not months."
   sub_heading: |
-    You're responsible for conversion, retention, and engagement. But you depend on data you don't fully control, built on pipelines you didn't design, producing results you can't always explain.
-
-    NEXTGRES puts the engine and the answers in your hands. No tickets. No waiting. No guesswork.
-
-    *We're currently onboarding a select group of teams for hands-on pilots. No lengthy sales process. No commitment required.*
+    We're onboarding a select group of product and growth teams. Connect to your existing data and see personalized recommendations the same day.
   buttons:
     enabled: true
     list:
