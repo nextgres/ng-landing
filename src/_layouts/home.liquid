@@ -7,6 +7,11 @@ body_classes: page-home
   {% include "theme/hero-home" %}
 {% endif %}
 
+{% comment %} TIMELINE SECTION {% endcomment %}
+{% if timeline.enabled %}
+  {% include "theme/section-timeline" %}
+{% endif %}
+
 {% comment %} PROBLEM SECTION {% endcomment %}
 {% if problem.enabled %}
   <div class="section">

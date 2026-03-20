@@ -39,8 +39,11 @@ hero:
         outline: false
         style: "light"
 
-problem:
+timeline:
   enabled: true
+
+problem:
+  enabled: false
   align: center
   image: false
   heading: "Personalization delayed is customers lost."
