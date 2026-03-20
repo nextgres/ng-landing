@@ -1,0 +1,124 @@
+.section-metrics {
+  background-color: var(--color-base-bg-2);
+  padding: var(--section-padding) 0;
+}
+
+// Header
+.section-metrics-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-metrics-eyebrow {
+  display: block;
+  font-family: var(--font-family-base);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #A8BCD8;
+  margin-bottom: 16px;
+}
+
+.section-metrics-heading {
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.25;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.section-metrics-claim {
+  font-size: 15px;
+  color: #A8BCD8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// Card grid — uses subgrid so card internals align across columns
+.section-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto 1fr auto auto; // header, pain (flexible), divider, resolution
+    column-gap: 16px;
+    row-gap: 0;
+  }
+}
+
+// Cards — on desktop, each card becomes a subgrid spanning 4 rows
+.section-metrics-card {
+  background: #0D2147;
+  border: 1px solid #1E3A72;
+  border-radius: var(--card-border-radius, 12px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+  }
+}
+
+// Card header (label + future metric number)
+.section-metrics-card-header {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+    align-self: start;
+  }
+}
+
+.section-metrics-label {
+  display: block;
+  font-family: var(--font-family-base);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #A8BCD8;
+}
+
+// Pain paragraph
+.section-metrics-pain {
+  padding-top: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #A8BCD8;
+  margin: 0;
+  @include media-breakpoint-up(md) {
+    align-self: start;
+  }
+}
+
+// Divider
+.section-metrics-divider {
+  border: none;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+  margin: 16px 0;
+  @include media-breakpoint-up(md) {
+    align-self: center;
+  }
+}
+
+// Resolution paragraph
+.section-metrics-resolution {
+  border-left: 2px solid #5DCAA5;
+  padding-left: 12px;
+  @include media-breakpoint-up(md) {
+    align-self: start;
+  }
+  p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: #fff;
+    margin: 0;
+  }
+}

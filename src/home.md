@@ -42,6 +42,9 @@ hero:
 timeline:
   enabled: true
 
+metrics:
+  enabled: true
+
 problem:
   enabled: false
   align: center
