@@ -125,7 +125,7 @@ projects:
 
 credibility:
   enabled: true
-  heading: "Built by practitioners, not theorists."
+  heading: "Built by practitioners, <span style='color: #4D9FFF'>not theorists.</span>"
   sub_heading: "We've built and scaled personalization systems serving hundreds of millions of users\n\nbehind the scenes at some of the world's most recognized brands."
   logos_image: "/assets/images/icons/allicons.png"
 
@@ -133,7 +133,7 @@ audience:
   enabled: true
   align: center
   image: false
-  heading: "Your first pilot takes hours, not months."
+  heading: "Your first pilot takes <span style='color: #4D9FFF'>hours, not months.</span>"
   sub_heading: |
     We're onboarding a select group of product and growth teams. Connect to your existing data and see personalized recommendations the same day.
   buttons:
@@ -154,7 +154,7 @@ services:
 
 video:
   enabled: true
-  heading: "See what owning personalization actually looks like."
+  heading: "See what <span style='color: #4D9FFF'>owning personalization</span> actually looks like."
   sub_heading: "Watch how growth and product teams use NEXTGRES to define audiences in natural language, simulate experiences before they go live, and understand every recommendation — without a single engineering ticket."
   youtube_id: "69fLHvNNCBU"
 
