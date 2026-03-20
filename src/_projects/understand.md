@@ -2,7 +2,7 @@
 title: "Explainable Personalization"
 description: "Ask why any recommendation was made and get a real answer. No black box. No guessing. The explainability your team needs to own every decision — and defend it to anyone who asks.\n\n*Give your team a defensible answer for every recommendation, in plain language.*"
 date: 2025-01-01
-weight: 5
+weight: 3
 header_transparent: false
 thumbnail: "/assets/images/hero-image.png"
 image: "/assets/images/hero-image.png"

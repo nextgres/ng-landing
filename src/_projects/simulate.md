@@ -2,7 +2,7 @@
 title: "Experience Preview"
 description: "Preview what every audience will see before anything goes live. Test variants, pressure-test segments, and ship with confidence — without running a single live experiment you can't take back.\n\n*Preview audience experiences before launch — no live experiment required.*"
 date: 2025-01-02
-weight: 4
+weight: 1
 header_transparent: false
 thumbnail: "/assets/images/hero-image.png"
 image: "/assets/images/hero-image.png"

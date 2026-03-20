@@ -2,7 +2,7 @@
 title: "Recommendation Observability"
 description: "See exactly what your recommendation engine is doing in real time. Track the signals behind every recommendation and catch underperformance before your users do.\n\n*Catch recommendation drift before it shows up in your retention numbers.*"
 date: 2025-01-03
-weight: 3
+weight: 2
 header_transparent: false
 thumbnail: "/assets/images/hero-image.png"
 image: "/assets/images/hero-image.png"
