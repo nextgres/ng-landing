@@ -3,7 +3,7 @@ layout: basic
 title: "About NEXTGRES"
 header_transparent: true
 permalink: "/about/"
-description: "NEXTGRES delivers real-time personalization at scale — no data pipelines, no AI/ML team, no year-long implementation."
+description: "NEXTGRES delivers real-time personalization at scale — no new pipelines, no AI/ML team, no six-month implementation."
 
 hero:
   enabled: true
@@ -22,7 +22,7 @@ hero:
 
 ## Why We Built NEXTGRES
 
-Every team we've worked with hits the same wall. They decide to make personalization a priority, then realize their data is siloed, their ML infrastructure doesn't exist, and the vendors who promise to help need a year and seven figures to get started.
+Every team we've worked with hits the same wall. They decide to make personalization a priority, then realize their data is spread across five systems, their engineering backlog is six months deep, and the ML infrastructure they need doesn't exist yet.
 
 We've been on both sides of that wall. We've built personalization systems from scratch — at scale, under pressure, with real users. We know what works, what breaks, and what never should have been that hard in the first place.
 
@@ -30,19 +30,19 @@ NEXTGRES is the product we wished existed every time we had to build one from no
 
 ## What NEXTGRES Does
 
-NEXTGRES connects to your existing data and acts on what each customer does the moment they do it. No data pipelines. No AI/ML team. No year-long implementation.
+NEXTGRES connects read-only to your existing databases and event streams, determines which behavioral signals matter, and ingests only what's needed. No new pipelines. No AI/ML team. No engineering dependency.
 
-- Connects instantly to your existing data stack
-- Transforms raw events into AI-ready profiles in real time
-- Delivers personalized experiences via a single API
+- Connects to your existing data — read-only, schema-agnostic
+- Determines the right signals and acts on them in real time
+- Gives product and growth teams tools to preview, observe, explain, and control personalization directly
 
-What once took a dedicated team and a year, NEXTGRES delivers in hours.
+What once took four teams and six months, NEXTGRES delivers in hours.
 
 ## Our Team
 
-Jonah Harris (Co-Founder & CEO) built the personalization systems behind hundreds of millions of users at ParshipMeet and Noom — systems that outperformed TikTok's Monolith recommender. He served as CTO of MariaDB and The Meet Group, was a founding engineer at EnterpriseDB, and was instrumental in adding Oracle compatibility to IBM DB2.
+Jonah Harris (Co-Founder & CEO) built the personalization systems behind hundreds of millions of users at ParshipMeet and Noom — systems that outperformed TikTok's Monolith recommender. He served as CTO of MariaDB and The Meet Group, was a founding engineer at EnterpriseDB, and was instrumental in adding Oracle compatibility to IBM DB2. He is a member of the Oracle OakTable Network and a longstanding Postgres contributor.
 
-Joe Cotellese (Co-Founder & CPO) is a product and commercial executive who has scaled platforms serving over 1M daily active users, managed $40M+ in SaaS product portfolios, and been part of teams responsible for more than $275M in successful exits.
+Joe Cotellese (Co-Founder & CPO) is a product and commercial executive who has scaled platforms serving over 1M daily active users, managed $40M+ in SaaS product portfolios, and been part of teams responsible for more than $275M in successful exits. Over 20 years in leadership he has specialized in go-to-market strategy, portfolio management, and operational restructuring within high-growth and turnaround environments.
 
 Together they were part of the turnaround team that restructured MariaDB from a $52M loss to profitability and a $100M+ exit.
 

@@ -4,8 +4,36 @@ title: "How It Works"
 description: "NEXTGRES doesn't replace your infrastructure. It sits on top of it. One virtualization layer connects to your existing data sources and acts on behavioral signals in real time."
 permalink: "/how-it-works/"
 body_classes: page-basic
+header_transparent: true
 hero:
-  enabled: false
+  enabled: true
+  heading: "How It Works"
+  text_color: "#FFFFFF"
+  background_color: "#1d2830"
+  background_gradient: true
+  background_image: false
+  background_image_blend_mode: false
+  fullscreen_mobile: false
+  fullscreen_desktop: false
+  height: "180px"
+  buttons:
+    enabled: false
 ---
+
+{% if hero.enabled %}
+  {% include "framework/hero",
+    heading:hero.heading
+    sub_heading:hero.sub_heading
+    text_color:hero.text_color
+    background_image:hero.background_image
+    background_image_blend_mode:hero.background_image_blend_mode
+    background_color:hero.background_color
+    background_gradient:hero.background_gradient
+    fullscreen_mobile:hero.fullscreen_mobile
+    fullscreen_desktop:hero.fullscreen_desktop
+    height:hero.height
+    buttons:hero.buttons
+  %}
+{% endif %}
 
 {% include "theme/section-solution" %}
