@@ -1,0 +1,202 @@
+// =============================================
+// Brochure Landing Page — /pgapr2026/
+// =============================================
+
+// --- Tighter section padding for brochure density ---
+.page-brochure .section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  @include media-breakpoint-up(md) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+// --- Shared elements ---
+
+.section-brochure-eyebrow {
+  display: block;
+  font-family: var(--font-family-base);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #A8BCD8;
+  margin-bottom: 12px;
+}
+
+.section-brochure-heading {
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.25;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+// --- Compatibility section ---
+
+.section-brochure-compat-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+  }
+}
+
+.section-brochure-compat-copy {
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #A8BCD8;
+    margin-bottom: 0.75rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.section-brochure-compat-badges-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.section-brochure-compat-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.section-brochure-compat-badge {
+  display: inline-flex;
+  align-items: center;
+  background: #1E3A72;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-family: var(--font-family-base);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  white-space: nowrap;
+}
+
+// --- Data Models section ---
+
+.section-brochure-models-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.section-brochure-model-card {
+  background: #0D2147;
+  border: 1px solid #1E3A72;
+  border-radius: var(--card-border-radius, 12px);
+  padding: 20px;
+  .section-brochure-model-name {
+    display: block;
+    font-family: var(--font-family-base);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #A8BCD8;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: #fff;
+    margin: 0;
+  }
+}
+
+// --- Performance section ---
+
+.section-brochure-perf-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.section-brochure-perf-card {
+  background: #0D2147;
+  border: 1px solid #1E3A72;
+  border-radius: var(--card-border-radius, 12px);
+  padding: 20px;
+  h3 {
+    font-family: var(--font-family-base);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: #A8BCD8;
+    margin: 0;
+  }
+}
+
+// --- Curated section ---
+
+.section-brochure-curated {
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #A8BCD8;
+    margin-bottom: 0.75rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.section-brochure-curated-closer {
+  margin-top: 1.25rem;
+  font-size: 1.0625rem;
+  color: #fff !important;
+  line-height: 1.5;
+}
+
+// --- Final CTA section ---
+
+.section-brochure-cta {
+  .section-brochure-heading {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+  .button-primary {
+    background: var(--color-primary-bg);
+    color: #fff;
+    border-radius: 50px;
+    padding: 14px 32px;
+    font-family: var(--font-family-base);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    &:hover {
+      background: var(--color-primary-bg-2);
+    }
+  }
+}
+
+// --- Hero mobile adjustment ---
+.page-brochure .hero {
+  @include media-breakpoint-down(md) {
+    min-height: 320px !important;
+  }
+}
