@@ -1,0 +1,146 @@
+---
+layout: default
+title: "Postgres Reimagined"
+description: "One Engine. Every Workload. Batteries Included. The last Postgres distribution you'll ever deploy."
+permalink: "/pgapr2026/"
+body_classes: page-basic page-brochure
+header_transparent: true
+excludeFromSitemap: true
+meta_title: "NEXTGRES | Postgres Reimagined"
+hero:
+  enabled: true
+  heading: "Postgres <span style='color: #4D9FFF'>Reimagined.</span>"
+  sub_heading: "One Engine. Every Workload. Batteries Included.<br><span style='font-size: 1.1rem; color: #A8BCD8;'>The last Postgres distribution you'll ever deploy.</span>"
+  text_color: "#FFFFFF"
+  background_color: "#091A3A"
+  background_gradient: false
+  fullscreen_mobile: false
+  fullscreen_desktop: false
+  height: "420px"
+  buttons:
+    enabled: true
+    list:
+      - text: "Schedule a Demo"
+        url: "/contact/?utm_source=brochure&utm_medium=qr&utm_campaign=pgapr2026"
+        external: false
+        size: large
+        outline: false
+        style: "light"
+---
+
+{% include "framework/hero",
+  heading:hero.heading
+  sub_heading:hero.sub_heading
+  text_color:hero.text_color
+  background_color:hero.background_color
+  background_gradient:hero.background_gradient
+  fullscreen_mobile:hero.fullscreen_mobile
+  fullscreen_desktop:hero.fullscreen_desktop
+  height:hero.height
+  buttons:hero.buttons
+%}
+
+{% comment %} PERFORMANCE — Predictable Performance At Scale {% endcomment %}
+<section class="section section-brochure-perf">
+  <div class="container">
+    <span class="section-brochure-eyebrow">Performance</span>
+    <h2 class="section-brochure-heading">Predictable performance, <span style="color: #4D9FFF">at scale.</span></h2>
+    <div class="section-brochure-perf-grid">
+      <div class="section-brochure-perf-card">
+        <h3>Modern Storage Engine</h3>
+        <p>A storage engine that replaces Postgres's aging heap. No bloat. No wraparound. No VACUUM emergencies.</p>
+      </div>
+      <div class="section-brochure-perf-card">
+        <h3>Dynamic Auto-Tuning</h3>
+        <p>Automatically adjusts configuration for analytical and transactional workloads in real time. No manual tuning. No separate OLAP cluster.</p>
+      </div>
+      <div class="section-brochure-perf-card">
+        <h3>Compiled Procedural Language</h3>
+        <p>Stored procedures compiled to optimized native code — not interpreted at runtime like standard PL/pgSQL.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} DATA MODELS — Every Data Model, One Database {% endcomment %}
+<section class="section section-base-bg-2 section-brochure-models">
+  <div class="container">
+    <span class="section-brochure-eyebrow">Multi-Model</span>
+    <h2 class="section-brochure-heading">Every data model, <span style="color: #4D9FFF">one database.</span></h2>
+    <div class="section-brochure-models-grid">
+      <div class="section-brochure-model-card">
+        <span class="section-brochure-model-name">Vector</span>
+        <p>AI search, embeddings, similarity</p>
+      </div>
+      <div class="section-brochure-model-card">
+        <span class="section-brochure-model-name">Graph</span>
+        <p>Relationships, recommendations, fraud detection</p>
+      </div>
+      <div class="section-brochure-model-card">
+        <span class="section-brochure-model-name">Columnar</span>
+        <p>Analytics, reporting, aggregations</p>
+      </div>
+      <div class="section-brochure-model-card">
+        <span class="section-brochure-model-name">Time-series</span>
+        <p>Metrics, events, observability</p>
+      </div>
+      <div class="section-brochure-model-card">
+        <span class="section-brochure-model-name">Document</span>
+        <p>Flexible schema, JSON workloads</p>
+      </div>
+      <div class="section-brochure-model-card">
+        <span class="section-brochure-model-name">Spatial</span>
+        <p>Location, mapping, geospatial queries</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} CURATED — Curated, Integrated, Supported {% endcomment %}
+<section class="section section-brochure-curated">
+  <div class="container">
+    <span class="section-brochure-eyebrow">Platform</span>
+    <h2 class="section-brochure-heading">Curated, integrated, <span style="color: #4D9FFF">supported.</span></h2>
+    <p>The Postgres ecosystem is vast. It's also fragmented. For every problem there's a tool. Sometimes five tools. Each with its own deployment, configuration, and failure mode — oh and good luck finding the maintainer.</p>
+    <p>NEXTGRES curates the best of that ecosystem, builds it in, tests it together, and backs it with a single enterprise support contract.</p>
+    <p class="section-brochure-curated-closer">Stop duct-taping your database. Start shipping. <strong>We got your back.</strong></p>
+  </div>
+</section>
+
+{% comment %} COMPATIBILITY — Speaks Your Language {% endcomment %}
+<section class="section section-base-bg-2 section-brochure-compat">
+  <div class="container">
+    <span class="section-brochure-eyebrow">Compatibility</span>
+    <h2 class="section-brochure-heading">Speaks your language, <span style="color: #4D9FFF">with zero accent.</span></h2>
+    <div class="section-brochure-compat-grid">
+      <div class="section-brochure-compat-copy">
+        <p>Have an application written for Oracle Database, SQL Server, MySQL, or MariaDB? Copy your schema and data, update your connection string, and start testing. NEXTGRES speaks their wire protocols, understands their SQL dialects, and compiles PL/SQL, T-SQL, and SQL/PSM to native machine code.</p>
+        <p>Running on MongoDB, Pinecone, Elastic, Algolia, or Amplitude? Those applications connect too. NEXTGRES implements their APIs, executes their query languages, and stores their data natively.</p>
+        <p>Your existing drivers, ORMs, and apps connect today. Most migrations are as simple as a connection string change.</p>
+      </div>
+      <div class="section-brochure-compat-badges-wrap">
+        <div class="section-brochure-compat-badges">
+          <span class="section-brochure-compat-badge">Oracle</span>
+          <span class="section-brochure-compat-badge">SQL Server</span>
+          <span class="section-brochure-compat-badge">MySQL</span>
+          <span class="section-brochure-compat-badge">MariaDB</span>
+          <span class="section-brochure-compat-badge">MongoDB</span>
+          <span class="section-brochure-compat-badge">Pinecone</span>
+          <span class="section-brochure-compat-badge">Elastic</span>
+          <span class="section-brochure-compat-badge">Algolia</span>
+          <span class="section-brochure-compat-badge">Amplitude</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} FINAL CTA (back cover) {% endcomment %}
+<section class="section section-brochure-cta">
+  <div class="container text-center">
+    <h2 class="section-brochure-heading">Ready for a Postgres <span style="color: #4D9FFF">you won't outgrow?</span></h2>
+    <div class="mt-3">
+      <a href="/contact/?utm_source=brochure&utm_medium=qr&utm_campaign=pgapr2026" class="button button-primary button-lg">Schedule a Demo</a>
+    </div>
+  </div>
+</section>
