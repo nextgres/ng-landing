@@ -1,0 +1,50 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NEXTGRES",
+  "legalName": "NEXTGRES, INC.",
+  "url": "https://nextgres.com/",
+  "logo": "https://nextgres.com/assets/images/logo.png",
+  "description": "{{ site.footer.footer_description }}",
+  "sameAs": [
+    {%- for item in social -%}
+      "{{ item.url }}"{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+{% if page.url == "/about/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jonah Harris",
+  "jobTitle": "Co-Founder & CEO",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "NEXTGRES"
+  },
+  "description": "Built personalization systems serving hundreds of millions of users at ParshipMeet and Noom. Former CTO of MariaDB and The Meet Group, founding engineer at EnterpriseDB, and longstanding Postgres contributor. Member of the Oracle OakTable Network.",
+  "sameAs": [
+    "https://www.linkedin.com/in/jonahharris/"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Joe Cotellese",
+  "jobTitle": "Co-Founder & CPO",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "NEXTGRES"
+  },
+  "description": "Product and commercial executive who has scaled platforms serving over 1M daily active users, managed $40M+ in SaaS product portfolios, and been part of teams responsible for more than $275M in successful exits.",
+  "sameAs": [
+    "https://www.linkedin.com/in/cotellese/"
+  ]
+}
+</script>
+{% endif %}
