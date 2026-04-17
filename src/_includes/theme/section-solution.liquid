@@ -52,12 +52,12 @@
             </marker>
           </defs>
 
-          <!-- Top source → center -->
-          <line x1="130" y1="70" x2="218" y2="118" stroke="rgba(77,159,255,0.5)" stroke-width="1.5" marker-end="url(#arrow)"/>
-          <!-- Middle source → center -->
-          <line x1="130" y1="148" x2="218" y2="148" stroke="rgba(77,159,255,0.5)" stroke-width="1.5" marker-end="url(#arrow)"/>
-          <!-- Bottom source → center -->
-          <line x1="130" y1="226" x2="218" y2="178" stroke="rgba(77,159,255,0.5)" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <!-- Top source ← center (NEXTGRES reaches into data) -->
+          <line x1="130" y1="70" x2="218" y2="118" stroke="rgba(77,159,255,0.5)" stroke-width="1.5" marker-start="url(#arrow)"/>
+          <!-- Middle source ← center -->
+          <line x1="130" y1="148" x2="218" y2="148" stroke="rgba(77,159,255,0.5)" stroke-width="1.5" marker-start="url(#arrow)"/>
+          <!-- Bottom source ← center -->
+          <line x1="130" y1="226" x2="218" y2="178" stroke="rgba(77,159,255,0.5)" stroke-width="1.5" marker-start="url(#arrow)"/>
 
           <!-- ====== CENTER: NEXTGRES layer ====== -->
           <rect x="224" y="78" width="172" height="140" rx="10" fill="#0D2147" stroke="#2260D9" stroke-width="1.5"/>

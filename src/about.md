@@ -3,7 +3,7 @@ layout: basic
 title: "About NEXTGRES"
 header_transparent: true
 permalink: "/about/"
-description: "NEXTGRES delivers real-time personalization at scale — no new pipelines, no AI/ML team, no six-month implementation."
+description: "NEXTGRES delivers real-time personalization at scale — no new pipelines, no AI/ML team, no quarter-long implementation."
 
 hero:
   enabled: true
@@ -22,7 +22,7 @@ hero:
 
 ## Why We Built NEXTGRES
 
-Every team we've worked with hits the same wall. They decide to make personalization a priority, then realize their data is spread across five systems, their engineering backlog is six months deep, and the ML infrastructure they need doesn't exist yet.
+Every team we've worked with hits the same wall. They decide to make personalization a priority, then realize their data is spread across five systems, their engineering backlog is a quarter deep, and the ML infrastructure they need doesn't exist yet.
 
 We've been on both sides of that wall. We've built personalization systems from scratch — at scale, under pressure, with real users. We know what works, what breaks, and what never should have been that hard in the first place.
 
@@ -36,7 +36,7 @@ NEXTGRES connects read-only to your existing databases and event streams, determ
 - Determines the right signals and acts on them in real time
 - Gives product and growth teams tools to preview, observe, explain, and control personalization directly
 
-What once took four teams and six months, NEXTGRES delivers in hours.
+What once took four teams and a quarter, NEXTGRES delivers in hours.
 
 ## Our Team
 
