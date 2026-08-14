@@ -72,10 +72,27 @@
   letter-spacing: 0.08em;
 }
 
-.hero-home-pill__logo {
-  height: 14px;
-  width: auto;
-  opacity: 0.85;
+.hero-home-pill__logos {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  .selected-for-amp {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .selected-for-logo {
+    height: 14px;
+    width: auto;
+    opacity: 0.85;
+  }
+
+  .selected-for-logo--lift-labs {
+    height: 22px;
+  }
 }
 
 .hero-home-pill__sep {
@@ -88,7 +105,11 @@
   font-weight: 500;
 }
 
-// Headline
+// Headline — hidden until self-hosted fonts finish loading (prevents Inter flash)
+html:not(.fonts-loaded) .hero-home-headline {
+  visibility: hidden;
+}
+
 .hero-home-headline {
   font-family: var(--font-family-heading);
   font-size: clamp(1.75rem, 3vw, 2.625rem);

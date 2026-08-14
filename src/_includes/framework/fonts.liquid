@@ -1,9 +1,36 @@
+{% if site.fonts.use_self_hosted_fonts %}
+    <link rel="preload" href="{{ '/assets/fonts/cormorant-garamond/cormorant-garamond-v21-latin-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/cormorant-garamond/cormorant-garamond-v21-latin-600.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+    <link href="{{ '/assets/css/fonts.css' | url }}" rel="stylesheet">
+{% endif %}
 {% if site.fonts.use_google_fonts %}
-    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="{{ site.fonts.google_fonts_url }}" rel="stylesheet">
 {% endif %}
-{% if site.fonts.use_self_hosted_fonts %}
-    <link href="{{ '/assets/css/fonts.css' }}" rel="stylesheet">
-{% endif %}
+{% if site.fonts.use_self_hosted_fonts or site.fonts.use_google_fonts %}
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var done = false;
+        var markReady = function () {
+          if (done) return;
+          done = true;
+          root.classList.add('fonts-loaded');
+        };
 
+        setTimeout(markReady, 2000);
+
+        if (!document.fonts || !document.fonts.load) {
+          markReady();
+          return;
+        }
+
+        Promise.all([
+          document.fonts.load('400 1em "Cormorant Garamond"'),
+          document.fonts.load('600 1em "Cormorant Garamond"')
+        ]).then(markReady).catch(markReady);
+      })();
+    </script>
+    <noscript><style>.hero-home-headline { visibility: visible; }</style></noscript>
+{% endif %}
 

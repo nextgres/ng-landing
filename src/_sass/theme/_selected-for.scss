@@ -27,16 +27,28 @@
 .selected-for__logos {
   display: flex;
   align-items: center;
-  gap: 40px;
-}
+  gap: 16px;
 
-.selected-for__logos img {
-  height: 24px;
-  width: auto;
-  opacity: 0.6;
-  transition: opacity 150ms ease;
-}
+  .selected-for-amp {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    user-select: none;
+  }
 
-.selected-for__logos img:hover {
-  opacity: 1;
+  .selected-for-logo {
+    height: 24px;
+    width: auto;
+    opacity: 0.6;
+    transition: opacity 150ms ease;
+  }
+
+  .selected-for-logo--lift-labs {
+    height: 34px;
+  }
+
+  .selected-for-logo:hover {
+    opacity: 1;
+  }
 }

@@ -33,8 +33,8 @@ colors:
 
 fonts:
   use_google_fonts: true
-  google_fonts_url: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
-  use_self_hosted_fonts: false
+  google_fonts_url: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  use_self_hosted_fonts: true
   heading: "'Cormorant Garamond'"
   base: "'Inter'"
   monospace: "'Source Code Pro'"
